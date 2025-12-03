@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --yg-gold: #D4AF37;
+  --yg-navy: #1a1a2e;
+  --yg-cream: #F5F5DC;
+  --yg-burgundy: #722F37;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--yg-navy);
+  color: var(--yg-cream);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--yg-navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--yg-gold);
+  border-radius: 4px;
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--yg-gold) 0%,
+    var(--yg-cream) 50%,
+    var(--yg-gold) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Button hover effects */
+.btn-primary {
+  @apply bg-yg-gold text-yg-navy font-bold py-3 px-8 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yg-gold/30;
+}
+
+.btn-secondary {
+  @apply border-2 border-yg-gold text-yg-gold font-bold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-yg-gold hover:text-yg-navy;
+}
