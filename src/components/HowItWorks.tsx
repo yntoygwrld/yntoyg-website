@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Wallet, Film, Share2, Trophy, X, Bot, Star, Gift, ChevronRight, ChevronDown } from 'lucide-react';
 
 const steps = [
@@ -54,6 +55,11 @@ const detailSections = [
 export default function HowItWorks() {
   const [showModal, setShowModal] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const openModal = () => {
     setShowModal(true);
@@ -103,8 +109,8 @@ export default function HowItWorks() {
             <h2 className="section-heading text-white mb-4 md:mb-5 text-4xl md:text-5xl lg:text-6xl">
               How It <span className="text-glow-gold">Works</span>
             </h2>
-            <p className="text-[#a1a4a5] text-lg md:text-xl max-w-md md:max-w-2xl mx-auto font-medium leading-8">
-              Four simple steps to transform<br className="md:hidden" /> from <span className="text-gradient-burgundy font-street">YN</span> to <span className="text-gradient-gold font-serif">YG</span>
+            <p className="text-[#a1a4a5] text-xl md:text-2xl max-w-md md:max-w-2xl mx-auto font-medium leading-9">
+              Four simple steps to transform<br className="md:hidden" /> from <span className="text-gradient-burgundy font-street text-2xl md:text-3xl">YN</span> to <span className="text-gradient-gold font-serif text-2xl md:text-3xl">YG</span>
             </p>
 
             {/* Scroll indicator on mobile */}
@@ -131,12 +137,12 @@ export default function HowItWorks() {
                 {/* Card - Glass style with elegant hover, centered content on mobile */}
                 <div className="glass-card rounded-2xl p-6 h-full hover:scale-[1.02] text-center md:text-left">
                   {/* Step number - embossed effect */}
-                  <div className="text-5xl md:text-6xl font-bold mb-3 md:mb-4 font-serif step-number-emboss">
+                  <div className="text-5xl md:text-6xl font-bold mb-5 md:mb-4 font-serif step-number-emboss">
                     {step.number}
                   </div>
 
                   {/* Icon with emboss effect */}
-                  <div className="mb-3 md:mb-4 flex justify-center md:justify-start">
+                  <div className="mb-4 md:mb-4 flex justify-center md:justify-start">
                     <step.Icon className="w-7 h-7 md:w-8 md:h-8 icon-gold-emboss" strokeWidth={1.5} />
                   </div>
 
@@ -187,8 +193,8 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      {/* Aristocratic Modal */}
-      {showModal && (
+      {/* Aristocratic Modal - rendered via portal to avoid blur */}
+      {mounted && showModal && createPortal(
         <div
           className={`fixed inset-0 z-50 flex items-center justify-center p-6 md:p-8 ${isClosing ? 'modal-closing' : ''}`}
           onClick={closeModal}
@@ -296,7 +302,8 @@ export default function HowItWorks() {
               </div>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

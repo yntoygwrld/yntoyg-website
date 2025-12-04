@@ -52,11 +52,11 @@ export default function ViralCalculator() {
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Section header - Resend style */}
         <div className="text-center mb-10 md:mb-16">
-          <h2 className="section-heading text-white mb-3 md:mb-4 text-3xl md:text-5xl lg:text-6xl">
+          <h2 className="section-heading text-white mb-4 md:mb-5 text-4xl md:text-5xl lg:text-6xl">
             The <span className="text-glow-gold">Math</span>
           </h2>
-          <p className="text-[#a1a4a5] text-base md:text-lg max-w-2xl mx-auto font-medium leading-7">
-            Viral growth isn't luck - it's inevitable when we all post together
+          <p className="text-[#a1a4a5] text-xl md:text-2xl max-w-2xl mx-auto font-medium leading-8">
+            Viral growth isn't luck - it's inevitable<br className="md:hidden" /> when we all post together
           </p>
         </div>
 

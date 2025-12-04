@@ -36,11 +36,11 @@ export default function JoinCTA() {
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Main CTA - Glass card with elegant hover */}
         <div className="glass-card rounded-2xl md:rounded-3xl p-6 md:p-10 lg:p-16 mb-8 md:mb-12 hover:scale-[1.01]">
-          <h2 className="section-heading text-white mb-4 md:mb-6 text-2xl md:text-4xl lg:text-5xl">
+          <h2 className="section-heading text-white mb-4 md:mb-6 text-3xl md:text-4xl lg:text-5xl">
             Ready to <span className="text-glow-gold">Transform</span>?
           </h2>
-          <p className="text-[#a1a4a5] text-lg md:text-xl mb-6 md:mb-8 max-w-xl mx-auto leading-7">
-            Join the movement. Claim your daily videos. Rise from <span className="text-gradient-burgundy font-street">YN</span> to <span className="text-gradient-gold font-serif">YG</span>.
+          <p className="text-[#a1a4a5] text-xl md:text-2xl mb-6 md:mb-8 max-w-xl mx-auto leading-8">
+            Join the movement. Claim your daily videos.<br className="md:hidden" /> Rise from <span className="text-gradient-burgundy font-street text-2xl md:text-3xl">YN</span> to <span className="text-gradient-gold font-serif text-2xl md:text-3xl">YG</span>.
           </p>
 
           {/* Primary buttons */}
