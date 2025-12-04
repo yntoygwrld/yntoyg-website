@@ -36,53 +36,50 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-4 py-20 relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-yg-navy via-yg-navy to-yg-burgundy/20 -z-10" />
-
-      {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-yg-gold/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-yg-burgundy/10 rounded-full blur-3xl" />
+    <section className="min-h-screen flex flex-col items-center justify-center px-4 py-20 relative overflow-hidden fabric-texture grain">
+      {/* Subtle gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-yg-navy to-yg-navy -z-10" />
 
       {/* Content */}
       <div className="max-w-4xl mx-auto text-center z-10">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-yg-gold/10 border border-yg-gold/30 rounded-full px-4 py-2 mb-8">
-          <span className="text-yg-gold text-sm font-medium">🎩 The transformation begins</span>
+        <div className="inline-flex items-center gap-2 border border-yg-gold/20 rounded-full px-4 py-2 mb-12">
+          <span className="w-2 h-2 bg-yg-gold rounded-full animate-pulse" />
+          <span className="text-yg-cream/60 text-sm tracking-wide">The transformation begins</span>
         </div>
 
-        {/* Main headline */}
-        <h1 className="text-5xl md:text-7xl font-bold mb-6">
-          <span className="text-yg-cream">FROM </span>
+        {/* Main headline - Resend style with Playfair */}
+        <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal mb-8 tracking-tight text-glow">
+          <span className="text-yg-cream">From </span>
           <span className="text-yg-burgundy">YN</span>
-          <span className="text-yg-cream"> TO </span>
+          <span className="text-yg-cream"> to </span>
           <span className="shimmer">YG</span>
         </h1>
 
-        {/* Subheadline */}
-        <p className="text-xl md:text-2xl text-yg-cream/80 mb-4">
+        {/* Subheadline - clean Inter */}
+        <p className="text-lg md:text-xl text-yg-cream/50 mb-6 font-light tracking-wide">
           The Daily Young Gentleman Grind
         </p>
 
-        <p className="text-lg text-yg-cream/60 mb-12 max-w-2xl mx-auto">
-          Buy $YNTOYG → Claim your unique daily video → Repost on socials →
+        <p className="text-base text-yg-cream/40 mb-16 max-w-xl mx-auto leading-relaxed">
+          Buy $YNTOYG → Claim your daily video → Repost on socials →
           Climb the leaderboard. Together, we go viral.
         </p>
 
-        {/* Email signup form */}
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto mb-8">
+        {/* Email signup form - elegant minimal */}
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto mb-6">
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
-            className="flex-1 px-6 py-4 rounded-lg bg-yg-navy/50 border border-yg-gold/30 text-yg-cream placeholder-yg-cream/40 focus:outline-none focus:border-yg-gold transition-colors"
+            className="flex-1 px-5 py-3.5 rounded-lg bg-white/5 border border-yg-cream/10 text-yg-cream placeholder-yg-cream/30 focus:outline-none focus:border-yg-gold/50 focus:bg-white/[0.07] transition-all text-sm"
             disabled={status === 'loading'}
           />
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="btn-primary whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+            className="btn-primary whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed text-sm"
           >
             {status === 'loading' ? 'Sending...' : 'Join the Movement'}
           </button>
@@ -90,35 +87,34 @@ export default function Hero() {
 
         {/* Status message */}
         {message && (
-          <p className={`text-sm mb-8 ${status === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+          <p className={`text-sm mb-8 ${status === 'success' ? 'text-green-400/80' : 'text-red-400/80'}`}>
             {message}
           </p>
         )}
 
-        {/* Features */}
-        <div className="flex flex-wrap items-center justify-center gap-8 text-yg-cream/60 text-sm">
-          <div className="flex items-center gap-2">
-            <span className="text-yg-gold font-bold text-2xl">📹</span>
-            <span>Daily Videos</span>
+        {/* Elegant divider */}
+        <div className="elegant-divider max-w-xs mx-auto my-16" />
+
+        {/* Features - minimal style */}
+        <div className="flex flex-wrap items-center justify-center gap-12 text-yg-cream/40 text-sm">
+          <div className="flex items-center gap-3">
+            <span className="text-yg-gold/70">📹</span>
+            <span className="tracking-wide">Daily Videos</span>
           </div>
-          <div className="h-8 w-px bg-yg-cream/20" />
-          <div className="flex items-center gap-2">
-            <span className="text-yg-gold font-bold text-2xl">🏆</span>
-            <span>Leaderboard</span>
+          <div className="flex items-center gap-3">
+            <span className="text-yg-gold/70">🏆</span>
+            <span className="tracking-wide">Leaderboard</span>
           </div>
-          <div className="h-8 w-px bg-yg-cream/20" />
-          <div className="flex items-center gap-2">
-            <span className="text-yg-gold font-bold text-2xl">∞</span>
-            <span>Viral Potential</span>
+          <div className="flex items-center gap-3">
+            <span className="text-yg-gold/70">∞</span>
+            <span className="tracking-wide">Viral Potential</span>
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <svg className="w-6 h-6 text-yg-gold/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
+      {/* Scroll indicator - subtle */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <div className="w-px h-12 bg-gradient-to-b from-yg-gold/40 to-transparent" />
       </div>
     </section>
   );

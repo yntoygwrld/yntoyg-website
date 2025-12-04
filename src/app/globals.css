@@ -4,9 +4,11 @@
 
 :root {
   --yg-gold: #D4AF37;
-  --yg-navy: #1a1a2e;
+  --yg-navy: #0a0a0f;
   --yg-cream: #F5F5DC;
   --yg-burgundy: #722F37;
+  --font-inter: 'Inter', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
 }
 
 html {
@@ -16,6 +18,12 @@ html {
 body {
   background: var(--yg-navy);
   color: var(--yg-cream);
+  font-family: var(--font-inter);
+}
+
+/* Elegant serif headline */
+.font-serif {
+  font-family: var(--font-playfair);
 }
 
 /* Custom scrollbar */
@@ -32,7 +40,7 @@ body {
   border-radius: 4px;
 }
 
-/* Animations */
+/* Elegant gold shimmer */
 @keyframes shimmer {
   0% {
     background-position: -200% 0;
@@ -55,11 +63,55 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+/* Brushed fabric texture overlay */
+.fabric-texture {
+  position: relative;
+}
+
+.fabric-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(212, 175, 55, 0.15), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 50%, rgba(114, 47, 55, 0.1), transparent),
+    radial-gradient(ellipse 50% 30% at 20% 80%, rgba(212, 175, 55, 0.08), transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Subtle grain texture */
+.grain {
+  position: relative;
+}
+
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 1;
+}
+
 /* Button hover effects */
 .btn-primary {
-  @apply bg-yg-gold text-yg-navy font-bold py-3 px-8 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yg-gold/30;
+  @apply bg-yg-gold text-yg-navy font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-yg-cream hover:shadow-lg hover:shadow-yg-gold/20;
 }
 
 .btn-secondary {
-  @apply border-2 border-yg-gold text-yg-gold font-bold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-yg-gold hover:text-yg-navy;
+  @apply border border-yg-gold/50 text-yg-cream font-medium py-3 px-8 rounded-lg transition-all duration-300 hover:bg-yg-gold/10 hover:border-yg-gold;
+}
+
+/* Elegant divider */
+.elegant-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--yg-gold), transparent);
+  opacity: 0.3;
+}
+
+/* Glow effect for headlines */
+.text-glow {
+  text-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
 }

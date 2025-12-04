@@ -11,14 +11,14 @@ const config: Config = {
       colors: {
         // YG Brand Colors - Gentleman aesthetic
         'yg-gold': '#D4AF37',
-        'yg-navy': '#1a1a2e',
+        'yg-navy': '#0a0a0f',
         'yg-cream': '#F5F5DC',
         'yg-burgundy': '#722F37',
         'yg-forest': '#228B22',
       },
       fontFamily: {
-        'serif': ['Georgia', 'Cambria', 'Times New Roman', 'serif'],
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'serif': ['var(--font-playfair)', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],
+        'sans': ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
