@@ -28,7 +28,7 @@ function QuarterZipModel() {
       rotationIntensity={0.2}
       floatIntensity={0.3}
     >
-      <group ref={groupRef} scale={0.7}>
+      <group ref={groupRef} scale={1.0}>
         {/* Main body - more rounded */}
         <RoundedBox
           args={[2.0, 2.4, 0.9]}
@@ -165,7 +165,7 @@ function QuarterZipModel() {
 
 export default function QuarterZip3D() {
   return (
-    <div className="w-full h-[80px] flex items-center justify-center">
+    <div className="w-full h-[100px] flex items-center justify-center">
       <Canvas
         camera={{ position: [0, 0, 8], fov: 45 }}
         gl={{ antialias: true, alpha: true }}
