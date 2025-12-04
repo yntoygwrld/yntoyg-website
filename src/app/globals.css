@@ -174,58 +174,20 @@ body {
     );
   pointer-events: none;
   z-index: 1;
+  animation: ambientGlowBreath 12s ease-in-out infinite;
 }
 
-/* Animated horizontal light sweep */
-.hero-light-sweep {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.hero-light-sweep::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -100%;
-  width: 60%;
-  height: 200%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(212, 175, 55, 0.03) 20%,
-    rgba(255, 255, 255, 0.08) 40%,
-    rgba(212, 175, 55, 0.15) 50%,
-    rgba(255, 255, 255, 0.08) 60%,
-    rgba(212, 175, 55, 0.03) 80%,
-    transparent 100%
-  );
-  transform: skewX(-20deg);
-  animation: heroLightSweep 8s ease-in-out infinite;
-}
-
-@keyframes heroLightSweep {
-  0% {
-    left: -100%;
-    opacity: 0;
-  }
-  10% {
+@keyframes ambientGlowBreath {
+  0%, 100% {
     opacity: 1;
+    transform: scale(1) translateX(0);
   }
   50% {
-    left: 150%;
-    opacity: 1;
-  }
-  60% {
-    opacity: 0;
-  }
-  100% {
-    left: 150%;
-    opacity: 0;
+    opacity: 0.7;
+    transform: scale(1.02) translateX(-2%);
   }
 }
+
 
 /* Brushed fabric/canvas texture overlay */
 .resend-canvas::after {
@@ -360,7 +322,7 @@ body {
   color: rgb(161, 164, 165);
 }
 
-/* Royal premium gold button with shimmer and glow */
+/* Royal premium gold button - refined, elegant, less intense */
 .btn-royal-gold {
   display: inline-flex;
   align-items: center;
@@ -369,24 +331,20 @@ body {
   height: 3rem;
   padding: 0 2rem;
   border-radius: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1rem;
   transition: all 0.3s ease;
-  background: linear-gradient(135deg, #D4AF37 0%, #f5d76e 40%, #fff8dc 50%, #f5d76e 60%, #D4AF37 100%);
+  background: linear-gradient(135deg, #D4AF37 0%, #e6c55a 50%, #D4AF37 100%);
   background-size: 200% 200%;
   color: #0a0a0c;
   box-shadow:
-    0 0 20px rgba(212, 175, 55, 0.6),
-    0 0 40px rgba(212, 175, 55, 0.4),
-    0 6px 20px rgba(212, 175, 55, 0.5),
-    0 12px 40px rgba(212, 175, 55, 0.25),
-    inset 0 2px 0 rgba(255, 255, 255, 0.4),
+    0 4px 12px rgba(212, 175, 55, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
     inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
-  animation: royalGoldShift 3s ease-in-out infinite;
-  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
+  animation: royalGoldShift 6s ease-in-out infinite;
   border: none;
 }
 
@@ -399,7 +357,7 @@ body {
   }
 }
 
-/* Shimmer shine overlay */
+/* Subtle shimmer overlay */
 .btn-royal-gold::before {
   content: '';
   position: absolute;
@@ -410,10 +368,10 @@ body {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.2) 50%,
     transparent 100%
   );
-  animation: royalShine 4s ease-in-out infinite;
+  animation: royalShine 6s ease-in-out infinite;
 }
 
 @keyframes royalShine {
@@ -426,23 +384,18 @@ body {
 }
 
 .btn-royal-gold:hover {
-  transform: translateY(-3px) scale(1.02);
+  transform: translateY(-2px);
   box-shadow:
-    0 0 30px rgba(212, 175, 55, 0.8),
-    0 0 60px rgba(212, 175, 55, 0.5),
-    0 8px 25px rgba(212, 175, 55, 0.6),
-    0 16px 50px rgba(212, 175, 55, 0.35),
-    inset 0 2px 0 rgba(255, 255, 255, 0.5),
+    0 6px 20px rgba(212, 175, 55, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
     inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.7));
 }
 
 .btn-royal-gold:active {
   transform: translateY(0);
   box-shadow:
-    0 2px 10px rgba(212, 175, 55, 0.4),
-    0 4px 20px rgba(212, 175, 55, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    0 2px 8px rgba(212, 175, 55, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 /* Resend-style muted text color */
