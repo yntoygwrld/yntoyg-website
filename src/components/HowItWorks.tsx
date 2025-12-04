@@ -53,18 +53,46 @@ const detailSections = [
 
 export default function HowItWorks() {
   const [showModal, setShowModal] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
-  // Lock body scroll when modal is open
+  const openModal = () => {
+    setShowModal(true);
+    setIsClosing(false);
+  };
+
+  const closeModal = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setShowModal(false);
+      setIsClosing(false);
+    }, 250); // Match animation duration
+  };
+
+  // Lock body scroll and blur page when modal is open
   useEffect(() => {
-    if (showModal) {
+    const main = document.querySelector('main');
+    if (showModal && !isClosing) {
       document.body.style.overflow = 'hidden';
+      if (main) {
+        main.classList.add('modal-blur-active');
+      }
+    } else if (isClosing) {
+      if (main) {
+        main.classList.remove('modal-blur-active');
+      }
     } else {
       document.body.style.overflow = '';
+      if (main) {
+        main.classList.remove('modal-blur-active');
+      }
     }
     return () => {
       document.body.style.overflow = '';
+      if (main) {
+        main.classList.remove('modal-blur-active');
+      }
     };
-  }, [showModal]);
+  }, [showModal, isClosing]);
 
   return (
     <>
@@ -129,7 +157,7 @@ export default function HowItWorks() {
           {/* More Details link */}
           <div className="text-center mt-10">
             <button
-              onClick={() => setShowModal(true)}
+              onClick={openModal}
               className="inline-flex items-center gap-2 text-white/50 hover:text-yg-gold text-base md:text-lg transition-all duration-300 group"
             >
               <span className="border-b border-dashed border-white/30 group-hover:border-yg-gold/50 pb-0.5">
@@ -162,15 +190,15 @@ export default function HowItWorks() {
       {/* Aristocratic Modal */}
       {showModal && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-6 md:p-8"
-          onClick={() => setShowModal(false)}
+          className={`fixed inset-0 z-50 flex items-center justify-center p-6 md:p-8 ${isClosing ? 'modal-closing' : ''}`}
+          onClick={closeModal}
         >
-          {/* Backdrop - stronger blur */}
-          <div className="absolute inset-0 bg-black/85 backdrop-blur-md" />
+          {/* Backdrop */}
+          <div className={`absolute inset-0 bg-black/70 ${isClosing ? 'modal-backdrop-closing' : 'modal-backdrop'}`} />
 
           {/* Modal */}
           <div
-            className="relative w-full max-w-2xl max-h-[80vh] overflow-hidden"
+            className={`relative w-full max-w-2xl max-h-[80vh] overflow-hidden ${isClosing ? 'modal-content-closing' : 'modal-content'}`}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Ornate border frame */}
@@ -180,7 +208,7 @@ export default function HowItWorks() {
             <div className="relative bg-[#0a0a0c] rounded-2xl md:rounded-3xl overflow-hidden">
               {/* Close button - fixed position */}
               <button
-                onClick={() => setShowModal(false)}
+                onClick={closeModal}
                 className="absolute top-4 right-4 z-20 p-2 text-white/40 hover:text-white transition-colors bg-black/50 rounded-full"
               >
                 <X className="w-5 h-5" />
