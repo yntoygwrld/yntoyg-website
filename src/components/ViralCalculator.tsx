@@ -52,7 +52,7 @@ export default function ViralCalculator() {
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Section header - Resend style */}
         <div className="text-center mb-10 md:mb-16">
-          <h2 className="section-heading text-white mb-4 md:mb-5 text-4xl md:text-5xl lg:text-6xl">
+          <h2 className="section-heading text-white mb-4 md:mb-5 text-[46px] md:text-[56px] lg:text-6xl">
             The <span className="text-glow-gold">Math</span>
           </h2>
           <p className="text-[#a1a4a5] text-xl md:text-2xl max-w-2xl mx-auto font-medium leading-8">
@@ -61,22 +61,22 @@ export default function ViralCalculator() {
         </div>
 
         {/* Calculator card - Glass style with elegant hover */}
-        <div className="glass-card rounded-2xl md:rounded-3xl p-5 md:p-8 lg:p-12 hover:scale-[1.01]">
+        <div className="glass-card rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-12 hover:scale-[1.01]">
           {/* Royal Slider */}
-          <div className="mb-8 md:mb-12">
-            <label className="block text-white/50 text-xs md:text-sm mb-4 md:mb-6 font-medium tracking-wide uppercase">
+          <div className="mb-10 md:mb-12">
+            <label className="block text-white/40 text-sm md:text-base mb-5 md:mb-6 font-medium tracking-wide uppercase text-center">
               Number of Gentlemen Posting Daily
             </label>
 
             {/* Slider container with royal styling */}
-            <div className="relative py-4">
+            <div className="relative py-6">
               {/* Track background with gradient */}
-              <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-1 bg-gradient-to-r from-white/5 via-white/10 to-white/5 rounded-full" />
+              <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-0.5 bg-gradient-to-r from-white/5 via-white/10 to-white/5 rounded-full" />
 
-              {/* Active track - anchored to left */}
+              {/* Active track - anchored to left, extends to thumb center */}
               <div
                 className="absolute left-0 top-1/2 -translate-y-1/2 h-1 bg-gradient-to-r from-yg-gold/60 via-yg-gold to-yg-gold/80 rounded-full shadow-[0_0_10px_rgba(212,175,55,0.3)]"
-                style={{ width: `${((holders - 100) / (10000 - 100)) * 100}%` }}
+                style={{ width: `calc(${((holders - 100) / (10000 - 100)) * 100}% + 14px)` }}
               />
 
               {/* Hidden native input */}
@@ -92,52 +92,52 @@ export default function ViralCalculator() {
             </div>
 
             {/* Scale markers */}
-            <div className="flex justify-between items-center mt-4">
+            <div className="flex justify-between items-center mt-3">
               <div className="flex flex-col items-start">
-                <span className="text-white/30 text-xs font-medium">100</span>
-                <span className="text-white/20 text-[10px]">MIN</span>
+                <span className="text-white/30 text-sm font-medium">100</span>
+                <span className="text-white/20 text-xs">MIN</span>
               </div>
 
               {/* Center value display - diamond style */}
               <div className="relative">
                 <div className="absolute inset-0 bg-yg-gold/20 blur-xl rounded-full" />
-                <div className="relative bg-gradient-to-b from-white/10 to-white/5 border border-yg-gold/30 rounded-xl px-4 md:px-6 py-1.5 md:py-2">
-                  <span className="text-glow-gold font-bold text-2xl md:text-3xl font-serif">{formatNumber(holders)}</span>
+                <div className="relative bg-gradient-to-b from-white/10 to-white/5 border border-yg-gold/30 rounded-xl px-5 md:px-6 py-2 md:py-2.5">
+                  <span className="text-glow-gold font-bold text-3xl md:text-4xl font-serif">{formatNumber(holders)}</span>
                 </div>
               </div>
 
               <div className="flex flex-col items-end">
-                <span className="text-white/30 text-xs font-medium">10,000</span>
-                <span className="text-white/20 text-[10px]">MAX</span>
+                <span className="text-white/30 text-sm font-medium">10,000</span>
+                <span className="text-white/20 text-xs">MAX</span>
               </div>
             </div>
           </div>
 
           {/* Stats grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
-            <div className="bg-white/[0.02] border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 text-center">
-              <div className="text-glow-gold text-3xl md:text-4xl lg:text-5xl font-bold font-serif mb-1 md:mb-2">
+          <div className="grid grid-cols-3 gap-3 md:gap-6 mb-10 md:mb-12">
+            <div className="bg-white/[0.02] border border-white/5 rounded-xl md:rounded-2xl p-3 md:p-6 text-center">
+              <div className="text-glow-gold text-2xl md:text-4xl lg:text-5xl font-bold font-serif mb-1 md:mb-2">
                 {formatNumber(dailyImpressions)}
               </div>
-              <div className="text-white/50 text-xs md:text-sm">Daily Impressions</div>
+              <div className="text-white/50 text-[10px] md:text-sm">Daily</div>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 text-center">
-              <div className="text-glow-gold text-3xl md:text-4xl lg:text-5xl font-bold font-serif mb-1 md:mb-2">
+            <div className="bg-white/[0.02] border border-white/5 rounded-xl md:rounded-2xl p-3 md:p-6 text-center">
+              <div className="text-glow-gold text-2xl md:text-4xl lg:text-5xl font-bold font-serif mb-1 md:mb-2">
                 {formatNumber(weeklyImpressions)}
               </div>
-              <div className="text-white/50 text-xs md:text-sm">Weekly Impressions</div>
+              <div className="text-white/50 text-[10px] md:text-sm">Weekly</div>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 text-center">
-              <div className="text-glow-gold text-3xl md:text-4xl lg:text-5xl font-bold font-serif mb-1 md:mb-2">
+            <div className="bg-white/[0.02] border border-white/5 rounded-xl md:rounded-2xl p-3 md:p-6 text-center">
+              <div className="text-glow-gold text-2xl md:text-4xl lg:text-5xl font-bold font-serif mb-1 md:mb-2">
                 {formatNumber(monthlyImpressions)}
               </div>
-              <div className="text-white/50 text-xs md:text-sm">Monthly Impressions</div>
+              <div className="text-white/50 text-[10px] md:text-sm">Monthly</div>
             </div>
           </div>
 
           {/* Formula */}
-          <div className="text-center">
-            <div className="inline-block bg-white/[0.03] border border-white/5 rounded-lg md:rounded-xl px-3 md:px-6 py-3 md:py-4 mb-4 md:mb-6">
+          <div className="text-center pb-2 md:pb-4">
+            <div className="inline-block bg-white/[0.03] border border-white/5 rounded-lg md:rounded-xl px-3 md:px-6 py-3 md:py-4">
               <code className="text-white/60 text-xs md:text-sm lg:text-base">
                 <span className="text-yg-gold">{formatNumber(holders)}</span> holders ×{' '}
                 <span className="text-yg-gold">1</span> post/day ×{' '}
@@ -145,7 +145,7 @@ export default function ViralCalculator() {
                 <span className="text-yg-gold font-bold">{formatNumber(dailyImpressions)}</span> daily
               </code>
             </div>
-            <p className="text-white text-lg md:text-xl lg:text-2xl font-semibold">
+            <p className="text-white text-2xl md:text-3xl lg:text-4xl font-semibold mt-8 md:mt-10">
               Viral is <span className="shimmer-bold font-serif tracking-wide">INEVITABLE</span>
             </p>
           </div>
@@ -158,7 +158,9 @@ export default function ViralCalculator() {
             className="inline-flex items-center gap-2 text-white/50 hover:text-white/70 text-base md:text-lg transition-colors duration-300 group"
           >
             <BookOpen className="w-5 h-5" />
-            <span>Research-based estimates</span>
+            <span className="border-b border-dashed border-white/30 group-hover:border-yg-gold/50 pb-0.5">
+              Research-based estimates
+            </span>
             <span className={`transition-transform duration-300 ${showSources ? 'rotate-180' : ''}`}>
               ↓
             </span>

@@ -106,7 +106,7 @@ export default function HowItWorks() {
         <div className="max-w-6xl mx-auto relative z-10">
           {/* Section header - Resend style, centered */}
           <div className="text-center mb-8 md:mb-16">
-            <h2 className="section-heading text-white mb-4 md:mb-5 text-4xl md:text-5xl lg:text-6xl">
+            <h2 className="section-heading text-white mb-4 md:mb-5 text-[46px] md:text-[56px] lg:text-6xl">
               How It <span className="text-glow-gold">Works</span>
             </h2>
             <p className="text-[#a1a4a5] text-xl md:text-2xl max-w-md md:max-w-2xl mx-auto font-medium leading-9">
@@ -135,9 +135,9 @@ export default function HowItWorks() {
                 )}
 
                 {/* Card - Glass style with elegant hover, centered content on mobile */}
-                <div className="glass-card rounded-2xl p-6 h-full hover:scale-[1.02] text-center md:text-left">
+                <div className="glass-card rounded-2xl p-6 pt-5 h-full hover:scale-[1.02] text-center md:text-left">
                   {/* Step number - embossed effect */}
-                  <div className="text-5xl md:text-6xl font-bold mb-5 md:mb-4 font-serif step-number-emboss">
+                  <div className="text-5xl md:text-6xl font-bold mb-3 md:mb-3 font-serif step-number-emboss">
                     {step.number}
                   </div>
 
@@ -204,14 +204,14 @@ export default function HowItWorks() {
 
           {/* Modal */}
           <div
-            className={`relative w-full max-w-2xl max-h-[80vh] overflow-hidden ${isClosing ? 'modal-content-closing' : 'modal-content'}`}
+            className={`relative w-full max-w-2xl max-h-[80vh] overflow-hidden rounded-[2rem] md:rounded-[2.5rem] ${isClosing ? 'modal-content-closing' : 'modal-content'}`}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Ornate border frame */}
-            <div className="absolute -inset-px bg-gradient-to-b from-yg-gold/30 via-yg-gold/10 to-yg-gold/30 rounded-2xl md:rounded-3xl" />
+            <div className="absolute -inset-px bg-gradient-to-b from-yg-gold/30 via-yg-gold/10 to-yg-gold/30 rounded-[2rem] md:rounded-[2.5rem]" />
 
             {/* Modal container */}
-            <div className="relative bg-[#0a0a0c] rounded-2xl md:rounded-3xl overflow-hidden">
+            <div className="relative bg-[#0a0a0c] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden">
               {/* Close button - fixed position */}
               <button
                 onClick={closeModal}
@@ -235,10 +235,10 @@ export default function HowItWorks() {
                     <div className="w-2 h-2 rotate-45 bg-yg-gold/50" />
                     <div className="w-12 h-px bg-gradient-to-r from-transparent via-yg-gold/50 to-transparent" />
                   </div>
-                  <h3 className="text-3xl md:text-4xl font-serif text-white mb-3">
+                  <h3 className="text-[32px] md:text-[42px] font-serif text-white mb-3">
                     The <span className="text-glow-gold">Young Gentleman's</span> System
                   </h3>
-                  <p className="text-white/40 text-base">
+                  <p className="text-white/40 text-base md:text-lg">
                     A refined approach to community-driven viral growth
                   </p>
                 </div>
@@ -263,15 +263,15 @@ export default function HowItWorks() {
 
                         {/* Content */}
                         <div className="flex-1 pt-1">
-                          <div className="flex items-center gap-3 mb-2 flex-wrap">
-                            <h4 className="text-xl font-semibold text-white">
+                          <div className="flex flex-col items-start md:flex-row md:items-center gap-2 md:gap-3 mb-2">
+                            <h4 className="text-xl md:text-2xl font-semibold text-white">
                               {section.title}
                             </h4>
-                            <span className="text-xs uppercase tracking-wider px-2.5 py-1 bg-yg-gold/10 border border-yg-gold/20 rounded-full text-yg-gold/70 text-center whitespace-nowrap">
+                            <span className="text-[11px] md:text-xs uppercase tracking-wider px-2.5 py-1 bg-yg-gold/10 border border-yg-gold/20 rounded-full text-yg-gold/70 whitespace-nowrap">
                               {section.highlight}
                             </span>
                           </div>
-                          <p className="text-white/50 text-base leading-relaxed">
+                          <p className="text-white/50 text-base md:text-lg leading-relaxed">
                             {section.description}
                           </p>
                         </div>
@@ -290,7 +290,7 @@ export default function HowItWorks() {
                       href={process.env.NEXT_PUBLIC_TELEGRAM_URL || 'https://t.me/yntoyg'}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-yg-gold text-black font-medium px-6 py-3 rounded-lg hover:bg-yg-gold/90 transition-colors"
+                      className="btn-royal-gold"
                     >
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z" />

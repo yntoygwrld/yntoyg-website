@@ -31,7 +31,7 @@ export default function Hero() {
               href="https://pump.fun"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary w-full md:w-auto h-10"
+              className="btn-primary w-full md:w-auto"
             >
               Purchase
             </a>

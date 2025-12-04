@@ -49,7 +49,7 @@ export default function JoinCTA() {
               href="https://pump.fun"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center justify-center gap-2 w-full sm:w-auto h-10"
+              className="btn-primary w-full sm:w-auto"
             >
               Buy $YNTOYG
             </a>
@@ -57,7 +57,7 @@ export default function JoinCTA() {
               href={process.env.NEXT_PUBLIC_TELEGRAM_URL || 'https://t.me/yntoyg'}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary inline-flex items-center justify-center gap-2 w-full sm:w-auto"
+              className="btn-secondary w-full sm:w-auto"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z" />
