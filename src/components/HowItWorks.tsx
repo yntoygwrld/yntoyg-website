@@ -202,7 +202,7 @@ export default function HowItWorks() {
                     <div className="w-12 h-px bg-gradient-to-r from-transparent via-yg-gold/50 to-transparent" />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-serif text-white mb-2">
-                    The Young <span className="text-glow-gold">Gentleman's</span> System
+                    The <span className="text-glow-gold">Young Gentleman's</span> System
                   </h3>
                   <p className="text-white/40 text-sm">
                     A refined approach to community-driven viral growth
