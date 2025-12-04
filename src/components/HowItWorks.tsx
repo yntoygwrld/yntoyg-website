@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Wallet, Film, Share2, Trophy, X, Bot, Star, Gift, ChevronRight } from 'lucide-react';
 
 const steps = [
@@ -53,6 +53,18 @@ const detailSections = [
 
 export default function HowItWorks() {
   const [showModal, setShowModal] = useState(false);
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showModal]);
 
   return (
     <>
@@ -144,99 +156,114 @@ export default function HowItWorks() {
       {/* Aristocratic Modal */}
       {showModal && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center p-6 md:p-8"
           onClick={() => setShowModal(false)}
         >
-          {/* Backdrop */}
-          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+          {/* Backdrop - stronger blur */}
+          <div className="absolute inset-0 bg-black/85 backdrop-blur-md" />
 
           {/* Modal */}
           <div
-            className="relative w-full max-w-2xl max-h-[85vh] overflow-hidden"
+            className="relative w-full max-w-2xl max-h-[80vh] overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Ornate border frame */}
-            <div className="absolute -inset-px bg-gradient-to-b from-yg-gold/30 via-yg-gold/10 to-yg-gold/30 rounded-3xl" />
+            <div className="absolute -inset-px bg-gradient-to-b from-yg-gold/30 via-yg-gold/10 to-yg-gold/30 rounded-2xl md:rounded-3xl" />
 
-            {/* Modal content */}
-            <div className="relative bg-[#0a0a0c] rounded-3xl p-6 md:p-10 overflow-y-auto max-h-[85vh]">
-              {/* Close button */}
+            {/* Modal container */}
+            <div className="relative bg-[#0a0a0c] rounded-2xl md:rounded-3xl overflow-hidden">
+              {/* Close button - fixed position */}
               <button
                 onClick={() => setShowModal(false)}
-                className="absolute top-4 right-4 p-2 text-white/40 hover:text-white transition-colors"
+                className="absolute top-4 right-4 z-20 p-2 text-white/40 hover:text-white transition-colors bg-black/50 rounded-full"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              {/* Header with ornate styling */}
-              <div className="text-center mb-10">
-                <div className="inline-flex items-center gap-3 mb-4">
-                  <div className="w-12 h-px bg-gradient-to-r from-transparent via-yg-gold/50 to-transparent" />
-                  <div className="w-2 h-2 rotate-45 bg-yg-gold/50" />
-                  <div className="w-12 h-px bg-gradient-to-r from-transparent via-yg-gold/50 to-transparent" />
-                </div>
-                <h3 className="text-2xl md:text-3xl font-serif text-white mb-2">
-                  The Young <span className="text-glow-gold">Gentleman's</span> System
-                </h3>
-                <p className="text-white/40 text-sm">
-                  A refined approach to community-driven viral growth
-                </p>
+              {/* Top fade gradient */}
+              <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-[#0a0a0c] to-transparent z-10 pointer-events-none" />
+
+              {/* Bottom fade gradient */}
+              <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#0a0a0c] to-transparent z-10 pointer-events-none" />
+
+              {/* Gold scroll indicator on mobile */}
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 md:hidden z-10 flex flex-col items-center gap-1 opacity-50">
+                <div className="w-1 h-8 rounded-full bg-gradient-to-b from-yg-gold/60 via-yg-gold to-yg-gold/60" />
+                <ChevronRight className="w-3 h-3 text-yg-gold rotate-90" />
               </div>
 
-              {/* Detail sections */}
-              <div className="space-y-6">
-                {detailSections.map((section, index) => (
-                  <div
-                    key={section.title}
-                    className="relative"
-                  >
-                    {/* Connector line between sections */}
-                    {index < detailSections.length - 1 && (
-                      <div className="absolute left-6 top-16 w-px h-[calc(100%-2rem)] bg-gradient-to-b from-yg-gold/20 to-transparent" />
-                    )}
+              {/* Scrollable content with custom scrollbar */}
+              <div className="overflow-y-auto max-h-[80vh] p-6 md:p-10 modal-scroll">
+                {/* Header with ornate styling */}
+                <div className="text-center mb-10 pt-2">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-px bg-gradient-to-r from-transparent via-yg-gold/50 to-transparent" />
+                    <div className="w-2 h-2 rotate-45 bg-yg-gold/50" />
+                    <div className="w-12 h-px bg-gradient-to-r from-transparent via-yg-gold/50 to-transparent" />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-serif text-white mb-2">
+                    The Young <span className="text-glow-gold">Gentleman's</span> System
+                  </h3>
+                  <p className="text-white/40 text-sm">
+                    A refined approach to community-driven viral growth
+                  </p>
+                </div>
 
-                    <div className="flex gap-4">
-                      {/* Icon circle */}
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-yg-gold/10 border border-yg-gold/20 flex items-center justify-center">
-                        <section.icon className="w-5 h-5 text-yg-gold" />
-                      </div>
+                {/* Detail sections */}
+                <div className="space-y-6">
+                  {detailSections.map((section, index) => (
+                    <div
+                      key={section.title}
+                      className="relative"
+                    >
+                      {/* Connector line between sections */}
+                      {index < detailSections.length - 1 && (
+                        <div className="absolute left-6 top-16 w-px h-[calc(100%-2rem)] bg-gradient-to-b from-yg-gold/20 to-transparent" />
+                      )}
 
-                      {/* Content */}
-                      <div className="flex-1 pt-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <h4 className="text-lg font-semibold text-white">
-                            {section.title}
-                          </h4>
-                          <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 bg-yg-gold/10 border border-yg-gold/20 rounded-full text-yg-gold/70">
-                            {section.highlight}
-                          </span>
+                      <div className="flex gap-4">
+                        {/* Icon circle */}
+                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-yg-gold/10 border border-yg-gold/20 flex items-center justify-center">
+                          <section.icon className="w-5 h-5 text-yg-gold" />
                         </div>
-                        <p className="text-white/50 text-sm leading-relaxed">
-                          {section.description}
-                        </p>
+
+                        {/* Content */}
+                        <div className="flex-1 pt-1">
+                          <div className="flex items-center gap-3 mb-2 flex-wrap">
+                            <h4 className="text-lg font-semibold text-white">
+                              {section.title}
+                            </h4>
+                            <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 bg-yg-gold/10 border border-yg-gold/20 rounded-full text-yg-gold/70 text-center whitespace-nowrap">
+                              {section.highlight}
+                            </span>
+                          </div>
+                          <p className="text-white/50 text-sm leading-relaxed">
+                            {section.description}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
 
-              {/* Footer ornament and CTA */}
-              <div className="mt-10 pt-8 border-t border-white/5">
-                <div className="text-center">
-                  <p className="text-white/30 text-xs mb-6">
-                    Join the movement. Rise with the community.
-                  </p>
-                  <a
-                    href={process.env.NEXT_PUBLIC_TELEGRAM_URL || 'https://t.me/yntoyg'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-yg-gold text-black font-medium px-6 py-3 rounded-lg hover:bg-yg-gold/90 transition-colors"
-                  >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z" />
-                    </svg>
-                    Connect via Telegram
-                  </a>
+                {/* Footer ornament and CTA */}
+                <div className="mt-10 pt-8 border-t border-white/5 pb-4">
+                  <div className="text-center">
+                    <p className="text-white/30 text-xs mb-6">
+                      Join the movement. Rise with the community.
+                    </p>
+                    <a
+                      href={process.env.NEXT_PUBLIC_TELEGRAM_URL || 'https://t.me/yntoyg'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-yg-gold text-black font-medium px-6 py-3 rounded-lg hover:bg-yg-gold/90 transition-colors"
+                    >
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z" />
+                      </svg>
+                      Connect via Telegram
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

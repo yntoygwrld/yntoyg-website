@@ -46,6 +46,27 @@ body {
   border-radius: 4px;
 }
 
+/* Modal-specific gold scrollbar */
+.modal-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.modal-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--yg-gold) 0%, rgba(212, 175, 55, 0.6) 100%);
+  border-radius: 2px;
+}
+
+/* Firefox scrollbar for modal */
+.modal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--yg-gold) rgba(255, 255, 255, 0.05);
+}
+
 /* Resend-style canvas background */
 .resend-canvas {
   position: relative;
