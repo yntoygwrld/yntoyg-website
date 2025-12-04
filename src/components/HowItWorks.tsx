@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Wallet, Film, Share2, Trophy, X, Bot, Star, Gift, ChevronRight } from 'lucide-react';
+import { Wallet, Film, Share2, Trophy, X, Bot, Star, Gift, ChevronRight, ChevronDown } from 'lucide-react';
 
 const steps = [
   {
@@ -71,17 +71,23 @@ export default function HowItWorks() {
       <section className="py-12 md:py-24 px-6 md:px-8 lg:px-16 section-plain section-divider" id="how-it-works">
         <div className="max-w-6xl mx-auto relative z-10">
           {/* Section header - Resend style, centered */}
-          <div className="text-center mb-10 md:mb-16">
-            <h2 className="section-heading text-white mb-3 md:mb-4 text-3xl md:text-5xl lg:text-6xl">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="section-heading text-white mb-4 md:mb-5 text-4xl md:text-5xl lg:text-6xl">
               How It <span className="text-glow-gold">Works</span>
             </h2>
-            <p className="text-[#a1a4a5] text-base md:text-lg max-w-2xl mx-auto font-medium leading-7">
-              Four simple steps to transform from <span className="text-gradient-burgundy font-street">YN</span> to <span className="text-gradient-gold font-serif">YG</span>
+            <p className="text-[#a1a4a5] text-lg md:text-xl max-w-md md:max-w-2xl mx-auto font-medium leading-8">
+              Four simple steps to transform<br className="md:hidden" /> from <span className="text-gradient-burgundy font-street">YN</span> to <span className="text-gradient-gold font-serif">YG</span>
             </p>
+
+            {/* Scroll indicator on mobile */}
+            <div className="mt-6 md:hidden flex flex-col items-center text-white/30">
+              <span className="text-xs mb-1">Scroll</span>
+              <ChevronDown className="w-4 h-4 animate-bounce" />
+            </div>
           </div>
 
-          {/* Steps grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Steps grid - centered cards on mobile */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 max-w-sm md:max-w-none mx-auto">
             {steps.map((step, index) => (
               <div
                 key={step.number}
@@ -94,16 +100,16 @@ export default function HowItWorks() {
                   </div>
                 )}
 
-                {/* Card - Glass style with elegant hover */}
-                <div className="glass-card rounded-2xl p-6 h-full hover:scale-[1.02]">
+                {/* Card - Glass style with elegant hover, centered content on mobile */}
+                <div className="glass-card rounded-2xl p-6 h-full hover:scale-[1.02] text-center md:text-left">
                   {/* Step number - embossed effect */}
-                  <div className="text-6xl font-bold mb-4 font-serif step-number-emboss">
+                  <div className="text-5xl md:text-6xl font-bold mb-3 md:mb-4 font-serif step-number-emboss">
                     {step.number}
                   </div>
 
                   {/* Icon with emboss effect */}
-                  <div className="mb-4">
-                    <step.Icon className="w-8 h-8 icon-gold-emboss" strokeWidth={1.5} />
+                  <div className="mb-3 md:mb-4 flex justify-center md:justify-start">
+                    <step.Icon className="w-7 h-7 md:w-8 md:h-8 icon-gold-emboss" strokeWidth={1.5} />
                   </div>
 
                   {/* Title */}
