@@ -174,3 +174,39 @@ body {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
 }
+
+/* Resend-style glowing gradient text - makes text "pop out" */
+.text-glow-gold {
+  background: linear-gradient(90deg, #D4AF37 0%, #f0c14b 50%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 40px rgba(212, 175, 55, 0.5), 0 0 80px rgba(212, 175, 55, 0.3);
+  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4));
+}
+
+.text-glow-burgundy {
+  background: linear-gradient(90deg, #722F37 0%, #9a4048 50%, #722F37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 40px rgba(114, 47, 55, 0.5), 0 0 80px rgba(114, 47, 55, 0.3);
+  filter: drop-shadow(0 0 20px rgba(114, 47, 55, 0.4));
+}
+
+/* Section heading style like Resend */
+.section-heading {
+  @apply text-3xl md:text-5xl lg:text-6xl font-serif tracking-tight;
+}
+
+/* Card glass effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(212, 175, 55, 0.2);
+}
