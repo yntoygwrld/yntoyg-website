@@ -32,7 +32,7 @@ const socialLinks = [
 
 export default function JoinCTA() {
   return (
-    <section className="py-24 px-4 md:px-8 lg:px-16 resend-canvas" id="join">
+    <section className="py-24 px-4 md:px-8 lg:px-16 section-plain section-divider" id="join">
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Main CTA - Glass card */}
         <div className="glass-card rounded-3xl p-8 md:p-16 mb-12">

@@ -17,7 +17,7 @@ export default function ViralCalculator() {
   };
 
   return (
-    <section className="py-24 px-4 md:px-8 lg:px-16 resend-canvas" id="the-math">
+    <section className="py-24 px-4 md:px-8 lg:px-16 section-plain section-divider" id="the-math">
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Section header - Resend style */}
         <div className="text-center mb-16">

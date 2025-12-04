@@ -29,7 +29,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 px-4 md:px-8 lg:px-16 resend-canvas" id="how-it-works">
+    <section className="py-24 px-4 md:px-8 lg:px-16 section-plain section-divider" id="how-it-works">
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section header - Resend style */}
         <div className="text-center mb-16">
