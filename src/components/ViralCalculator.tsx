@@ -29,8 +29,8 @@ export default function ViralCalculator() {
           </p>
         </div>
 
-        {/* Calculator card - Glass style */}
-        <div className="glass-card rounded-3xl p-8 md:p-12">
+        {/* Calculator card - Glass style with elegant hover */}
+        <div className="glass-card rounded-3xl p-8 md:p-12 hover:scale-[1.01]">
           {/* Royal Slider */}
           <div className="mb-12">
             <label className="block text-white/50 text-sm mb-6 font-medium tracking-wide uppercase">

@@ -39,7 +39,7 @@ export default function HowItWorks() {
             How It <span className="text-glow-gold">Works</span>
           </h2>
           <p className="text-white/50 text-lg max-w-2xl mx-auto font-medium">
-            Four simple steps to transform from YN to YG
+            Four simple steps to transform from <span className="text-gradient-burgundy font-serif">YN</span> to <span className="text-gradient-gold font-serif">YG</span>
           </p>
         </div>
 
@@ -57,8 +57,8 @@ export default function HowItWorks() {
                 </div>
               )}
 
-              {/* Card - Glass style */}
-              <div className="glass-card rounded-2xl p-6 h-full transition-all duration-300 hover:scale-[1.02]">
+              {/* Card - Glass style with elegant hover */}
+              <div className="glass-card rounded-2xl p-6 h-full hover:scale-[1.02]">
                 {/* Step number - embossed effect */}
                 <div className="text-6xl font-bold mb-4 font-serif step-number-emboss">
                   {step.number}

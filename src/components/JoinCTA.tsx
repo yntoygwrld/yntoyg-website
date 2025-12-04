@@ -34,13 +34,13 @@ export default function JoinCTA() {
   return (
     <section className="py-24 px-4 md:px-8 lg:px-16 section-plain section-divider" id="join">
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        {/* Main CTA - Glass card */}
-        <div className="glass-card rounded-3xl p-8 md:p-16 mb-12">
+        {/* Main CTA - Glass card with elegant hover */}
+        <div className="glass-card rounded-3xl p-8 md:p-16 mb-12 hover:scale-[1.01]">
           <h2 className="section-heading text-white mb-6">
             Ready to <span className="text-glow-gold">Transform</span>?
           </h2>
           <p className="text-white/40 text-lg mb-8 max-w-xl mx-auto">
-            Join the movement. Claim your daily videos. Rise from YN to YG.
+            Join the movement. Claim your daily videos. Rise from <span className="text-gradient-burgundy font-serif">YN</span> to <span className="text-gradient-gold font-serif">YG</span>.
           </p>
 
           {/* Primary buttons */}
