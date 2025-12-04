@@ -100,7 +100,7 @@ export default function HowItWorks() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-white/50 text-sm">
+                  <p className="text-[#a1a4a5] text-base">
                     {step.description}
                   </p>
                 </div>

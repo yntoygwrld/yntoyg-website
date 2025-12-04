@@ -277,9 +277,10 @@ body {
   backdrop-filter: blur(10px);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  overflow: hidden;
 }
 
-/* Metallic corner accents */
+/* Metallic top accent - respects rounded corners via overflow:hidden */
 .glass-card::before {
   content: '';
   position: absolute;
@@ -288,12 +289,13 @@ body {
   right: 0;
   height: 1px;
   background: linear-gradient(90deg,
-    rgba(212, 175, 55, 0.4) 0%,
-    rgba(212, 175, 55, 0.1) 15%,
-    transparent 30%,
-    transparent 70%,
-    rgba(212, 175, 55, 0.1) 85%,
-    rgba(212, 175, 55, 0.4) 100%
+    transparent 0%,
+    rgba(212, 175, 55, 0.3) 20%,
+    rgba(212, 175, 55, 0.1) 40%,
+    transparent 50%,
+    rgba(212, 175, 55, 0.1) 60%,
+    rgba(212, 175, 55, 0.3) 80%,
+    transparent 100%
   );
   pointer-events: none;
 }
@@ -302,13 +304,12 @@ body {
 .glass-card::after {
   content: '';
   position: absolute;
-  top: -1px;
-  left: -1px;
+  top: 0;
+  left: 0;
   width: 60px;
   height: 60px;
   background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
   pointer-events: none;
-  border-radius: inherit;
 }
 
 .glass-card:hover {
@@ -319,12 +320,13 @@ body {
 
 .glass-card:hover::before {
   background: linear-gradient(90deg,
-    rgba(212, 175, 55, 0.6) 0%,
-    rgba(212, 175, 55, 0.2) 20%,
-    transparent 35%,
-    transparent 65%,
-    rgba(212, 175, 55, 0.2) 80%,
-    rgba(212, 175, 55, 0.6) 100%
+    transparent 0%,
+    rgba(212, 175, 55, 0.5) 20%,
+    rgba(212, 175, 55, 0.2) 40%,
+    transparent 50%,
+    rgba(212, 175, 55, 0.2) 60%,
+    rgba(212, 175, 55, 0.5) 80%,
+    transparent 100%
   );
 }
 
