@@ -14,11 +14,13 @@ const GOLD_ACCENT = '#f5e6a3';
 function QuarterZipModel() {
   const groupRef = useRef<THREE.Group>(null);
 
-  // Slow rotation animation
+  // Slow rotation + gentle bounce animation
   useFrame((state) => {
     if (groupRef.current) {
       groupRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.3) * 0.3;
       groupRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.2) * 0.05;
+      // Gentle bounce
+      groupRef.current.position.y = Math.sin(state.clock.elapsedTime * 1.5) * 0.15;
     }
   });
 
