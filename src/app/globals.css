@@ -272,13 +272,15 @@ body {
   filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.4));
 }
 
-/* Step number embossed effect - elegant raised look */
+/* Step number embossed effect - elegant raised look with better visibility */
 .step-number-emboss {
-  color: rgba(212, 175, 55, 0.15);
+  color: rgba(212, 175, 55, 0.35);
   text-shadow:
-    1px 1px 0 rgba(212, 175, 55, 0.08),
-    -1px -1px 0 rgba(0, 0, 0, 0.3),
-    0 0 20px rgba(212, 175, 55, 0.1);
+    2px 2px 0 rgba(212, 175, 55, 0.15),
+    -1px -1px 0 rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(212, 175, 55, 0.2),
+    0 0 60px rgba(212, 175, 55, 0.1);
+  letter-spacing: -0.02em;
 }
 
 /* Larger icon variant with stronger effect */
