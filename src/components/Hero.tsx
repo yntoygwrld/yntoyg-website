@@ -1,6 +1,10 @@
 'use client';
 
-export default function Hero() {
+interface HeroProps {
+  onJoinClick: () => void;
+}
+
+export default function Hero({ onJoinClick }: HeroProps) {
   const scrollToHowItWorks = () => {
     document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -45,15 +49,13 @@ export default function Hero() {
           </div>
 
           {/* Subtle Telegram connect - optional, non-intrusive */}
-          <a
-            href={process.env.NEXT_PUBLIC_TELEGRAM_URL || 'https://t.me/yntoyg'}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={onJoinClick}
             className="inline-flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-base md:text-lg text-[#a1a4a5] hover:text-white/70 transition-colors"
           >
             <span>Already hold $YNTOYG?</span>
-            <span className="text-yg-gold/80 hover:text-yg-gold">Connect Telegram to claim videos →</span>
-          </a>
+            <span className="text-yg-gold/80 hover:text-yg-gold">Connect to claim videos →</span>
+          </button>
         </div>
       </div>
 
