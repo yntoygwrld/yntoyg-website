@@ -5,10 +5,11 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { RoundedBox, Float } from '@react-three/drei';
 import * as THREE from 'three';
 
-// Navy blue and gold colors matching the site
-const NAVY_BLUE = '#1a1a2e';
+// Colors - lighter navy to stand out from dark background
+const NAVY_BLUE = '#2a3a5c';
 const GOLD = '#D4AF37';
-const LIGHTER_NAVY = '#252540';
+const LIGHTER_NAVY = '#3d4d6e';
+const DARK_ACCENT = '#1e2d4a';
 
 function QuarterZipModel() {
   const groupRef = useRef<THREE.Group>(null);
@@ -166,32 +167,39 @@ export default function QuarterZip3D() {
   return (
     <div className="w-full h-full min-h-[400px] md:min-h-[500px]">
       <Canvas
-        camera={{ position: [0, 0, 8], fov: 45 }}
+        camera={{ position: [0, 0, 6], fov: 50 }}
         gl={{ antialias: true, alpha: true }}
         style={{ background: 'transparent' }}
       >
         {/* Ambient light for base illumination */}
-        <ambientLight intensity={0.4} />
+        <ambientLight intensity={0.6} />
 
-        {/* Main light from top-right */}
+        {/* Main light from top-right - brighter */}
         <directionalLight
           position={[5, 5, 5]}
-          intensity={1}
+          intensity={1.5}
           color="#ffffff"
         />
 
-        {/* Gold accent light from left */}
+        {/* Gold accent light from left - stronger */}
         <pointLight
           position={[-5, 2, 3]}
-          intensity={0.5}
+          intensity={1}
           color={GOLD}
+        />
+
+        {/* Front fill light */}
+        <pointLight
+          position={[0, 0, 5]}
+          intensity={0.8}
+          color="#ffffff"
         />
 
         {/* Subtle rim light from behind */}
         <pointLight
           position={[0, 0, -5]}
-          intensity={0.3}
-          color="#4a4a6a"
+          intensity={0.5}
+          color="#6a6a9a"
         />
 
         <QuarterZipModel />
