@@ -264,6 +264,15 @@ body {
   filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.4));
 }
 
+/* Step number embossed effect - elegant raised look */
+.step-number-emboss {
+  color: rgba(212, 175, 55, 0.15);
+  text-shadow:
+    1px 1px 0 rgba(212, 175, 55, 0.08),
+    -1px -1px 0 rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(212, 175, 55, 0.1);
+}
+
 /* Larger icon variant with stronger effect */
 .icon-gold-emboss-lg {
   color: #D4AF37;
@@ -281,4 +290,50 @@ body {
 /* Featured quote styling */
 .quote-featured {
   @apply text-white/50 italic text-xl md:text-2xl font-serif;
+}
+
+/* Royal slider thumb styling */
+.royal-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(145deg, #f0d060 0%, #D4AF37 50%, #a68b2a 100%);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow:
+    0 0 0 4px rgba(9, 9, 11, 0.8),
+    0 0 0 6px rgba(212, 175, 55, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.royal-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 0 4px rgba(9, 9, 11, 0.8),
+    0 0 0 8px rgba(212, 175, 55, 0.4),
+    0 4px 20px rgba(212, 175, 55, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.royal-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(145deg, #f0d060 0%, #D4AF37 50%, #a68b2a 100%);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow:
+    0 0 0 4px rgba(9, 9, 11, 0.8),
+    0 0 0 6px rgba(212, 175, 55, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.royal-slider::-moz-range-track {
+  background: transparent;
+  height: 4px;
 }

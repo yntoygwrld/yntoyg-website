@@ -25,30 +25,60 @@ export default function ViralCalculator() {
             The <span className="text-glow-gold">Math</span>
           </h2>
           <p className="text-white/50 text-lg max-w-2xl mx-auto font-medium">
-            Viral growth isn't luck—it's inevitable when we all post together
+            Viral growth isn't luck - it's inevitable when we all post together
           </p>
         </div>
 
         {/* Calculator card - Glass style */}
         <div className="glass-card rounded-3xl p-8 md:p-12">
-          {/* Slider */}
+          {/* Royal Slider */}
           <div className="mb-12">
-            <label className="block text-white/50 text-sm mb-4 font-medium">
+            <label className="block text-white/50 text-sm mb-6 font-medium tracking-wide uppercase">
               Number of Gentlemen Posting Daily
             </label>
-            <input
-              type="range"
-              min="100"
-              max="10000"
-              step="100"
-              value={holders}
-              onChange={(e) => setHolders(Number(e.target.value))}
-              className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-yg-gold"
-            />
-            <div className="flex justify-between text-white/40 text-sm mt-2">
-              <span>100</span>
-              <span className="text-glow-gold font-bold text-2xl">{formatNumber(holders)}</span>
-              <span>10,000</span>
+
+            {/* Slider container with royal styling */}
+            <div className="relative py-4">
+              {/* Track background with gradient */}
+              <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-1 bg-gradient-to-r from-white/5 via-white/10 to-white/5 rounded-full" />
+
+              {/* Active track */}
+              <div
+                className="absolute top-1/2 -translate-y-1/2 h-1 bg-gradient-to-r from-yg-gold/60 via-yg-gold to-yg-gold/80 rounded-full shadow-[0_0_10px_rgba(212,175,55,0.3)]"
+                style={{ width: `${((holders - 100) / (10000 - 100)) * 100}%` }}
+              />
+
+              {/* Hidden native input */}
+              <input
+                type="range"
+                min="100"
+                max="10000"
+                step="100"
+                value={holders}
+                onChange={(e) => setHolders(Number(e.target.value))}
+                className="royal-slider w-full h-6 appearance-none bg-transparent cursor-pointer relative z-10"
+              />
+            </div>
+
+            {/* Scale markers */}
+            <div className="flex justify-between items-center mt-4">
+              <div className="flex flex-col items-start">
+                <span className="text-white/30 text-xs font-medium">100</span>
+                <span className="text-white/20 text-[10px]">MIN</span>
+              </div>
+
+              {/* Center value display - diamond style */}
+              <div className="relative">
+                <div className="absolute inset-0 bg-yg-gold/20 blur-xl rounded-full" />
+                <div className="relative bg-gradient-to-b from-white/10 to-white/5 border border-yg-gold/30 rounded-xl px-6 py-2">
+                  <span className="text-glow-gold font-bold text-3xl font-serif">{formatNumber(holders)}</span>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-end">
+                <span className="text-white/30 text-xs font-medium">10,000</span>
+                <span className="text-white/20 text-[10px]">MAX</span>
+              </div>
             </div>
           </div>
 

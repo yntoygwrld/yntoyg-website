@@ -50,15 +50,17 @@ export default function HowItWorks() {
               key={step.number}
               className="relative group"
             >
-              {/* Connector line */}
+              {/* Connector line - elegant gold gradient */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-white/20 to-transparent" />
+                <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-px">
+                  <div className="w-full h-full bg-gradient-to-r from-yg-gold/40 via-yg-gold/20 to-transparent" />
+                </div>
               )}
 
               {/* Card - Glass style */}
               <div className="glass-card rounded-2xl p-6 h-full transition-all duration-300 hover:scale-[1.02]">
-                {/* Step number */}
-                <div className="text-yg-gold/20 text-6xl font-bold mb-4 font-serif">
+                {/* Step number - embossed effect */}
+                <div className="text-6xl font-bold mb-4 font-serif step-number-emboss">
                   {step.number}
                 </div>
 
