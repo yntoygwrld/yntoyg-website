@@ -21,7 +21,7 @@ export default function Hero() {
 
           {/* Subheadline - muted like Resend */}
           <p className="text-base md:text-lg text-[#a1a4a5] mb-8 max-w-md mx-auto md:mx-0 leading-7">
-            The best way to transform from street to success.
+            This is no mere sport - seize your opportunity.
             Buy $YNTOYG, claim daily videos, go viral together.
           </p>
 
