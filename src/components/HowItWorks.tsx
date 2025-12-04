@@ -87,7 +87,7 @@ export default function HowItWorks() {
             Ready to start your transformation?
           </p>
           <a
-            href={process.env.NEXT_PUBLIC_TELEGRAM_URL || 'https://t.me/theygseason'}
+            href={process.env.NEXT_PUBLIC_TELEGRAM_URL || 'https://t.me/yntoyg'}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary inline-flex items-center gap-2"

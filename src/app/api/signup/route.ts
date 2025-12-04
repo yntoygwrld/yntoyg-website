@@ -41,9 +41,9 @@ export async function POST(request: NextRequest) {
 
     // Send magic link email via Resend
     const { data, error } = await resend.emails.send({
-      from: 'YG Season <onboarding@resend.dev>', // Will use custom domain later
+      from: '$YNTOYG <onboarding@resend.dev>', // Will use custom domain later
       to: email,
-      subject: '🎩 Your YG Season Magic Link',
+      subject: '🎩 Your $YNTOYG Magic Link',
       html: `
         <!DOCTYPE html>
         <html>
@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
           <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
             <!-- Header -->
             <div style="text-align: center; margin-bottom: 40px;">
-              <h1 style="color: #D4AF37; font-size: 32px; margin: 0;">🎩 YG SEASON</h1>
+              <h1 style="color: #D4AF37; font-size: 32px; margin: 0;">🎩 $YNTOYG</h1>
               <p style="color: #F5F5DC; opacity: 0.8; margin-top: 8px;">From YN to YG</p>
             </div>
 
@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
 
               <!-- CTA Button -->
               <a href="${magicLink}" style="display: inline-block; background-color: #D4AF37; color: #1a1a2e; font-weight: bold; text-decoration: none; padding: 16px 32px; border-radius: 8px; font-size: 16px;">
-                Join YG Season on Telegram
+                Join $YNTOYG on Telegram
               </a>
 
               <p style="color: #F5F5DC; opacity: 0.5; font-size: 12px; margin-top: 24px;">
