@@ -32,24 +32,24 @@ const socialLinks = [
 
 export default function JoinCTA() {
   return (
-    <section className="py-24 px-4 md:px-8 lg:px-16 section-plain section-divider" id="join">
+    <section className="py-16 md:py-24 px-4 md:px-8 lg:px-16 section-plain section-divider" id="join">
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Main CTA - Glass card with elegant hover */}
-        <div className="glass-card rounded-3xl p-8 md:p-16 mb-12 hover:scale-[1.01]">
-          <h2 className="section-heading text-white mb-6">
+        <div className="glass-card rounded-2xl md:rounded-3xl p-6 md:p-10 lg:p-16 mb-8 md:mb-12 hover:scale-[1.01]">
+          <h2 className="section-heading text-white mb-4 md:mb-6 text-2xl md:text-4xl lg:text-5xl">
             Ready to <span className="text-glow-gold">Transform</span>?
           </h2>
-          <p className="text-white/40 text-lg mb-8 max-w-xl mx-auto">
+          <p className="text-white/40 text-base md:text-lg mb-6 md:mb-8 max-w-xl mx-auto px-2">
             Join the movement. Claim your daily videos. Rise from <span className="text-gradient-burgundy font-street">YN</span> to <span className="text-gradient-gold font-serif">YG</span>.
           </p>
 
           {/* Primary buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-2 sm:px-0">
             <a
               href="https://pump.fun"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center justify-center gap-2"
+              className="btn-primary inline-flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               <span>🚀</span>
               Buy $YNTOYG
@@ -58,7 +58,7 @@ export default function JoinCTA() {
               href={process.env.NEXT_PUBLIC_TELEGRAM_URL || 'https://t.me/yntoyg'}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary inline-flex items-center justify-center gap-2"
+              className="btn-secondary inline-flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z" />
@@ -69,16 +69,16 @@ export default function JoinCTA() {
         </div>
 
         {/* Social links */}
-        <div className="mb-12">
-          <p className="text-white/30 text-sm mb-6">Follow us everywhere</p>
-          <div className="flex justify-center gap-4">
+        <div className="mb-8 md:mb-12">
+          <p className="text-white/30 text-xs md:text-sm mb-4 md:mb-6">Follow us everywhere</p>
+          <div className="flex justify-center gap-3 md:gap-4">
             {socialLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                className="p-2.5 md:p-3 rounded-full bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300"
                 aria-label={link.name}
               >
                 {link.icon}
@@ -88,9 +88,9 @@ export default function JoinCTA() {
         </div>
 
         {/* Contract address placeholder */}
-        <div className="bg-white/[0.02] border border-white/5 rounded-xl px-6 py-4 inline-block">
-          <p className="text-white/30 text-xs mb-1">Contract Address</p>
-          <code className="text-yg-gold text-sm">
+        <div className="bg-white/[0.02] border border-white/5 rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 inline-block">
+          <p className="text-white/30 text-[10px] md:text-xs mb-1">Contract Address</p>
+          <code className="text-yg-gold text-xs md:text-sm">
             Coming soon...
           </code>
         </div>
