@@ -48,14 +48,14 @@ export default function ViralCalculator() {
   };
 
   return (
-    <section className="py-16 md:py-24 pb-20 md:pb-28 px-4 md:px-8 lg:px-16 section-plain section-divider" id="the-math">
+    <section className="py-12 md:py-24 pb-20 md:pb-28 px-6 md:px-8 lg:px-16 section-plain section-divider" id="the-math">
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Section header - Resend style */}
         <div className="text-center mb-10 md:mb-16">
           <h2 className="section-heading text-white mb-3 md:mb-4 text-3xl md:text-5xl lg:text-6xl">
             The <span className="text-glow-gold">Math</span>
           </h2>
-          <p className="text-white/50 text-base md:text-lg max-w-2xl mx-auto font-medium px-2">
+          <p className="text-[#a1a4a5] text-base md:text-lg max-w-2xl mx-auto font-medium leading-7">
             Viral growth isn't luck - it's inevitable when we all post together
           </p>
         </div>

@@ -32,24 +32,24 @@ const socialLinks = [
 
 export default function JoinCTA() {
   return (
-    <section className="py-16 md:py-24 px-4 md:px-8 lg:px-16 section-plain section-divider" id="join">
+    <section className="py-12 md:py-24 px-6 md:px-8 lg:px-16 section-plain section-divider" id="join">
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Main CTA - Glass card with elegant hover */}
         <div className="glass-card rounded-2xl md:rounded-3xl p-6 md:p-10 lg:p-16 mb-8 md:mb-12 hover:scale-[1.01]">
           <h2 className="section-heading text-white mb-4 md:mb-6 text-2xl md:text-4xl lg:text-5xl">
             Ready to <span className="text-glow-gold">Transform</span>?
           </h2>
-          <p className="text-white/50 text-lg md:text-xl mb-6 md:mb-8 max-w-xl mx-auto px-2">
+          <p className="text-[#a1a4a5] text-lg md:text-xl mb-6 md:mb-8 max-w-xl mx-auto leading-7">
             Join the movement. Claim your daily videos. Rise from <span className="text-gradient-burgundy font-street">YN</span> to <span className="text-gradient-gold font-serif">YG</span>.
           </p>
 
           {/* Primary buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-2 sm:px-0">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="https://pump.fun"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center justify-center gap-2 w-full sm:w-auto"
+              className="btn-primary inline-flex items-center justify-center gap-2 w-full sm:w-auto h-10"
             >
               Buy $YNTOYG
             </a>

@@ -220,7 +220,19 @@ body {
 .btn-secondary {
   @apply inline-flex items-center justify-center gap-2 py-3 px-4 transition-all duration-200;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
+  color: rgb(161, 164, 165);
+}
+
+/* Resend-style muted text color */
+.text-muted {
+  color: rgb(161, 164, 165);
+}
+
+/* Resend-style description text */
+.text-description {
+  font-size: 16px;
+  line-height: 28px;
   color: rgb(161, 164, 165);
 }
 

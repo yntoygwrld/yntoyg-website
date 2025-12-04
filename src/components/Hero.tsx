@@ -6,7 +6,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center px-4 md:px-8 lg:px-16 py-20 resend-canvas overflow-hidden">
+    <section className="min-h-screen flex items-center px-6 md:px-8 lg:px-16 py-20 resend-canvas overflow-hidden">
       {/* Content - Centered on mobile, left on desktop like Resend */}
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="max-w-2xl mx-auto md:mx-0 text-center md:text-left">
@@ -20,24 +20,24 @@ export default function Hero() {
           </h1>
 
           {/* Subheadline - muted like Resend */}
-          <p className="text-base md:text-lg text-white/50 mb-8 max-w-md mx-auto md:mx-0 leading-relaxed">
+          <p className="text-base md:text-lg text-[#a1a4a5] mb-8 max-w-md mx-auto md:mx-0 leading-7">
             The best way to transform from street to success.
             Buy $YNTOYG, claim daily videos, go viral together.
           </p>
 
           {/* Buttons - Stacked on mobile, row on desktop like Resend */}
-          <div className="flex flex-col md:flex-row items-center gap-3 md:gap-4 mb-8">
+          <div className="flex flex-col md:flex-row items-center gap-4 mb-8">
             <a
               href="https://pump.fun"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary w-full md:w-auto"
+              className="btn-primary w-full md:w-auto h-10"
             >
               Purchase
             </a>
             <button
               onClick={scrollToHowItWorks}
-              className="btn-secondary text-white/60 hover:text-white w-full md:w-auto"
+              className="btn-secondary w-full md:w-auto"
             >
               Learn More
             </button>
@@ -48,7 +48,7 @@ export default function Hero() {
             href={process.env.NEXT_PUBLIC_TELEGRAM_URL || 'https://t.me/yntoyg'}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-base md:text-lg text-white/50 hover:text-white/70 transition-colors"
+            className="inline-flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-base md:text-lg text-[#a1a4a5] hover:text-white/70 transition-colors"
           >
             <span>Already hold $YNTOYG?</span>
             <span className="text-yg-gold/80 hover:text-yg-gold">Connect Telegram to claim videos →</span>
