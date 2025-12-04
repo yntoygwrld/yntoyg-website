@@ -5,9 +5,12 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: '$YNTOYG | From YN to YG - The Transformation',
+  title: '$YNTOYG | From YN to YG',
   description: 'The ultimate memecoin transformation. From Young N****s to Young Gentlemen. $YNTOYG on Solana.',
   keywords: ['memecoin', 'solana', 'crypto', 'yntoyg', 'quarter-zip', 'transformation'],
+  icons: {
+    icon: '/favicon.png',
+  },
   openGraph: {
     title: '$YNTOYG | From YN to YG',
     description: 'The ultimate memecoin transformation. $YNTOYG on Solana.',
