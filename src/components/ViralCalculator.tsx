@@ -64,7 +64,7 @@ export default function ViralCalculator() {
         <div className="glass-card rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-12 hover:scale-[1.01]">
           {/* Royal Slider */}
           <div className="mb-10 md:mb-12">
-            <label className="block text-white/40 text-sm md:text-base mb-5 md:mb-6 font-medium tracking-wide uppercase text-center">
+            <label className="block text-white/40 text-sm md:text-base mb-3 md:mb-4 font-medium tracking-wide uppercase text-center">
               Number of Gentlemen Posting Daily
             </label>
 
@@ -93,20 +93,20 @@ export default function ViralCalculator() {
 
             {/* Scale markers */}
             <div className="flex justify-between items-center mt-3">
-              <div className="flex flex-col items-start">
+              <div className="flex-1 flex flex-col items-start">
                 <span className="text-white/30 text-sm font-medium">100</span>
                 <span className="text-white/20 text-xs">MIN</span>
               </div>
 
               {/* Center value display - diamond style */}
-              <div className="relative">
+              <div className="relative flex-shrink-0">
                 <div className="absolute inset-0 bg-yg-gold/20 blur-xl rounded-full" />
                 <div className="relative bg-gradient-to-b from-white/10 to-white/5 border border-yg-gold/30 rounded-xl px-5 md:px-6 py-2 md:py-2.5">
                   <span className="text-glow-gold font-bold text-3xl md:text-4xl font-serif">{formatNumber(holders)}</span>
                 </div>
               </div>
 
-              <div className="flex flex-col items-end">
+              <div className="flex-1 flex flex-col items-end">
                 <span className="text-white/30 text-sm font-medium">10,000</span>
                 <span className="text-white/20 text-xs">MAX</span>
               </div>
@@ -145,7 +145,7 @@ export default function ViralCalculator() {
                 <span className="text-yg-gold font-bold">{formatNumber(dailyImpressions)}</span> daily
               </code>
             </div>
-            <p className="text-white text-2xl md:text-3xl lg:text-4xl font-semibold mt-8 md:mt-10">
+            <p className="text-white text-xl md:text-2xl lg:text-3xl font-semibold mt-8 md:mt-10 text-center">
               Viral is <span className="shimmer-bold font-serif tracking-wide">INEVITABLE</span>
             </p>
           </div>

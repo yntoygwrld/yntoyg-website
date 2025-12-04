@@ -137,7 +137,7 @@ export default function HowItWorks() {
                 {/* Card - Glass style with elegant hover, centered content on mobile */}
                 <div className="glass-card rounded-2xl p-6 pt-5 h-full hover:scale-[1.02] text-center md:text-left">
                   {/* Step number - embossed effect */}
-                  <div className="text-5xl md:text-6xl font-bold mb-3 md:mb-3 font-serif step-number-emboss">
+                  <div className="text-5xl md:text-6xl font-bold mb-1 md:mb-2 font-serif step-number-emboss">
                     {step.number}
                   </div>
 
