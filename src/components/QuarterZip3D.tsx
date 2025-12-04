@@ -28,7 +28,7 @@ function QuarterZipModel() {
       rotationIntensity={0.2}
       floatIntensity={0.5}
     >
-      <group ref={groupRef}>
+      <group ref={groupRef} scale={1.4}>
         {/* Main body of the sweater */}
         <RoundedBox
           args={[2.2, 2.8, 0.8]}
