@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { resend } from '@/lib/resend';
+import { supabase } from '@/lib/supabase';
 import { randomBytes } from 'crypto';
 
 // Generate a secure token
@@ -32,12 +33,21 @@ export async function POST(request: NextRequest) {
     const botUsername = process.env.NEXT_PUBLIC_TELEGRAM_BOT_USERNAME || 'ygclaimbot';
     const magicLink = `https://t.me/${botUsername}?start=${token}`;
 
-    // TODO: Store token in Supabase with expiration
-    // await supabase.from('email_tokens').insert({
-    //   email,
-    //   token,
-    //   expires_at: new Date(Date.now() + 24 * 60 * 60 * 1000), // 24 hours
-    // });
+    // Store token in Supabase with expiration
+    const { error: tokenError } = await supabase.from('email_tokens').insert({
+      email,
+      token,
+      expires_at: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
+      used: false,
+    });
+
+    if (tokenError) {
+      console.error('Token storage error:', tokenError);
+      return NextResponse.json(
+        { error: 'Failed to generate magic link' },
+        { status: 500 }
+      );
+    }
 
     // Send magic link email via Resend
     const { data, error } = await resend.emails.send({
