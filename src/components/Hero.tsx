@@ -36,85 +36,66 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-4 py-20 relative overflow-hidden fabric-texture grain">
-      {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-yg-navy to-yg-navy -z-10" />
+    <section className="min-h-screen flex items-center px-4 md:px-8 lg:px-16 py-20 resend-canvas overflow-hidden">
+      {/* Content - Left aligned like Resend */}
+      <div className="max-w-7xl mx-auto w-full relative z-10">
+        <div className="max-w-2xl">
+          {/* Main headline - Resend style with gradient fade */}
+          <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-normal mb-8 tracking-tight leading-[0.9]">
+            <span className="text-gradient-fade">From </span>
+            <span className="text-gradient-burgundy">YN</span>
+            <br />
+            <span className="text-gradient-fade">to </span>
+            <span className="text-gradient-gold">YG</span>
+          </h1>
 
-      {/* Content */}
-      <div className="max-w-4xl mx-auto text-center z-10">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 border border-yg-gold/20 rounded-full px-4 py-2 mb-12">
-          <span className="w-2 h-2 bg-yg-gold rounded-full animate-pulse" />
-          <span className="text-yg-cream/60 text-sm tracking-wide">The transformation begins</span>
-        </div>
-
-        {/* Main headline - Resend style with Playfair */}
-        <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal mb-8 tracking-tight text-glow">
-          <span className="text-yg-cream">From </span>
-          <span className="text-yg-burgundy">YN</span>
-          <span className="text-yg-cream"> to </span>
-          <span className="shimmer">YG</span>
-        </h1>
-
-        {/* Subheadline - clean Inter */}
-        <p className="text-lg md:text-xl text-yg-cream/50 mb-6 font-light tracking-wide">
-          The Daily Young Gentleman Grind
-        </p>
-
-        <p className="text-base text-yg-cream/40 mb-16 max-w-xl mx-auto leading-relaxed">
-          Buy $YNTOYG → Claim your daily video → Repost on socials →
-          Climb the leaderboard. Together, we go viral.
-        </p>
-
-        {/* Email signup form - elegant minimal */}
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto mb-6">
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
-            className="flex-1 px-5 py-3.5 rounded-lg bg-white/5 border border-yg-cream/10 text-yg-cream placeholder-yg-cream/30 focus:outline-none focus:border-yg-gold/50 focus:bg-white/[0.07] transition-all text-sm"
-            disabled={status === 'loading'}
-          />
-          <button
-            type="submit"
-            disabled={status === 'loading'}
-            className="btn-primary whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed text-sm"
-          >
-            {status === 'loading' ? 'Sending...' : 'Join the Movement'}
-          </button>
-        </form>
-
-        {/* Status message */}
-        {message && (
-          <p className={`text-sm mb-8 ${status === 'success' ? 'text-green-400/80' : 'text-red-400/80'}`}>
-            {message}
+          {/* Subheadline - muted like Resend */}
+          <p className="text-base md:text-lg text-white/50 mb-8 max-w-md leading-relaxed">
+            The best way to transform from street to success.
+            Buy $YNTOYG, claim daily videos, go viral together.
           </p>
-        )}
 
-        {/* Elegant divider */}
-        <div className="elegant-divider max-w-xs mx-auto my-16" />
+          {/* Buttons - Resend style */}
+          <div className="flex items-center gap-2 mb-12">
+            <button className="btn-primary">
+              Get Started
+            </button>
+            <button className="btn-secondary">
+              Learn More
+            </button>
+          </div>
 
-        {/* Features - minimal style */}
-        <div className="flex flex-wrap items-center justify-center gap-12 text-yg-cream/40 text-sm">
-          <div className="flex items-center gap-3">
-            <span className="text-yg-gold/70">📹</span>
-            <span className="tracking-wide">Daily Videos</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <span className="text-yg-gold/70">🏆</span>
-            <span className="tracking-wide">Leaderboard</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <span className="text-yg-gold/70">∞</span>
-            <span className="tracking-wide">Viral Potential</span>
-          </div>
+          {/* Email signup - subtle */}
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-sm">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              className="flex-1 px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-white/20 transition-all text-sm"
+              disabled={status === 'loading'}
+            />
+            <button
+              type="submit"
+              disabled={status === 'loading'}
+              className="px-5 py-3 rounded-lg bg-white/10 text-white/80 text-sm font-medium hover:bg-white/15 transition-all disabled:opacity-50"
+            >
+              {status === 'loading' ? '...' : 'Join'}
+            </button>
+          </form>
+
+          {/* Status message */}
+          {message && (
+            <p className={`text-sm mt-4 ${status === 'success' ? 'text-green-400/80' : 'text-red-400/80'}`}>
+              {message}
+            </p>
+          )}
         </div>
       </div>
 
-      {/* Scroll indicator - subtle */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-        <div className="w-px h-12 bg-gradient-to-b from-yg-gold/40 to-transparent" />
+      {/* Right side ambient glow element (like Resend's 3D keyboard) */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-radial from-yg-gold/5 via-transparent to-transparent" />
       </div>
     </section>
   );

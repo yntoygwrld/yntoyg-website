@@ -11,7 +11,7 @@ const config: Config = {
       colors: {
         // YG Brand Colors - Gentleman aesthetic
         'yg-gold': '#D4AF37',
-        'yg-navy': '#0a0a0f',
+        'yg-navy': '#09090b',
         'yg-cream': '#F5F5DC',
         'yg-burgundy': '#722F37',
         'yg-forest': '#228B22',

@@ -4,7 +4,7 @@
 
 :root {
   --yg-gold: #D4AF37;
-  --yg-navy: #0a0a0f;
+  --yg-navy: #09090b;
   --yg-cream: #F5F5DC;
   --yg-burgundy: #722F37;
   --font-inter: 'Inter', sans-serif;
@@ -40,6 +40,103 @@ body {
   border-radius: 4px;
 }
 
+/* Resend-style canvas background */
+.resend-canvas {
+  position: relative;
+  background: #09090b;
+}
+
+.resend-canvas::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    /* Diagonal light sweep from bottom right */
+    linear-gradient(
+      125deg,
+      transparent 0%,
+      transparent 40%,
+      rgba(255, 255, 255, 0.02) 50%,
+      rgba(255, 255, 255, 0.05) 60%,
+      rgba(255, 255, 255, 0.02) 70%,
+      transparent 80%,
+      transparent 100%
+    ),
+    /* Ambient glow from right side */
+    radial-gradient(
+      ellipse 80% 60% at 85% 60%,
+      rgba(212, 175, 55, 0.08) 0%,
+      rgba(212, 175, 55, 0.03) 30%,
+      transparent 70%
+    ),
+    /* Subtle top-left darkness */
+    radial-gradient(
+      ellipse 100% 100% at 0% 0%,
+      rgba(0, 0, 0, 0.3) 0%,
+      transparent 50%
+    ),
+    /* Bottom edge light reflection */
+    linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.02) 0%,
+      transparent 30%
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Brushed fabric/canvas texture overlay */
+.resend-canvas::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Resend-style text gradient - brighter top, fades to gray */
+.text-gradient-fade {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #ffffff 30%,
+    rgba(255, 255, 255, 0.7) 60%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gold version of the gradient */
+.text-gradient-gold {
+  background: linear-gradient(
+    180deg,
+    #D4AF37 0%,
+    #D4AF37 30%,
+    rgba(212, 175, 55, 0.7) 60%,
+    rgba(212, 175, 55, 0.5) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Burgundy version */
+.text-gradient-burgundy {
+  background: linear-gradient(
+    180deg,
+    #722F37 0%,
+    #722F37 40%,
+    rgba(114, 47, 55, 0.8) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Elegant gold shimmer */
 @keyframes shimmer {
   0% {
@@ -63,55 +160,17 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Brushed fabric texture overlay */
-.fabric-texture {
-  position: relative;
-}
-
-.fabric-texture::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(212, 175, 55, 0.15), transparent),
-    radial-gradient(ellipse 60% 40% at 80% 50%, rgba(114, 47, 55, 0.1), transparent),
-    radial-gradient(ellipse 50% 30% at 20% 80%, rgba(212, 175, 55, 0.08), transparent);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Subtle grain texture */
-.grain {
-  position: relative;
-}
-
-.grain::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.03;
-  pointer-events: none;
-  z-index: 1;
-}
-
 /* Button hover effects */
 .btn-primary {
-  @apply bg-yg-gold text-yg-navy font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-yg-cream hover:shadow-lg hover:shadow-yg-gold/20;
+  @apply bg-white text-black font-medium py-3 px-6 rounded-lg transition-all duration-200 hover:bg-white/90;
 }
 
 .btn-secondary {
-  @apply border border-yg-gold/50 text-yg-cream font-medium py-3 px-8 rounded-lg transition-all duration-300 hover:bg-yg-gold/10 hover:border-yg-gold;
+  @apply text-white/60 font-medium py-3 px-6 transition-all duration-200 hover:text-white;
 }
 
 /* Elegant divider */
 .elegant-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--yg-gold), transparent);
-  opacity: 0.3;
-}
-
-/* Glow effect for headlines */
-.text-glow {
-  text-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
 }
