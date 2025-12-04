@@ -61,7 +61,7 @@ export default function Hero() {
 
         {/* Subheadline */}
         <p className="text-xl md:text-2xl text-yg-cream/80 mb-4">
-          The Daily Gentleman Grind
+          Young Gentlemen - The Daily Grind
         </p>
 
         <p className="text-lg text-yg-cream/60 mb-12 max-w-2xl mx-auto">
