@@ -93,7 +93,7 @@ export default function ViralCalculator() {
         {/* Bottom quote */}
         <div className="text-center mt-12">
           <blockquote className="text-yg-cream/60 italic text-lg">
-            "The question isn't if we go viral—it's when."
+            "The question isn't if we go viral - it's when."
           </blockquote>
         </div>
       </div>

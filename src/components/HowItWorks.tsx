@@ -11,7 +11,7 @@ const steps = [
   {
     number: '02',
     title: 'CLAIM',
-    description: 'Daily video via Telegram',
+    description: 'Daily videos via Telegram',
     icon: '🎬',
     color: 'from-yg-burgundy/20 to-yg-burgundy/5',
   },
