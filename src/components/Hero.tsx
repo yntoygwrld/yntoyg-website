@@ -48,7 +48,7 @@ export default function Hero() {
       <div className="max-w-4xl mx-auto text-center z-10">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-yg-gold/10 border border-yg-gold/30 rounded-full px-4 py-2 mb-8">
-          <span className="text-yg-gold text-sm font-medium">🎩 Quarter-zip season is here</span>
+          <span className="text-yg-gold text-sm font-medium">🎩 The transformation begins</span>
         </div>
 
         {/* Main headline */}
