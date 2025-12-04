@@ -1,38 +1,8 @@
 'use client';
 
-import { useState } from 'react';
-
 export default function Hero() {
-  const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [message, setMessage] = useState('');
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-
-    setStatus('loading');
-    try {
-      const res = await fetch('/api/signup', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        setStatus('success');
-        setMessage('Check your email for the magic link!');
-        setEmail('');
-      } else {
-        setStatus('error');
-        setMessage(data.error || 'Something went wrong');
-      }
-    } catch (err) {
-      setStatus('error');
-      setMessage('Failed to send. Try again.');
-    }
+  const scrollToHowItWorks = () => {
+    document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -56,44 +26,37 @@ export default function Hero() {
           </p>
 
           {/* Buttons - Resend style */}
-          <div className="flex items-center gap-2 mb-12">
-            <button className="btn-primary">
-              Get Started
-            </button>
-            <button className="btn-secondary">
+          <div className="flex items-center gap-4 mb-8">
+            <a
+              href="https://pump.fun"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              Purchase
+            </a>
+            <button
+              onClick={scrollToHowItWorks}
+              className="btn-secondary"
+            >
               Learn More
             </button>
           </div>
 
-          {/* Email signup - subtle */}
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-sm">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-white/20 transition-all text-sm"
-              disabled={status === 'loading'}
-            />
-            <button
-              type="submit"
-              disabled={status === 'loading'}
-              className="px-5 py-3 rounded-lg bg-white/10 text-white/80 text-sm font-medium hover:bg-white/15 transition-all disabled:opacity-50"
-            >
-              {status === 'loading' ? '...' : 'Join'}
-            </button>
-          </form>
-
-          {/* Status message */}
-          {message && (
-            <p className={`text-sm mt-4 ${status === 'success' ? 'text-green-400/80' : 'text-red-400/80'}`}>
-              {message}
-            </p>
-          )}
+          {/* Subtle Telegram connect - optional, non-intrusive */}
+          <a
+            href={process.env.NEXT_PUBLIC_TELEGRAM_URL || 'https://t.me/yntoyg'}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/60 transition-colors"
+          >
+            <span>Already hold $YNTOYG?</span>
+            <span className="text-yg-gold/70 hover:text-yg-gold">Connect Telegram to claim videos →</span>
+          </a>
         </div>
       </div>
 
-      {/* Right side ambient glow element (like Resend's 3D keyboard) */}
+      {/* Right side ambient glow element (placeholder for 3D object) */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full pointer-events-none">
         <div className="absolute inset-0 bg-gradient-radial from-yg-gold/5 via-transparent to-transparent" />
       </div>

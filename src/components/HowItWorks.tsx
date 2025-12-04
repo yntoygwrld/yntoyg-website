@@ -1,29 +1,31 @@
 'use client';
 
+import { Wallet, Film, Share2, Trophy } from 'lucide-react';
+
 const steps = [
   {
     number: '01',
     title: 'BUY',
     description: 'Get $YNTOYG on Pump.fun',
-    icon: '💰',
+    Icon: Wallet,
   },
   {
     number: '02',
     title: 'CLAIM',
     description: 'Daily videos via Telegram',
-    icon: '🎬',
+    Icon: Film,
   },
   {
     number: '03',
     title: 'POST',
     description: 'Repost on your socials',
-    icon: '📱',
+    Icon: Share2,
   },
   {
     number: '04',
     title: 'EARN',
     description: 'Climb the leaderboard',
-    icon: '🏆',
+    Icon: Trophy,
   },
 ];
 
@@ -36,7 +38,7 @@ export default function HowItWorks() {
           <h2 className="section-heading text-white mb-4">
             How It <span className="text-glow-gold">Works</span>
           </h2>
-          <p className="text-white/40 text-lg max-w-2xl mx-auto">
+          <p className="text-white/50 text-lg max-w-2xl mx-auto font-medium">
             Four simple steps to transform from YN to YG
           </p>
         </div>
@@ -56,20 +58,22 @@ export default function HowItWorks() {
               {/* Card - Glass style */}
               <div className="glass-card rounded-2xl p-6 h-full transition-all duration-300 hover:scale-[1.02]">
                 {/* Step number */}
-                <div className="text-white/10 text-6xl font-bold mb-4 font-serif">
+                <div className="text-yg-gold/20 text-6xl font-bold mb-4 font-serif">
                   {step.number}
                 </div>
 
-                {/* Icon */}
-                <div className="text-3xl mb-4 opacity-80">{step.icon}</div>
+                {/* Icon with emboss effect */}
+                <div className="mb-4">
+                  <step.Icon className="w-8 h-8 icon-gold-emboss" strokeWidth={1.5} />
+                </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-semibold text-white mb-2">
+                <h3 className="text-xl font-bold text-white mb-2">
                   {step.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-white/40 text-sm">
+                <p className="text-white/50 text-sm">
                   {step.description}
                 </p>
               </div>
@@ -79,14 +83,14 @@ export default function HowItWorks() {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <p className="text-white/40 mb-6">
+          <p className="text-white/60 text-lg font-medium mb-6">
             Ready to start your transformation?
           </p>
           <a
             href={process.env.NEXT_PUBLIC_TELEGRAM_URL || 'https://t.me/yntoyg'}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors"
+            className="btn-outline"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z" />

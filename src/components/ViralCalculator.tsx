@@ -24,7 +24,7 @@ export default function ViralCalculator() {
           <h2 className="section-heading text-white mb-4">
             The <span className="text-glow-gold">Math</span>
           </h2>
-          <p className="text-white/40 text-lg max-w-2xl mx-auto">
+          <p className="text-white/50 text-lg max-w-2xl mx-auto font-medium">
             Viral growth isn't luck—it's inevitable when we all post together
           </p>
         </div>
@@ -33,7 +33,7 @@ export default function ViralCalculator() {
         <div className="glass-card rounded-3xl p-8 md:p-12">
           {/* Slider */}
           <div className="mb-12">
-            <label className="block text-white/40 text-sm mb-4">
+            <label className="block text-white/50 text-sm mb-4 font-medium">
               Number of Gentlemen Posting Daily
             </label>
             <input
@@ -45,7 +45,7 @@ export default function ViralCalculator() {
               onChange={(e) => setHolders(Number(e.target.value))}
               className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-yg-gold"
             />
-            <div className="flex justify-between text-white/30 text-sm mt-2">
+            <div className="flex justify-between text-white/40 text-sm mt-2">
               <span>100</span>
               <span className="text-glow-gold font-bold text-2xl">{formatNumber(holders)}</span>
               <span>10,000</span>
@@ -58,19 +58,19 @@ export default function ViralCalculator() {
               <div className="text-glow-gold text-4xl md:text-5xl font-bold font-serif mb-2">
                 {formatNumber(dailyImpressions)}
               </div>
-              <div className="text-white/40 text-sm">Daily Impressions</div>
+              <div className="text-white/50 text-sm">Daily Impressions</div>
             </div>
             <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6 text-center">
               <div className="text-glow-gold text-4xl md:text-5xl font-bold font-serif mb-2">
                 {formatNumber(weeklyImpressions)}
               </div>
-              <div className="text-white/40 text-sm">Weekly Impressions</div>
+              <div className="text-white/50 text-sm">Weekly Impressions</div>
             </div>
             <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6 text-center">
               <div className="text-glow-gold text-4xl md:text-5xl font-bold font-serif mb-2">
                 {formatNumber(monthlyImpressions)}
               </div>
-              <div className="text-white/40 text-sm">Monthly Impressions</div>
+              <div className="text-white/50 text-sm">Monthly Impressions</div>
             </div>
           </div>
 
@@ -90,10 +90,10 @@ export default function ViralCalculator() {
           </div>
         </div>
 
-        {/* Bottom quote */}
+        {/* Bottom quote - BIGGER and more visible */}
         <div className="text-center mt-12">
-          <blockquote className="text-white/30 italic text-lg font-serif">
-            "The question isn't if we go viral - it's when."
+          <blockquote className="quote-featured">
+            "The question isn't if we go viral — it's when."
           </blockquote>
         </div>
       </div>

@@ -257,3 +257,28 @@ body {
   position: relative;
   background: #09090b;
 }
+
+/* Icon with gold emboss effect */
+.icon-gold-emboss {
+  color: #D4AF37;
+  filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.4));
+}
+
+/* Larger icon variant with stronger effect */
+.icon-gold-emboss-lg {
+  color: #D4AF37;
+  filter: drop-shadow(0 3px 6px rgba(212, 175, 55, 0.5));
+}
+
+/* Outlined button style */
+.btn-outline {
+  @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg;
+  @apply border border-white/20 text-white/70;
+  @apply hover:border-yg-gold/50 hover:text-white hover:bg-white/5;
+  @apply transition-all duration-200;
+}
+
+/* Featured quote styling */
+.quote-featured {
+  @apply text-white/50 italic text-xl md:text-2xl font-serif;
+}
