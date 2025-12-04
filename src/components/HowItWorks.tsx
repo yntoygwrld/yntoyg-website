@@ -39,7 +39,7 @@ export default function HowItWorks() {
             How It <span className="text-glow-gold">Works</span>
           </h2>
           <p className="text-white/50 text-lg max-w-2xl mx-auto font-medium">
-            Four simple steps to transform from <span className="text-gradient-burgundy font-serif">YN</span> to <span className="text-gradient-gold font-serif">YG</span>
+            Four simple steps to transform from <span className="text-gradient-burgundy font-street">YN</span> to <span className="text-gradient-gold font-serif">YG</span>
           </p>
         </div>
 

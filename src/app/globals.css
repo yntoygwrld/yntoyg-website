@@ -9,6 +9,12 @@
   --yg-burgundy: #722F37;
   --font-inter: 'Inter', sans-serif;
   --font-playfair: 'Playfair Display', serif;
+  --font-marker: 'Permanent Marker', cursive;
+}
+
+/* Trashy street font for YN */
+.font-street {
+  font-family: var(--font-marker);
 }
 
 html {

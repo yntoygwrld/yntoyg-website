@@ -11,12 +11,12 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="max-w-2xl">
           {/* Main headline - Resend style with gradient fade */}
-          <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-normal mb-8 tracking-tight leading-[0.9]">
-            <span className="text-gradient-fade">From </span>
-            <span className="text-gradient-burgundy">YN</span>
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-normal mb-8 tracking-tight leading-[0.9]">
+            <span className="text-gradient-fade font-serif">From </span>
+            <span className="text-gradient-burgundy font-street">YN</span>
             <br />
-            <span className="text-gradient-fade">to </span>
-            <span className="text-gradient-gold">YG</span>
+            <span className="text-gradient-fade font-serif">to </span>
+            <span className="text-gradient-gold font-serif">YG</span>
           </h1>
 
           {/* Subheadline - muted like Resend */}

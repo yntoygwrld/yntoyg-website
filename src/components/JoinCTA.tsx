@@ -40,7 +40,7 @@ export default function JoinCTA() {
             Ready to <span className="text-glow-gold">Transform</span>?
           </h2>
           <p className="text-white/40 text-lg mb-8 max-w-xl mx-auto">
-            Join the movement. Claim your daily videos. Rise from <span className="text-gradient-burgundy font-serif">YN</span> to <span className="text-gradient-gold font-serif">YG</span>.
+            Join the movement. Claim your daily videos. Rise from <span className="text-gradient-burgundy font-street">YN</span> to <span className="text-gradient-gold font-serif">YG</span>.
           </p>
 
           {/* Primary buttons */}
