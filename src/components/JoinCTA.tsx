@@ -96,7 +96,7 @@ export default function JoinCTA({ onJoinClick }: JoinCTAProps) {
         </div>
 
         {/* 3D Quarter Zip */}
-        <div className="mb-4 md:mb-6">
+        <div className="my-2">
           <QuarterZip3D />
         </div>
 
