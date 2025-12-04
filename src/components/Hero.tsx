@@ -73,8 +73,10 @@ export default function Hero({ onJoinClick }: HeroProps) {
           </div>
 
           {/* Right side - 3D Quarter Zip (hidden on mobile, visible on lg+) */}
-          <div className="hidden lg:block flex-1 w-full max-w-xl">
-            <QuarterZip3D />
+          <div className="hidden lg:flex flex-1 w-full max-w-2xl items-center justify-center">
+            <div className="w-full h-[600px]">
+              <QuarterZip3D />
+            </div>
           </div>
         </div>
       </div>
