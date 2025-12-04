@@ -28,7 +28,7 @@ function QuarterZipModel() {
       rotationIntensity={0.2}
       floatIntensity={0.5}
     >
-      <group ref={groupRef} scale={1.0}>
+      <group ref={groupRef} scale={0.5}>
         {/* Main body of the sweater */}
         <RoundedBox
           args={[2.2, 2.8, 0.8]}
@@ -165,7 +165,7 @@ function QuarterZipModel() {
 
 export default function QuarterZip3D() {
   return (
-    <div className="w-full h-[250px] flex items-center justify-center">
+    <div className="w-full h-[120px] flex items-center justify-center">
       <Canvas
         camera={{ position: [0, 0, 8], fov: 45 }}
         gl={{ antialias: true, alpha: true }}
