@@ -95,16 +95,16 @@ export default function Hero() {
           </p>
         )}
 
-        {/* Social proof */}
+        {/* Features */}
         <div className="flex flex-wrap items-center justify-center gap-8 text-yg-cream/60 text-sm">
           <div className="flex items-center gap-2">
-            <span className="text-yg-gold font-bold text-2xl">1,000+</span>
-            <span>Gentlemen</span>
+            <span className="text-yg-gold font-bold text-2xl">📹</span>
+            <span>Daily Videos</span>
           </div>
           <div className="h-8 w-px bg-yg-cream/20" />
           <div className="flex items-center gap-2">
-            <span className="text-yg-gold font-bold text-2xl">15M+</span>
-            <span>Monthly Impressions</span>
+            <span className="text-yg-gold font-bold text-2xl">🏆</span>
+            <span>Leaderboard</span>
           </div>
           <div className="h-8 w-px bg-yg-cream/20" />
           <div className="flex items-center gap-2">
