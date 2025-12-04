@@ -7,6 +7,9 @@ export default function Hero() {
 
   return (
     <section className="min-h-screen flex items-center px-6 md:px-8 lg:px-16 py-20 resend-canvas overflow-hidden">
+      {/* Animated light sweep effect */}
+      <div className="hero-light-sweep" />
+
       {/* Content - Centered on mobile, left on desktop like Resend */}
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="max-w-2xl mx-auto md:mx-0 text-center md:text-left">

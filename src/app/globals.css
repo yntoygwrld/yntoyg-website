@@ -134,6 +134,7 @@ body {
 .resend-canvas {
   position: relative;
   background: #09090b;
+  overflow: hidden;
 }
 
 .resend-canvas::before {
@@ -173,6 +174,57 @@ body {
     );
   pointer-events: none;
   z-index: 1;
+}
+
+/* Animated horizontal light sweep */
+.hero-light-sweep {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-light-sweep::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.03) 20%,
+    rgba(255, 255, 255, 0.08) 40%,
+    rgba(212, 175, 55, 0.15) 50%,
+    rgba(255, 255, 255, 0.08) 60%,
+    rgba(212, 175, 55, 0.03) 80%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  animation: heroLightSweep 8s ease-in-out infinite;
+}
+
+@keyframes heroLightSweep {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    left: 150%;
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    left: 150%;
+    opacity: 0;
+  }
 }
 
 /* Brushed fabric/canvas texture overlay */
