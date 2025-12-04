@@ -16,7 +16,7 @@ export default function Hero() {
             <span className="text-gradient-burgundy font-street">YN</span>
             <br />
             <span className="text-gradient-fade font-serif">to </span>
-            <span className="text-gradient-gold font-serif">YG</span>
+            <span className="shimmer font-serif">YG</span>
           </h1>
 
           {/* Subheadline - muted like Resend */}
@@ -25,7 +25,7 @@ export default function Hero() {
             Buy $YNTOYG, claim daily videos, go viral together.
           </p>
 
-          {/* Buttons - Resend style */}
+          {/* Buttons - Resend glass style */}
           <div className="flex items-center gap-4 mb-8">
             <a
               href="https://pump.fun"
@@ -37,7 +37,7 @@ export default function Hero() {
             </a>
             <button
               onClick={scrollToHowItWorks}
-              className="btn-secondary"
+              className="btn-glass"
             >
               Learn More
             </button>

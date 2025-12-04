@@ -166,6 +166,26 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+/* Bold shimmer for INEVITABLE - more dramatic effect */
+.shimmer-bold {
+  background: linear-gradient(
+    90deg,
+    #D4AF37 0%,
+    #f5e6a3 25%,
+    #ffffff 50%,
+    #f5e6a3 75%,
+    #D4AF37 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  text-shadow: 0 0 40px rgba(212, 175, 55, 0.6), 0 0 80px rgba(212, 175, 55, 0.3);
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+}
+
 /* Button hover effects */
 .btn-primary {
   @apply bg-white text-black font-medium py-3 px-6 rounded-lg transition-all duration-200 hover:bg-white/90;
@@ -205,18 +225,66 @@ body {
   @apply text-3xl md:text-5xl lg:text-6xl font-serif tracking-tight;
 }
 
-/* Card glass effect - elegant gradual hover */
+/* Card glass effect - elegant gradual hover with metallic corners */
 .glass-card {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+/* Metallic corner accents */
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    rgba(212, 175, 55, 0.4) 0%,
+    rgba(212, 175, 55, 0.1) 15%,
+    transparent 30%,
+    transparent 70%,
+    rgba(212, 175, 55, 0.1) 85%,
+    rgba(212, 175, 55, 0.4) 100%
+  );
+  pointer-events: none;
+}
+
+/* Corner glow effects */
+.glass-card::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  border-radius: inherit;
 }
 
 .glass-card:hover {
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(212, 175, 55, 0.2);
   box-shadow: 0 0 40px rgba(212, 175, 55, 0.05);
+}
+
+.glass-card:hover::before {
+  background: linear-gradient(90deg,
+    rgba(212, 175, 55, 0.6) 0%,
+    rgba(212, 175, 55, 0.2) 20%,
+    transparent 35%,
+    transparent 65%,
+    rgba(212, 175, 55, 0.2) 80%,
+    rgba(212, 175, 55, 0.6) 100%
+  );
+}
+
+.glass-card:hover::after {
+  background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.25) 0%, transparent 70%);
 }
 
 /* Resend-style section divider */
@@ -297,50 +365,105 @@ body {
   @apply transition-all duration-200;
 }
 
+/* Resend-style glass button */
+.btn-glass {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg;
+  @apply font-medium text-white/90;
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(104deg, rgba(253, 253, 253, 0.05) 5%, rgba(240, 240, 228, 0.1) 100%);
+  background-origin: border-box;
+  backdrop-filter: blur(25px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-glass::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.btn-glass:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  background: linear-gradient(104deg, rgba(253, 253, 253, 0.08) 5%, rgba(212, 175, 55, 0.15) 100%);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
+}
+
 /* Featured quote styling */
 .quote-featured {
   @apply text-white/50 italic text-xl md:text-2xl font-serif;
 }
 
-/* Royal slider thumb styling */
+/* Diamond chrome slider thumb styling */
 .royal-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 24px;
-  height: 24px;
-  background: linear-gradient(145deg, #f0d060 0%, #D4AF37 50%, #a68b2a 100%);
-  border-radius: 50%;
+  width: 18px;
+  height: 28px;
+  background: linear-gradient(
+    165deg,
+    #ffffff 0%,
+    #e8e8e8 15%,
+    #c0c0c0 30%,
+    #a8a8a8 50%,
+    #888888 70%,
+    #a0a0a0 85%,
+    #d0d0d0 100%
+  );
+  border-radius: 3px;
   cursor: pointer;
+  transform: rotate(45deg);
   box-shadow:
-    0 0 0 4px rgba(9, 9, 11, 0.8),
-    0 0 0 6px rgba(212, 175, 55, 0.3),
-    0 4px 12px rgba(0, 0, 0, 0.4),
-    inset 0 2px 4px rgba(255, 255, 255, 0.3),
-    inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+    0 0 0 2px rgba(9, 9, 11, 0.9),
+    0 0 0 4px rgba(212, 175, 55, 0.4),
+    0 4px 15px rgba(0, 0, 0, 0.5),
+    inset 0 2px 6px rgba(255, 255, 255, 0.8),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.3),
+    inset 2px 0 4px rgba(255, 255, 255, 0.4),
+    inset -2px 0 4px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease;
 }
 
 .royal-slider::-webkit-slider-thumb:hover {
-  transform: scale(1.1);
+  transform: rotate(45deg) scale(1.1);
   box-shadow:
-    0 0 0 4px rgba(9, 9, 11, 0.8),
-    0 0 0 8px rgba(212, 175, 55, 0.4),
-    0 4px 20px rgba(212, 175, 55, 0.3),
-    inset 0 2px 4px rgba(255, 255, 255, 0.4),
-    inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+    0 0 0 2px rgba(9, 9, 11, 0.9),
+    0 0 0 6px rgba(212, 175, 55, 0.5),
+    0 0 20px rgba(212, 175, 55, 0.4),
+    0 4px 20px rgba(0, 0, 0, 0.5),
+    inset 0 2px 6px rgba(255, 255, 255, 0.9),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.3),
+    inset 2px 0 4px rgba(255, 255, 255, 0.5),
+    inset -2px 0 4px rgba(0, 0, 0, 0.2);
 }
 
 .royal-slider::-moz-range-thumb {
-  width: 24px;
-  height: 24px;
-  background: linear-gradient(145deg, #f0d060 0%, #D4AF37 50%, #a68b2a 100%);
-  border-radius: 50%;
+  width: 18px;
+  height: 28px;
+  background: linear-gradient(
+    165deg,
+    #ffffff 0%,
+    #e8e8e8 15%,
+    #c0c0c0 30%,
+    #a8a8a8 50%,
+    #888888 70%,
+    #a0a0a0 85%,
+    #d0d0d0 100%
+  );
+  border-radius: 3px;
   border: none;
   cursor: pointer;
+  transform: rotate(45deg);
   box-shadow:
-    0 0 0 4px rgba(9, 9, 11, 0.8),
-    0 0 0 6px rgba(212, 175, 55, 0.3),
-    0 4px 12px rgba(0, 0, 0, 0.4);
+    0 0 0 2px rgba(9, 9, 11, 0.9),
+    0 0 0 4px rgba(212, 175, 55, 0.4),
+    0 4px 15px rgba(0, 0, 0, 0.5),
+    inset 0 2px 6px rgba(255, 255, 255, 0.8),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .royal-slider::-moz-range-track {

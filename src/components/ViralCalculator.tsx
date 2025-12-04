@@ -73,9 +73,9 @@ export default function ViralCalculator() {
               {/* Track background with gradient */}
               <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-1 bg-gradient-to-r from-white/5 via-white/10 to-white/5 rounded-full" />
 
-              {/* Active track */}
+              {/* Active track - anchored to left */}
               <div
-                className="absolute top-1/2 -translate-y-1/2 h-1 bg-gradient-to-r from-yg-gold/60 via-yg-gold to-yg-gold/80 rounded-full shadow-[0_0_10px_rgba(212,175,55,0.3)]"
+                className="absolute left-0 top-1/2 -translate-y-1/2 h-1 bg-gradient-to-r from-yg-gold/60 via-yg-gold to-yg-gold/80 rounded-full shadow-[0_0_10px_rgba(212,175,55,0.3)]"
                 style={{ width: `${((holders - 100) / (10000 - 100)) * 100}%` }}
               />
 
@@ -146,7 +146,7 @@ export default function ViralCalculator() {
               </code>
             </div>
             <p className="text-white text-xl md:text-2xl font-semibold">
-              Viral is <span className="text-glow-gold">INEVITABLE</span>
+              Viral is <span className="shimmer-bold font-serif tracking-wide">INEVITABLE</span>
             </p>
           </div>
         </div>
