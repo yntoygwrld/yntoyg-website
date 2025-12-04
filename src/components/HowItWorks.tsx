@@ -186,13 +186,7 @@ export default function HowItWorks() {
               {/* Bottom fade gradient */}
               <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#0a0a0c] to-transparent z-10 pointer-events-none" />
 
-              {/* Gold scroll indicator on mobile */}
-              <div className="absolute right-2 top-1/2 -translate-y-1/2 md:hidden z-10 flex flex-col items-center gap-1 opacity-50">
-                <div className="w-1 h-8 rounded-full bg-gradient-to-b from-yg-gold/60 via-yg-gold to-yg-gold/60" />
-                <ChevronRight className="w-3 h-3 text-yg-gold rotate-90" />
-              </div>
-
-              {/* Scrollable content with custom scrollbar */}
+              {/* Scrollable content */}
               <div className="overflow-y-auto max-h-[80vh] p-6 md:p-10 modal-scroll">
                 {/* Header with ornate styling */}
                 <div className="text-center mb-10 pt-2">
@@ -201,10 +195,10 @@ export default function HowItWorks() {
                     <div className="w-2 h-2 rotate-45 bg-yg-gold/50" />
                     <div className="w-12 h-px bg-gradient-to-r from-transparent via-yg-gold/50 to-transparent" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-serif text-white mb-2">
+                  <h3 className="text-3xl md:text-4xl font-serif text-white mb-3">
                     The <span className="text-glow-gold">Young Gentleman's</span> System
                   </h3>
-                  <p className="text-white/40 text-sm">
+                  <p className="text-white/40 text-base">
                     A refined approach to community-driven viral growth
                   </p>
                 </div>
@@ -230,14 +224,14 @@ export default function HowItWorks() {
                         {/* Content */}
                         <div className="flex-1 pt-1">
                           <div className="flex items-center gap-3 mb-2 flex-wrap">
-                            <h4 className="text-lg font-semibold text-white">
+                            <h4 className="text-xl font-semibold text-white">
                               {section.title}
                             </h4>
-                            <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 bg-yg-gold/10 border border-yg-gold/20 rounded-full text-yg-gold/70 text-center whitespace-nowrap">
+                            <span className="text-xs uppercase tracking-wider px-2.5 py-1 bg-yg-gold/10 border border-yg-gold/20 rounded-full text-yg-gold/70 text-center whitespace-nowrap">
                               {section.highlight}
                             </span>
                           </div>
-                          <p className="text-white/50 text-sm leading-relaxed">
+                          <p className="text-white/50 text-base leading-relaxed">
                             {section.description}
                           </p>
                         </div>

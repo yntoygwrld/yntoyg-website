@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="max-w-2xl mx-auto md:mx-0 text-center md:text-left">
           {/* Main headline - Resend style with gradient fade */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-normal mb-6 md:mb-8 tracking-tight leading-[0.9]">
+          <h1 className="text-[64px] sm:text-7xl md:text-8xl lg:text-9xl font-normal mb-6 md:mb-8 tracking-tight leading-[0.9]">
             <span className="text-gradient-fade font-serif">From </span>
             <span className="text-gradient-burgundy font-street">YN</span>
             <br />
