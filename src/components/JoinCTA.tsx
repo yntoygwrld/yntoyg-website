@@ -1,5 +1,12 @@
 'use client';
 
+import dynamic from 'next/dynamic';
+
+const QuarterZip3D = dynamic(() => import('./QuarterZip3D'), {
+  ssr: false,
+  loading: () => <div className="w-full h-[250px]" />,
+});
+
 const socialLinks = [
   {
     name: 'Telegram',
@@ -86,6 +93,11 @@ export default function JoinCTA({ onJoinClick }: JoinCTAProps) {
               </a>
             ))}
           </div>
+        </div>
+
+        {/* 3D Quarter Zip */}
+        <div className="mb-8 md:mb-12">
+          <QuarterZip3D />
         </div>
 
         {/* Contract address placeholder */}
