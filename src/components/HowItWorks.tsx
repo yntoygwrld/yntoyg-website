@@ -112,12 +112,12 @@ export default function HowItWorks() {
           <div className="text-center mt-10">
             <button
               onClick={() => setShowModal(true)}
-              className="inline-flex items-center gap-2 text-white/40 hover:text-yg-gold text-sm transition-all duration-300 group"
+              className="inline-flex items-center gap-2 text-white/50 hover:text-yg-gold text-base md:text-lg transition-all duration-300 group"
             >
-              <span className="border-b border-dashed border-white/20 group-hover:border-yg-gold/50 pb-0.5">
+              <span className="border-b border-dashed border-white/30 group-hover:border-yg-gold/50 pb-0.5">
                 Learn more about the system
               </span>
-              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
@@ -152,14 +152,14 @@ export default function HowItWorks() {
 
           {/* Modal */}
           <div
-            className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto"
+            className="relative w-full max-w-2xl max-h-[85vh] overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Ornate border frame */}
             <div className="absolute -inset-px bg-gradient-to-b from-yg-gold/30 via-yg-gold/10 to-yg-gold/30 rounded-3xl" />
 
             {/* Modal content */}
-            <div className="relative bg-[#0a0a0c] rounded-3xl p-8 md:p-10">
+            <div className="relative bg-[#0a0a0c] rounded-3xl p-6 md:p-10 overflow-y-auto max-h-[85vh]">
               {/* Close button */}
               <button
                 onClick={() => setShowModal(false)}
@@ -176,7 +176,7 @@ export default function HowItWorks() {
                   <div className="w-12 h-px bg-gradient-to-r from-transparent via-yg-gold/50 to-transparent" />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-serif text-white mb-2">
-                  The <span className="text-glow-gold">Gentleman's</span> System
+                  The Young <span className="text-glow-gold">Gentleman's</span> System
                 </h3>
                 <p className="text-white/40 text-sm">
                   A refined approach to community-driven viral growth

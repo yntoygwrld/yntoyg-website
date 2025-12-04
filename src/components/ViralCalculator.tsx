@@ -48,7 +48,7 @@ export default function ViralCalculator() {
   };
 
   return (
-    <section className="py-16 md:py-24 px-4 md:px-8 lg:px-16 section-plain section-divider" id="the-math">
+    <section className="py-16 md:py-24 pb-20 md:pb-28 px-4 md:px-8 lg:px-16 section-plain section-divider" id="the-math">
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Section header - Resend style */}
         <div className="text-center mb-10 md:mb-16">
@@ -155,9 +155,9 @@ export default function ViralCalculator() {
         <div className="text-center mt-6 md:mt-8">
           <button
             onClick={() => setShowSources(!showSources)}
-            className="inline-flex items-center gap-2 text-white/40 hover:text-white/70 text-sm transition-colors duration-300 group"
+            className="inline-flex items-center gap-2 text-white/50 hover:text-white/70 text-base md:text-lg transition-colors duration-300 group"
           >
-            <BookOpen className="w-4 h-4" />
+            <BookOpen className="w-5 h-5" />
             <span>Research-based estimates</span>
             <span className={`transition-transform duration-300 ${showSources ? 'rotate-180' : ''}`}>
               ↓
@@ -168,7 +168,7 @@ export default function ViralCalculator() {
         {/* Sources panel - elegant accordion */}
         <div
           className={`overflow-hidden transition-all duration-500 ease-out ${
-            showSources ? 'max-h-96 opacity-100 mt-6' : 'max-h-0 opacity-0'
+            showSources ? 'max-h-[500px] opacity-100 mt-6' : 'max-h-0 opacity-0'
           }`}
         >
           <div className="bg-white/[0.02] border border-white/10 rounded-xl md:rounded-2xl p-4 md:p-6">

@@ -48,10 +48,10 @@ export default function Hero() {
             href={process.env.NEXT_PUBLIC_TELEGRAM_URL || 'https://t.me/yntoyg'}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-sm text-white/40 hover:text-white/60 transition-colors"
+            className="inline-flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-base md:text-lg text-white/50 hover:text-white/70 transition-colors"
           >
             <span>Already hold $YNTOYG?</span>
-            <span className="text-yg-gold/70 hover:text-yg-gold">Connect Telegram to claim videos →</span>
+            <span className="text-yg-gold/80 hover:text-yg-gold">Connect Telegram to claim videos →</span>
           </a>
         </div>
       </div>

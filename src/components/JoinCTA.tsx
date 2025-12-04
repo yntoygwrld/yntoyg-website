@@ -39,7 +39,7 @@ export default function JoinCTA() {
           <h2 className="section-heading text-white mb-4 md:mb-6 text-2xl md:text-4xl lg:text-5xl">
             Ready to <span className="text-glow-gold">Transform</span>?
           </h2>
-          <p className="text-white/40 text-base md:text-lg mb-6 md:mb-8 max-w-xl mx-auto px-2">
+          <p className="text-white/50 text-lg md:text-xl mb-6 md:mb-8 max-w-xl mx-auto px-2">
             Join the movement. Claim your daily videos. Rise from <span className="text-gradient-burgundy font-street">YN</span> to <span className="text-gradient-gold font-serif">YG</span>.
           </p>
 
@@ -51,7 +51,6 @@ export default function JoinCTA() {
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center justify-center gap-2 w-full sm:w-auto"
             >
-              <span>🚀</span>
               Buy $YNTOYG
             </a>
             <a
