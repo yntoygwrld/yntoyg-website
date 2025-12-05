@@ -688,3 +688,138 @@ body {
   background: transparent;
   height: 2px;
 }
+
+/* Royal Covenant Button - Ornate 3D medallion style */
+.btn-covenant {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.875rem 2rem;
+  font-family: var(--font-playfair);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #D4AF37;
+  background:
+    linear-gradient(145deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.05) 50%, rgba(212, 175, 55, 0.1) 100%);
+  border: 2px solid;
+  border-image: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.8) 0%,
+    rgba(212, 175, 55, 0.3) 25%,
+    rgba(212, 175, 55, 0.6) 50%,
+    rgba(212, 175, 55, 0.3) 75%,
+    rgba(212, 175, 55, 0.8) 100%
+  ) 1;
+  border-radius: 0;
+  clip-path: polygon(
+    8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%, 0% 8%
+  );
+  box-shadow:
+    0 4px 20px rgba(212, 175, 55, 0.3),
+    0 8px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  overflow: visible;
+}
+
+/* Outer decorative frame */
+.btn-covenant::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  clip-path: polygon(
+    8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%, 0% 8%
+  );
+  pointer-events: none;
+}
+
+/* Inner glow effect */
+.btn-covenant::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(212, 175, 55, 0.15) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.btn-covenant:hover {
+  color: #f0d875;
+  background:
+    linear-gradient(145deg, rgba(212, 175, 55, 0.25) 0%, rgba(212, 175, 55, 0.1) 50%, rgba(212, 175, 55, 0.2) 100%);
+  box-shadow:
+    0 6px 30px rgba(212, 175, 55, 0.5),
+    0 12px 50px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+    0 0 60px rgba(212, 175, 55, 0.2);
+  text-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+  transform: translateY(-2px);
+}
+
+.btn-covenant:hover::after {
+  opacity: 1;
+}
+
+.btn-covenant:active {
+  transform: translateY(0);
+  box-shadow:
+    0 2px 15px rgba(212, 175, 55, 0.4),
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Decorative corner flourishes */
+.btn-covenant-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.btn-covenant-wrapper .corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  pointer-events: none;
+}
+
+.btn-covenant-wrapper .corner-tl {
+  top: -8px;
+  left: -8px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.btn-covenant-wrapper .corner-tr {
+  top: -8px;
+  right: -8px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.btn-covenant-wrapper .corner-bl {
+  bottom: -8px;
+  left: -8px;
+  border-right: none;
+  border-top: none;
+}
+
+.btn-covenant-wrapper .corner-br {
+  bottom: -8px;
+  right: -8px;
+  border-left: none;
+  border-top: none;
+}

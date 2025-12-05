@@ -16,49 +16,6 @@ export default function Hero({ onJoinClick }: HeroProps) {
 
   return (
     <section className="min-h-screen flex items-center justify-center px-6 md:px-8 lg:px-16 py-20 resend-canvas overflow-hidden">
-      {/* Enter The Covenant Button - Top Right */}
-      <div className="absolute top-6 right-6 z-20">
-        <div className="relative">
-          <button
-            onClick={() => setShowCovenantMenu(!showCovenantMenu)}
-            className="px-4 py-2 bg-yg-gold/10 border border-yg-gold/30 rounded-lg text-yg-gold hover:bg-yg-gold/20 hover:border-yg-gold/50 transition-all duration-300 text-sm font-medium"
-          >
-            Enter The Covenant
-          </button>
-
-          {/* Dropdown Menu */}
-          {showCovenantMenu && (
-            <>
-              {/* Backdrop to close menu */}
-              <div
-                className="fixed inset-0 z-10"
-                onClick={() => setShowCovenantMenu(false)}
-              />
-              <div className="absolute right-0 mt-2 w-56 bg-[#0a0a0c] border border-white/10 rounded-xl shadow-xl z-20 overflow-hidden">
-                <button
-                  onClick={() => {
-                    setShowCovenantMenu(false);
-                    onJoinClick();
-                  }}
-                  className="w-full px-4 py-3 text-left text-white/70 hover:bg-white/5 hover:text-white transition-colors border-b border-white/5"
-                >
-                  <span className="block text-sm font-medium">First time?</span>
-                  <span className="block text-xs text-white/40">Sign up with email</span>
-                </button>
-                <Link
-                  href="/covenant"
-                  className="block w-full px-4 py-3 text-left text-white/70 hover:bg-white/5 hover:text-white transition-colors"
-                  onClick={() => setShowCovenantMenu(false)}
-                >
-                  <span className="block text-sm font-medium">Already a member?</span>
-                  <span className="block text-xs text-white/40">Go to dashboard</span>
-                </Link>
-              </div>
-            </>
-          )}
-        </div>
-      </div>
-
       <div className="max-w-4xl mx-auto w-full relative z-10">
         {/* Content - Centered */}
         <div className="text-center">
@@ -95,14 +52,54 @@ export default function Hero({ onJoinClick }: HeroProps) {
             </button>
           </div>
 
-          {/* Subtle Telegram connect - optional, non-intrusive */}
-          <button
-            onClick={onJoinClick}
-            className="inline-flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-base md:text-lg text-[#a1a4a5] hover:text-white/70 transition-colors"
-          >
-            <span>Already hold $YNTOYG?</span>
-            <span className="text-yg-gold/80 hover:text-yg-gold">Connect to claim videos →</span>
-          </button>
+          {/* Royal Covenant Button with Dropdown */}
+          <div className="relative inline-block">
+            <div className="btn-covenant-wrapper">
+              <button
+                onClick={() => setShowCovenantMenu(!showCovenantMenu)}
+                className="btn-covenant"
+              >
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+                <span>Enter The Covenant</span>
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Dropdown Menu */}
+            {showCovenantMenu && (
+              <>
+                {/* Backdrop to close menu */}
+                <div
+                  className="fixed inset-0 z-10"
+                  onClick={() => setShowCovenantMenu(false)}
+                />
+                <div className="absolute left-1/2 -translate-x-1/2 mt-4 w-64 bg-[#0a0a0c]/95 backdrop-blur-sm border border-yg-gold/20 rounded-lg shadow-2xl z-20 overflow-hidden">
+                  <button
+                    onClick={() => {
+                      setShowCovenantMenu(false);
+                      onJoinClick();
+                    }}
+                    className="w-full px-5 py-4 text-left text-white/80 hover:bg-yg-gold/10 hover:text-white transition-all duration-300 border-b border-yg-gold/10 group"
+                  >
+                    <span className="block text-sm font-medium group-hover:text-yg-gold transition-colors">First time?</span>
+                    <span className="block text-xs text-white/40 mt-0.5">Sign up with email</span>
+                  </button>
+                  <Link
+                    href="/covenant"
+                    className="block w-full px-5 py-4 text-left text-white/80 hover:bg-yg-gold/10 hover:text-white transition-all duration-300 group"
+                    onClick={() => setShowCovenantMenu(false)}
+                  >
+                    <span className="block text-sm font-medium group-hover:text-yg-gold transition-colors">Already a member?</span>
+                    <span className="block text-xs text-white/40 mt-0.5">Go to dashboard</span>
+                  </Link>
+                </div>
+              </>
+            )}
+          </div>
         </div>
       </div>
 
