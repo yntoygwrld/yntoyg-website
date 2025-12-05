@@ -27,13 +27,6 @@ body {
   font-family: var(--font-inter);
 }
 
-/* Custom cursor - hide native cursor (JS-based cursor follows mouse) */
-*,
-*::before,
-*::after {
-  cursor: none !important;
-}
-
 /* Elegant serif headline */
 .font-serif {
   font-family: var(--font-playfair);
