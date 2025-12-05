@@ -187,16 +187,44 @@ export default function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
 
           {isSuccess ? (
             // Success state
-            <div className="text-center py-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-yg-gold/20 mb-6">
+            <div className="text-center py-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-yg-gold/20 mb-4">
                 <CheckCircle className="w-8 h-8 text-yg-gold" />
               </div>
-              <h3 className="text-2xl md:text-3xl font-serif text-white mb-3">
+              <h3 className="text-2xl md:text-3xl font-serif text-white mb-2">
                 Check Your <span className="text-glow-gold">Email</span>
               </h3>
-              <p className="text-white/50 text-base mb-6">
-                We've sent you a magic link to join the $YNTOYG Telegram bot.
+              <p className="text-white/40 text-sm mb-4">
+                Your invitation to the Covenant has been dispatched
               </p>
+
+              {/* Step-by-step instructions */}
+              <div className="text-left space-y-2 mb-4 px-2">
+                <div className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-yg-gold/20 flex items-center justify-center text-yg-gold text-xs font-bold">1</span>
+                  <p className="text-white/60 text-sm">Check your inbox for an email from <span className="text-white/80">YNTOYG Covenant</span></p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-yg-gold/20 flex items-center justify-center text-yg-gold text-xs font-bold">2</span>
+                  <p className="text-white/60 text-sm">Click the magic link to connect your <span className="text-white/80">Telegram</span></p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-yg-gold/20 flex items-center justify-center text-yg-gold text-xs font-bold">3</span>
+                  <p className="text-white/60 text-sm">Unlock access to <span className="text-white/80">daily viral videos</span></p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-yg-gold/20 flex items-center justify-center text-yg-gold text-xs font-bold">4</span>
+                  <p className="text-white/60 text-sm">Start earning <span className="text-white/80">points</span> on the leaderboard</p>
+                </div>
+              </div>
+
+              <p className="text-white/30 text-xs mb-3">
+                Link expires in 24 hours
+              </p>
+              <p className="text-amber-400/70 text-xs px-4 py-2 bg-amber-400/5 rounded-lg mb-4">
+                Don't see it? Check your spam folder
+              </p>
+
               <button
                 onClick={closeModal}
                 className="btn-outline"
