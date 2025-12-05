@@ -145,97 +145,118 @@ export async function POST(request: NextRequest) {
           </style>
           <![endif]-->
         </head>
-        <body style="margin: 0; padding: 0; background-color: #000000; font-family: 'Georgia', 'Times New Roman', serif;">
-          <!-- Preheader text -->
+        <body style="margin: 0; padding: 0; background-color: #000000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
           <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all;">
-            Esteemed member, your private chambers await. This passage expires in 15 minutes.
+            Your dashboard access link is ready. This link expires in 15 minutes.
           </div>
 
           <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #000000;">
             <tr>
-              <td style="padding: 40px 20px;">
-                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 520px; margin: 0 auto;">
+              <td style="padding: 40px 16px;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 480px; margin: 0 auto;">
 
-                  <!-- Decorative Header -->
+                  <!-- Main Card with thin gold border -->
                   <tr>
-                    <td style="text-align: center; padding-bottom: 32px;">
+                    <td style="background-color: #0a0a0a; border: 1px solid #D4AF37; border-radius: 16px; padding: 32px 24px;">
+
                       <!-- Diamond ornament -->
-                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 20px;">
                         <tr>
-                          <td style="width: 40px; height: 1px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5));"></td>
-                          <td style="padding: 0 12px;">
-                            <div style="width: 8px; height: 8px; background-color: #D4AF37; transform: rotate(45deg); opacity: 0.7;"></div>
+                          <td style="text-align: center;">
+                            <span style="color: #D4AF37; font-size: 10px;">◆</span>
                           </td>
-                          <td style="width: 40px; height: 1px; background: linear-gradient(90deg, rgba(212, 175, 55, 0.5), transparent);"></td>
                         </tr>
                       </table>
-                      <h1 style="color: #D4AF37; font-size: 32px; margin: 16px 0 0 0; font-weight: 400; letter-spacing: 3px; font-family: 'Georgia', serif;">YNTOYG</h1>
-                    </td>
-                  </tr>
 
-                  <!-- Main Card -->
-                  <tr>
-                    <td>
-                      <!-- Outer glow border -->
-                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="border-radius: 24px; background: linear-gradient(180deg, rgba(212, 175, 55, 0.3) 0%, rgba(212, 175, 55, 0.1) 50%, rgba(212, 175, 55, 0.3) 100%); padding: 1px;">
+                      <!-- Title -->
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                         <tr>
-                          <td>
-                            <!-- Inner card -->
-                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #000000; border-radius: 23px;">
+                          <td style="text-align: center; padding-bottom: 12px;">
+                            <h1 style="margin: 0; font-size: 28px; font-weight: 400; font-family: Georgia, 'Times New Roman', serif; color: #FFFFFF;">
+                              Welcome Back, <span style="color: #D4AF37; font-style: italic;">Gentleman</span>
+                            </h1>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: center; padding-bottom: 28px;">
+                            <p style="margin: 0; font-size: 14px; color: #808080; line-height: 1.5;">
+                              Access your personal dashboard
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+
+                      <!-- CTA Button -->
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 32px;">
+                        <tr>
+                          <td style="text-align: center;">
+                            <a href="${loginUrl}" style="display: inline-block; padding: 14px 32px; background-color: #D4AF37; color: #000000; font-weight: 600; text-decoration: none; font-size: 14px; border-radius: 8px;">
+                              Enter Dashboard →
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+
+                      <!-- Features Section -->
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <!-- Feature 1: Stats -->
+                        <tr>
+                          <td style="padding: 16px 0; border-top: 1px solid #1a1a1a;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                               <tr>
-                                <td style="padding: 40px 32px; text-align: center;">
+                                <td style="width: 44px; vertical-align: top;">
+                                  <div style="width: 36px; height: 36px; border: 1px solid #D4AF37; border-radius: 8px; text-align: center; line-height: 36px;">
+                                    <span style="color: #D4AF37; font-size: 16px;">📊</span>
+                                  </div>
+                                </td>
+                                <td style="vertical-align: top; padding-left: 12px;">
+                                  <p style="margin: 0 0 4px 0; font-size: 15px; font-weight: 600; color: #FFFFFF;">Your Statistics</p>
+                                  <p style="margin: 0; font-size: 12px; color: #808080; line-height: 1.4;">View your points, leaderboard ranking, and viral reach metrics.</p>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
 
-                                  <!-- Title with gold accent -->
-                                  <h2 style="color: #F5F5DC; font-size: 26px; margin: 0 0 8px 0; font-weight: 400; font-family: 'Georgia', serif;">
-                                    Welcome Back, <span style="color: #D4AF37;">Gentleman</span>
-                                  </h2>
-
-                                  <p style="color: rgba(245, 245, 220, 0.5); margin: 0 0 28px 0; font-size: 15px; line-height: 1.6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-                                    Your private chambers await. Kindly proceed to review your distinguished standing amongst the Covenant.
-                                  </p>
-
-                                  <!-- CTA Button -->
-                                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
-                                    <tr>
-                                      <td style="border-radius: 12px; background: linear-gradient(135deg, #D4AF37 0%, #e6c55a 50%, #D4AF37 100%); box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);">
-                                        <a href="${loginUrl}" style="display: inline-block; padding: 16px 36px; color: #000000; font-weight: 600; text-decoration: none; font-size: 15px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; letter-spacing: 0.5px;">
-                                          Enter the Chamber →
-                                        </a>
-                                      </td>
-                                    </tr>
-                                  </table>
-
-                                  <!-- Divider -->
-                                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: 28px 0;">
-                                    <tr>
-                                      <td style="height: 1px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);"></td>
-                                    </tr>
-                                  </table>
-
-                                  <!-- Info -->
-                                  <p style="color: rgba(245, 245, 220, 0.4); font-size: 14px; margin: 0; font-family: -apple-system, sans-serif; font-style: italic;">
-                                    View your statistics, track your ascension, and witness your transformation unfold.
-                                  </p>
-
-                                  <p style="color: rgba(245, 245, 220, 0.3); font-size: 12px; margin: 24px 0 0 0; font-family: -apple-system, sans-serif;">
-                                    This passage expires in 15 minutes
-                                  </p>
-
+                        <!-- Feature 2: Progress -->
+                        <tr>
+                          <td style="padding: 16px 0; border-top: 1px solid #1a1a1a;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                              <tr>
+                                <td style="width: 44px; vertical-align: top;">
+                                  <div style="width: 36px; height: 36px; border: 1px solid #D4AF37; border-radius: 8px; text-align: center; line-height: 36px;">
+                                    <span style="color: #D4AF37; font-size: 16px;">🏆</span>
+                                  </div>
+                                </td>
+                                <td style="vertical-align: top; padding-left: 12px;">
+                                  <p style="margin: 0 0 4px 0; font-size: 15px; font-weight: 600; color: #FFFFFF;">Track Your Progress</p>
+                                  <p style="margin: 0; font-size: 12px; color: #808080; line-height: 1.4;">Watch your transformation unfold as you ascend the ranks.</p>
                                 </td>
                               </tr>
                             </table>
                           </td>
                         </tr>
                       </table>
+
+                      <!-- Expiry notice -->
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 24px;">
+                        <tr>
+                          <td style="text-align: center;">
+                            <p style="margin: 0; font-size: 11px; color: #555555;">
+                              This link expires in 15 minutes
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+
                     </td>
                   </tr>
 
                   <!-- Footer -->
                   <tr>
-                    <td style="text-align: center; padding-top: 32px;">
-                      <p style="color: rgba(245, 245, 220, 0.25); font-size: 11px; line-height: 1.5; margin: 0; font-family: -apple-system, sans-serif;">
-                        This correspondence was dispatched from yntoyg.com<br/>
-                        Should this request not be of your making, you may disregard it with our regards.
+                    <td style="text-align: center; padding-top: 24px;">
+                      <p style="margin: 0; font-size: 11px; color: #444444;">
+                        yntoyg.com
                       </p>
                     </td>
                   </tr>
