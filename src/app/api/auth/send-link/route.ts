@@ -145,13 +145,13 @@ export async function POST(request: NextRequest) {
           </style>
           <![endif]-->
         </head>
-        <body style="margin: 0; padding: 0; background-color: #0a0a0c; font-family: 'Georgia', 'Times New Roman', serif;">
+        <body style="margin: 0; padding: 0; background-color: #000000; font-family: 'Georgia', 'Times New Roman', serif;">
           <!-- Preheader text -->
           <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all;">
             Esteemed member, your private chambers await. This passage expires in 15 minutes.
           </div>
 
-          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #0a0a0c;">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #000000;">
             <tr>
               <td style="padding: 40px 20px;">
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 520px; margin: 0 auto;">
@@ -181,7 +181,7 @@ export async function POST(request: NextRequest) {
                         <tr>
                           <td>
                             <!-- Inner card -->
-                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #0a0a0c; border-radius: 23px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #000000; border-radius: 23px;">
                               <tr>
                                 <td style="padding: 40px 32px; text-align: center;">
 
@@ -198,7 +198,7 @@ export async function POST(request: NextRequest) {
                                   <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
                                     <tr>
                                       <td style="border-radius: 12px; background: linear-gradient(135deg, #D4AF37 0%, #e6c55a 50%, #D4AF37 100%); box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);">
-                                        <a href="${loginUrl}" style="display: inline-block; padding: 16px 36px; color: #0a0a0c; font-weight: 600; text-decoration: none; font-size: 15px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; letter-spacing: 0.5px;">
+                                        <a href="${loginUrl}" style="display: inline-block; padding: 16px 36px; color: #000000; font-weight: 600; text-decoration: none; font-size: 15px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; letter-spacing: 0.5px;">
                                           Enter the Chamber →
                                         </a>
                                       </td>
