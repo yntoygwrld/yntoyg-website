@@ -1,17 +1,79 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Mail, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
+
+declare global {
+  interface Window {
+    turnstile: {
+      render: (container: string | HTMLElement, options: {
+        sitekey: string;
+        callback: (token: string) => void;
+        'error-callback'?: () => void;
+        'expired-callback'?: () => void;
+        theme?: 'light' | 'dark' | 'auto';
+        size?: 'normal' | 'compact';
+      }) => string;
+      reset: (widgetId: string) => void;
+      remove: (widgetId: string) => void;
+    };
+  }
+}
 
 export default function CovenantJoin() {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState('');
+  const [turnstileToken, setTurnstileToken] = useState('');
+  const turnstileRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef = useRef<string | null>(null);
+
+  const renderTurnstile = useCallback(() => {
+    if (turnstileRef.current && window.turnstile && !widgetIdRef.current) {
+      widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
+        sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '',
+        callback: (token: string) => setTurnstileToken(token),
+        'error-callback': () => setError('Security verification failed. Please refresh.'),
+        'expired-callback': () => setTurnstileToken(''),
+        theme: 'dark',
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    // Check if turnstile is already loaded
+    if (window.turnstile) {
+      renderTurnstile();
+    } else {
+      // Wait for script to load
+      const checkTurnstile = setInterval(() => {
+        if (window.turnstile) {
+          clearInterval(checkTurnstile);
+          renderTurnstile();
+        }
+      }, 100);
+
+      return () => clearInterval(checkTurnstile);
+    }
+
+    return () => {
+      if (widgetIdRef.current && window.turnstile) {
+        window.turnstile.remove(widgetIdRef.current);
+        widgetIdRef.current = null;
+      }
+    };
+  }, [renderTurnstile]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!turnstileToken) {
+      setError('Please complete the security verification');
+      return;
+    }
+
     setIsLoading(true);
     setError('');
 
@@ -19,7 +81,7 @@ export default function CovenantJoin() {
       const res = await fetch('/api/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, turnstileToken }),
       });
 
       const data = await res.json();
@@ -57,15 +119,33 @@ export default function CovenantJoin() {
             <div className="w-16 h-16 rounded-full bg-yg-gold/20 flex items-center justify-center mx-auto mb-4">
               <CheckCircle className="w-8 h-8 text-yg-gold" />
             </div>
-            <h2 className="text-xl font-semibold text-white mb-2">Check Your Email</h2>
-            <p className="text-white/50 mb-4">
-              We've sent you a magic link to join our Telegram and start claiming daily videos.
+            <h2 className="text-xl font-semibold text-white mb-3">Magic Link Sent!</h2>
+
+            {/* Step-by-step instructions */}
+            <div className="text-left space-y-2 mb-5 px-2">
+              <div className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-yg-gold/20 flex items-center justify-center text-yg-gold text-xs font-bold">1</span>
+                <p className="text-white/60 text-sm">Check your inbox for an email from <span className="text-white/80">YNTOYG Covenant</span></p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-yg-gold/20 flex items-center justify-center text-yg-gold text-xs font-bold">2</span>
+                <p className="text-white/60 text-sm">Click the link to connect your <span className="text-white/80">Telegram</span></p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-yg-gold/20 flex items-center justify-center text-yg-gold text-xs font-bold">3</span>
+                <p className="text-white/60 text-sm">Join our community to unlock <span className="text-white/80">daily videos</span></p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-yg-gold/20 flex items-center justify-center text-yg-gold text-xs font-bold">4</span>
+                <p className="text-white/60 text-sm">Start earning <span className="text-white/80">points</span> on the leaderboard</p>
+              </div>
+            </div>
+
+            <p className="text-white/30 text-xs mb-3">
+              Link expires in 24 hours
             </p>
-            <p className="text-white/30 text-sm">
-              The link expires in 24 hours
-            </p>
-            <p className="text-amber-400/70 text-xs mt-3 px-4 py-2 bg-amber-400/5 rounded-lg">
-              ⚠️ Don't see it? Check your spam folder and mark as "not spam"
+            <p className="text-amber-400/70 text-xs px-4 py-2 bg-amber-400/5 rounded-lg">
+              Don't see it? Check your spam folder and mark as "not spam"
             </p>
           </div>
         ) : (
@@ -87,9 +167,12 @@ export default function CovenantJoin() {
 
             {error && <p className="text-red-400 text-sm mb-4">{error}</p>}
 
+            {/* Turnstile Widget */}
+            <div ref={turnstileRef} className="flex justify-center mb-4" />
+
             <button
               type="submit"
-              disabled={isLoading || !email}
+              disabled={isLoading || !email || !turnstileToken}
               className="w-full btn-royal-gold flex items-center justify-center gap-3 disabled:opacity-50"
             >
               {isLoading ? (
