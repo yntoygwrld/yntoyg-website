@@ -1,16 +1,14 @@
 'use client';
 
-import { useState, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
-import { Mail, Loader2, AlertCircle } from 'lucide-react';
+import { useState } from 'react';
+import { Mail, Loader2, CheckCircle } from 'lucide-react';
+import Link from 'next/link';
 
-function LoginForm() {
+export default function CovenantJoin() {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState('');
-  const searchParams = useSearchParams();
-  const urlError = searchParams.get('error');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -18,7 +16,7 @@ function LoginForm() {
     setError('');
 
     try {
-      const res = await fetch('/api/auth/send-link', {
+      const res = await fetch('/api/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
@@ -38,19 +36,6 @@ function LoginForm() {
     }
   };
 
-  const getErrorMessage = (errorCode: string | null) => {
-    switch (errorCode) {
-      case 'expired':
-        return 'Link expired. Please request a new one.';
-      case 'invalid':
-        return 'Invalid link. Please request a new one.';
-      case 'notfound':
-        return 'Account not found. Join via Telegram first.';
-      default:
-        return null;
-    }
-  };
-
   return (
     <main className="min-h-screen bg-[#0a0a0c] flex items-center justify-center p-6">
       <div className="w-full max-w-md">
@@ -62,26 +47,23 @@ function LoginForm() {
             <div className="w-12 h-px bg-gradient-to-r from-transparent via-yg-gold/50 to-transparent" />
           </div>
           <h1 className="text-3xl md:text-4xl font-serif text-white mb-2">
-            The <span className="text-glow-gold">Covenant</span>
+            Join The <span className="text-glow-gold">Covenant</span>
           </h1>
-          <p className="text-white/40">Enter your email to access your dashboard</p>
+          <p className="text-white/40">Enter your email to begin your transformation</p>
         </div>
-
-        {/* Error from URL */}
-        {urlError && (
-          <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-xl flex items-center gap-3 text-red-400">
-            <AlertCircle className="w-5 h-5 flex-shrink-0" />
-            <span>{getErrorMessage(urlError)}</span>
-          </div>
-        )}
 
         {sent ? (
           <div className="glass-card rounded-2xl p-8 text-center">
             <div className="w-16 h-16 rounded-full bg-yg-gold/20 flex items-center justify-center mx-auto mb-4">
-              <Mail className="w-8 h-8 text-yg-gold" />
+              <CheckCircle className="w-8 h-8 text-yg-gold" />
             </div>
             <h2 className="text-xl font-semibold text-white mb-2">Check Your Email</h2>
-            <p className="text-white/50">We've sent a magic link to access your dashboard.</p>
+            <p className="text-white/50 mb-4">
+              We've sent you a magic link to join our Telegram and start claiming daily videos.
+            </p>
+            <p className="text-white/30 text-sm">
+              The link expires in 24 hours
+            </p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8">
@@ -96,6 +78,7 @@ function LoginForm() {
                 placeholder="gentleman@example.com"
                 className="w-full bg-white/5 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-white/30 focus:outline-none focus:border-yg-gold/50 focus:ring-1 focus:ring-yg-gold/50 transition-all"
                 disabled={isLoading}
+                required
               />
             </div>
 
@@ -112,39 +95,34 @@ function LoginForm() {
                   Sending...
                 </>
               ) : (
-                'Send Magic Link'
+                'Join the Covenant'
               )}
             </button>
 
+            <p className="text-white/30 text-xs text-center mt-4">
+              You'll receive a magic link to connect your Telegram
+            </p>
           </form>
         )}
 
-        {/* Don't have an account - Join */}
+        {/* Already have an account - Login */}
         <div className="text-center mt-6">
-          <a
-            href="/covenant/join"
+          <Link
+            href="/covenant/login"
             className="inline-flex items-center gap-2 text-white/50 hover:text-yg-gold text-sm transition-colors group"
           >
-            <span>Don't have an account?</span>
-            <span className="text-yg-gold group-hover:underline">Join the Covenant →</span>
-          </a>
+            <span>Already a member?</span>
+            <span className="text-yg-gold group-hover:underline">Sign in →</span>
+          </Link>
         </div>
 
         {/* Back to home */}
         <div className="text-center mt-3">
-          <a href="/" className="text-white/30 text-sm hover:text-white/50 transition-colors">
+          <Link href="/" className="text-white/30 text-sm hover:text-white/50 transition-colors">
             &larr; Back to home
-          </a>
+          </Link>
         </div>
       </div>
     </main>
-  );
-}
-
-export default function CovenantLogin() {
-  return (
-    <Suspense fallback={<div className="min-h-screen bg-[#0a0a0c]" />}>
-      <LoginForm />
-    </Suspense>
   );
 }
