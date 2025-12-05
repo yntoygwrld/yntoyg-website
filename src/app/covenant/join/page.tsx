@@ -127,7 +127,7 @@ export default function CovenantJoin() {
         {/* Back to home */}
         <div className="text-center mt-3">
           <Link href="/" className="text-white/30 text-sm hover:text-white/50 transition-colors">
-            &larr; Back to home
+            ← Back to home
           </Link>
         </div>
       </div>

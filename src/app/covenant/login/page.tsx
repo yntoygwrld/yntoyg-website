@@ -141,9 +141,9 @@ function LoginForm() {
 
         {/* Back to home */}
         <div className="text-center mt-3">
-          <a href="/" className="text-white/30 text-sm hover:text-white/50 transition-colors">
-            &larr; Back to home
-          </a>
+          <Link href="/" className="text-white/30 text-sm hover:text-white/50 transition-colors">
+            ← Back to home
+          </Link>
         </div>
       </div>
     </main>
