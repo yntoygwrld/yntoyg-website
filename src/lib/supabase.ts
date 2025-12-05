@@ -33,6 +33,26 @@ const handler = {
 
 export const supabase = new Proxy({} as SupabaseClient, handler)
 
+// Service role client for server-side operations
+let supabaseServiceInstance: SupabaseClient | null = null
+
+/**
+ * Get the Supabase client with service role key - for server-side only
+ */
+export function getSupabaseService(): SupabaseClient {
+  if (!supabaseServiceInstance) {
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const supabaseServiceKey = process.env.SUPABASE_SERVICE_KEY
+
+    if (!supabaseUrl || !supabaseServiceKey) {
+      throw new Error('Missing Supabase service environment variables')
+    }
+
+    supabaseServiceInstance = createClient(supabaseUrl, supabaseServiceKey)
+  }
+  return supabaseServiceInstance
+}
+
 // Types for database (will be expanded as needed)
 export interface WaitlistEntry {
   id?: string
