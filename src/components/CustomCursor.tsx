@@ -97,6 +97,14 @@ export default function CustomCursor() {
             <stop offset="100%" stopColor="#D4AF37" />
           </linearGradient>
         </defs>
+        {/* Black outline for visibility */}
+        <path
+          d="M6 6L18 18M18 6L6 18"
+          stroke="#000000"
+          strokeWidth="4.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
         {/* X shape with royal gold gradient */}
         <path
           d="M6 6L18 18M18 6L6 18"
