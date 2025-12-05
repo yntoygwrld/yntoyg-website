@@ -1,16 +1,64 @@
 'use client';
 
+import { useState } from 'react';
+import Link from 'next/link';
+
 interface HeroProps {
   onJoinClick: () => void;
 }
 
 export default function Hero({ onJoinClick }: HeroProps) {
+  const [showCovenantMenu, setShowCovenantMenu] = useState(false);
+
   const scrollToHowItWorks = () => {
     document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <section className="min-h-screen flex items-center justify-center px-6 md:px-8 lg:px-16 py-20 resend-canvas overflow-hidden">
+      {/* Enter The Covenant Button - Top Right */}
+      <div className="absolute top-6 right-6 z-20">
+        <div className="relative">
+          <button
+            onClick={() => setShowCovenantMenu(!showCovenantMenu)}
+            className="px-4 py-2 bg-yg-gold/10 border border-yg-gold/30 rounded-lg text-yg-gold hover:bg-yg-gold/20 hover:border-yg-gold/50 transition-all duration-300 text-sm font-medium"
+          >
+            Enter The Covenant
+          </button>
+
+          {/* Dropdown Menu */}
+          {showCovenantMenu && (
+            <>
+              {/* Backdrop to close menu */}
+              <div
+                className="fixed inset-0 z-10"
+                onClick={() => setShowCovenantMenu(false)}
+              />
+              <div className="absolute right-0 mt-2 w-56 bg-[#0a0a0c] border border-white/10 rounded-xl shadow-xl z-20 overflow-hidden">
+                <button
+                  onClick={() => {
+                    setShowCovenantMenu(false);
+                    onJoinClick();
+                  }}
+                  className="w-full px-4 py-3 text-left text-white/70 hover:bg-white/5 hover:text-white transition-colors border-b border-white/5"
+                >
+                  <span className="block text-sm font-medium">First time?</span>
+                  <span className="block text-xs text-white/40">Sign up with email</span>
+                </button>
+                <Link
+                  href="/covenant"
+                  className="block w-full px-4 py-3 text-left text-white/70 hover:bg-white/5 hover:text-white transition-colors"
+                  onClick={() => setShowCovenantMenu(false)}
+                >
+                  <span className="block text-sm font-medium">Already a member?</span>
+                  <span className="block text-xs text-white/40">Go to dashboard</span>
+                </Link>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+
       <div className="max-w-4xl mx-auto w-full relative z-10">
         {/* Content - Centered */}
         <div className="text-center">

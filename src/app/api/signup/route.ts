@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { resend } from '@/lib/resend';
-import { getSupabase } from '@/lib/supabase';
+import { getSupabaseService } from '@/lib/supabase';
 import { randomBytes } from 'crypto';
 
 // Generate a secure token
@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
     const magicLink = `https://t.me/${botUsername}?start=${token}`;
 
     // Store token in Supabase with expiration
-    const { error: tokenError } = await getSupabase().from('email_tokens').insert({
+    const { error: tokenError } = await getSupabaseService().from('email_tokens').insert({
       email,
       token,
       expires_at: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
