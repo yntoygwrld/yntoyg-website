@@ -1,5 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
   <defs>
+    <!-- Soft drop shadow filter -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
     <!-- Chrome/Gold gradient for the main pointer -->
     <linearGradient id="chromeGold" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#F5F5DC"/>
@@ -8,11 +12,6 @@
       <stop offset="75%" stop-color="#D4AF37"/>
       <stop offset="100%" stop-color="#B8860B"/>
     </linearGradient>
-    <!-- Dark outline gradient -->
-    <linearGradient id="darkOutline" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1a1a1a"/>
-      <stop offset="100%" stop-color="#0a0a0c"/>
-    </linearGradient>
     <!-- Inner shine -->
     <linearGradient id="innerShine" x1="0%" y1="0%" x2="50%" y2="100%">
       <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
@@ -20,18 +19,15 @@
     </linearGradient>
   </defs>
 
-  <!-- Dark outline/shadow -->
-  <path d="M4 2 L4 26 L10 20 L14 28 L18 26 L14 18 L22 18 Z"
-        fill="url(#darkOutline)"
-        transform="translate(1, 1)"/>
+  <g filter="url(#softShadow)">
+    <!-- Main chrome/gold pointer -->
+    <path d="M4 2 L4 26 L10 20 L14 28 L18 26 L14 18 L22 18 Z"
+          fill="url(#chromeGold)"
+          stroke="#0a0a0c"
+          stroke-width="1"/>
 
-  <!-- Main chrome/gold pointer -->
-  <path d="M4 2 L4 26 L10 20 L14 28 L18 26 L14 18 L22 18 Z"
-        fill="url(#chromeGold)"
-        stroke="#0a0a0c"
-        stroke-width="1"/>
-
-  <!-- Inner shine highlight -->
-  <path d="M6 6 L6 20 L9 17 L11 21 L13 20 L11 16 L16 16 Z"
-        fill="url(#innerShine)"/>
+    <!-- Inner shine highlight -->
+    <path d="M6 6 L6 20 L9 17 L11 21 L13 20 L11 16 L16 16 Z"
+          fill="url(#innerShine)"/>
+  </g>
 </svg>

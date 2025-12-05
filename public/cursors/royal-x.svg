@@ -1,5 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
   <defs>
+    <!-- Soft drop shadow filter -->
+    <filter id="softShadowX" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
     <linearGradient id="xGold" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#F5F5DC"/>
       <stop offset="25%" stop-color="#D4AF37"/>
@@ -8,18 +12,20 @@
       <stop offset="100%" stop-color="#B8860B"/>
     </linearGradient>
   </defs>
-  <!-- Black outline -->
-  <path d="M6 6L18 18M18 6L6 18"
-        stroke="#000000"
-        stroke-width="4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        fill="none"/>
-  <!-- Gold X -->
-  <path d="M6 6L18 18M18 6L6 18"
-        stroke="url(#xGold)"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        fill="none"/>
+  <g filter="url(#softShadowX)">
+    <!-- Black outline -->
+    <path d="M6 6L18 18M18 6L6 18"
+          stroke="#000000"
+          stroke-width="4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"/>
+    <!-- Gold X -->
+    <path d="M6 6L18 18M18 6L6 18"
+          stroke="url(#xGold)"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"/>
+  </g>
 </svg>
