@@ -161,7 +161,7 @@ export async function POST(request: NextRequest) {
     const { data, error } = await resend.emails.send({
       from: 'YNTOYG Covenant <noreply@yntoyg.com>',
       to: email,
-      subject: 'Complete Your Signup - One Click Away',
+      subject: 'Your Invitation to the Covenant Awaits',
       html: `
         <!DOCTYPE html>
         <html>
@@ -174,44 +174,140 @@ export async function POST(request: NextRequest) {
           </style>
           <![endif]-->
         </head>
-        <body style="margin: 0; padding: 0; background-color: #1a1a2e; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-          <!-- Preheader text (hidden but helps deliverability) -->
+        <body style="margin: 0; padding: 0; background-color: #0a0a0c; font-family: 'Georgia', 'Times New Roman', serif;">
+          <!-- Preheader text -->
           <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all;">
-            Your account setup link is ready. Click to connect your Telegram.
+            A distinguished invitation awaits your acceptance. Your transformation into a gentleman begins now.
           </div>
 
-          <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
-            <!-- Header -->
-            <div style="text-align: center; margin-bottom: 40px;">
-              <h1 style="color: #D4AF37; font-size: 28px; margin: 0; font-weight: 600;">YNTOYG</h1>
-              <p style="color: #F5F5DC; opacity: 0.7; margin-top: 8px; font-size: 14px;">Your account is almost ready</p>
-            </div>
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #0a0a0c;">
+            <tr>
+              <td style="padding: 40px 20px;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 520px; margin: 0 auto;">
 
-            <!-- Main content -->
-            <div style="background: #252540; border: 1px solid #3a3a5a; border-radius: 12px; padding: 32px; text-align: center;">
-              <h2 style="color: #F5F5DC; font-size: 20px; margin: 0 0 16px 0; font-weight: 500;">Welcome to the Covenant</h2>
-              <p style="color: #a0a0b0; margin: 0 0 24px 0; font-size: 15px; line-height: 1.5;">
-                Click below to connect your Telegram account and complete your registration.
-              </p>
+                  <!-- Decorative Header -->
+                  <tr>
+                    <td style="text-align: center; padding-bottom: 32px;">
+                      <!-- Diamond ornament -->
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+                        <tr>
+                          <td style="width: 40px; height: 1px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5));"></td>
+                          <td style="padding: 0 12px;">
+                            <div style="width: 8px; height: 8px; background-color: #D4AF37; transform: rotate(45deg); opacity: 0.7;"></div>
+                          </td>
+                          <td style="width: 40px; height: 1px; background: linear-gradient(90deg, rgba(212, 175, 55, 0.5), transparent);"></td>
+                        </tr>
+                      </table>
+                      <h1 style="color: #D4AF37; font-size: 32px; margin: 16px 0 0 0; font-weight: 400; letter-spacing: 3px; font-family: 'Georgia', serif;">YNTOYG</h1>
+                    </td>
+                  </tr>
 
-              <!-- CTA Button -->
-              <a href="${magicLink}" style="display: inline-block; background-color: #D4AF37; color: #1a1a2e; font-weight: 600; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-size: 15px;">
-                Complete Setup
-              </a>
+                  <!-- Main Card -->
+                  <tr>
+                    <td>
+                      <!-- Outer glow border -->
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="border-radius: 24px; background: linear-gradient(180deg, rgba(212, 175, 55, 0.3) 0%, rgba(212, 175, 55, 0.1) 50%, rgba(212, 175, 55, 0.3) 100%); padding: 1px;">
+                        <tr>
+                          <td>
+                            <!-- Inner card -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #0a0a0c; border-radius: 23px;">
+                              <tr>
+                                <td style="padding: 40px 32px; text-align: center;">
 
-              <p style="color: #707080; font-size: 12px; margin-top: 24px;">
-                Link expires in 24 hours
-              </p>
-            </div>
+                                  <!-- Title with gold accent -->
+                                  <h2 style="color: #F5F5DC; font-size: 26px; margin: 0 0 8px 0; font-weight: 400; font-family: 'Georgia', serif;">
+                                    Welcome to the <span style="color: #D4AF37;">Covenant</span>
+                                  </h2>
 
-            <!-- Footer -->
-            <div style="text-align: center; margin-top: 32px;">
-              <p style="color: #606070; font-size: 11px; line-height: 1.4;">
-                You requested this email from yntoyg.com<br/>
-                If you didn't request this, you can safely ignore it.
-              </p>
-            </div>
-          </div>
+                                  <p style="color: rgba(245, 245, 220, 0.5); margin: 0 0 28px 0; font-size: 15px; line-height: 1.6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+                                    Your journey toward refinement commences here. Kindly proceed to establish your credentials and take your rightful place among the distinguished.
+                                  </p>
+
+                                  <!-- CTA Button -->
+                                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+                                    <tr>
+                                      <td style="border-radius: 12px; background: linear-gradient(135deg, #D4AF37 0%, #e6c55a 50%, #D4AF37 100%); box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);">
+                                        <a href="${magicLink}" style="display: inline-block; padding: 16px 36px; color: #0a0a0c; font-weight: 600; text-decoration: none; font-size: 15px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; letter-spacing: 0.5px;">
+                                          Accept Invitation →
+                                        </a>
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                  <!-- Divider -->
+                                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: 28px 0;">
+                                    <tr>
+                                      <td style="height: 1px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);"></td>
+                                    </tr>
+                                  </table>
+
+                                  <!-- Steps -->
+                                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="text-align: left;">
+                                    <tr>
+                                      <td style="padding: 8px 0;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                          <tr>
+                                            <td style="width: 28px; height: 28px; background-color: rgba(212, 175, 55, 0.15); border-radius: 50%; text-align: center; vertical-align: middle;">
+                                              <span style="color: #D4AF37; font-size: 13px; font-weight: 600;">I</span>
+                                            </td>
+                                            <td style="padding-left: 14px; color: rgba(245, 245, 220, 0.6); font-size: 14px; font-family: -apple-system, sans-serif;">Accept the invitation above</td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td style="padding: 8px 0;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                          <tr>
+                                            <td style="width: 28px; height: 28px; background-color: rgba(212, 175, 55, 0.15); border-radius: 50%; text-align: center; vertical-align: middle;">
+                                              <span style="color: #D4AF37; font-size: 13px; font-weight: 600;">II</span>
+                                            </td>
+                                            <td style="padding-left: 14px; color: rgba(245, 245, 220, 0.6); font-size: 14px; font-family: -apple-system, sans-serif;">Establish your Telegram credentials</td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td style="padding: 8px 0;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                          <tr>
+                                            <td style="width: 28px; height: 28px; background-color: rgba(212, 175, 55, 0.15); border-radius: 50%; text-align: center; vertical-align: middle;">
+                                              <span style="color: #D4AF37; font-size: 13px; font-weight: 600;">III</span>
+                                            </td>
+                                            <td style="padding-left: 14px; color: rgba(245, 245, 220, 0.6); font-size: 14px; font-family: -apple-system, sans-serif;">Ascend the ranks of distinction</td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                  <p style="color: rgba(245, 245, 220, 0.3); font-size: 12px; margin: 24px 0 0 0; font-family: -apple-system, sans-serif;">
+                                    This invitation remains valid for 24 hours
+                                  </p>
+
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+
+                  <!-- Footer -->
+                  <tr>
+                    <td style="text-align: center; padding-top: 32px;">
+                      <p style="color: rgba(245, 245, 220, 0.25); font-size: 11px; line-height: 1.5; margin: 0; font-family: -apple-system, sans-serif;">
+                        This correspondence was dispatched from yntoyg.com<br/>
+                        Should this request not be of your making, you may disregard it with our regards.
+                      </p>
+                    </td>
+                  </tr>
+
+                </table>
+              </td>
+            </tr>
+          </table>
         </body>
         </html>
       `,

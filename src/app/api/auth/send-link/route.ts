@@ -132,7 +132,7 @@ export async function POST(request: NextRequest) {
     await resend.emails.send({
       from: 'YNTOYG Covenant <noreply@yntoyg.com>',
       to: email,
-      subject: 'Sign in to Your Dashboard',
+      subject: 'Your Presence is Requested - Dashboard Access',
       html: `
         <!DOCTYPE html>
         <html>
@@ -145,40 +145,105 @@ export async function POST(request: NextRequest) {
           </style>
           <![endif]-->
         </head>
-        <body style="margin: 0; padding: 0; background-color: #1a1a2e; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+        <body style="margin: 0; padding: 0; background-color: #0a0a0c; font-family: 'Georgia', 'Times New Roman', serif;">
           <!-- Preheader text -->
           <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all;">
-            Click to access your Covenant dashboard - link expires in 15 minutes.
+            Esteemed member, your private chambers await. This passage expires in 15 minutes.
           </div>
 
-          <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
-            <div style="text-align: center; margin-bottom: 40px;">
-              <h1 style="color: #D4AF37; font-size: 28px; margin: 0; font-weight: 600;">YNTOYG</h1>
-              <p style="color: #F5F5DC; opacity: 0.7; margin-top: 8px; font-size: 14px;">Dashboard Access</p>
-            </div>
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #0a0a0c;">
+            <tr>
+              <td style="padding: 40px 20px;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 520px; margin: 0 auto;">
 
-            <div style="background: #252540; border: 1px solid #3a3a5a; border-radius: 12px; padding: 32px; text-align: center;">
-              <h2 style="color: #F5F5DC; font-size: 20px; margin: 0 0 16px 0; font-weight: 500;">Welcome Back</h2>
-              <p style="color: #a0a0b0; margin: 0 0 24px 0; font-size: 15px; line-height: 1.5;">
-                Click below to access your dashboard and view your stats.
-              </p>
+                  <!-- Decorative Header -->
+                  <tr>
+                    <td style="text-align: center; padding-bottom: 32px;">
+                      <!-- Diamond ornament -->
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+                        <tr>
+                          <td style="width: 40px; height: 1px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5));"></td>
+                          <td style="padding: 0 12px;">
+                            <div style="width: 8px; height: 8px; background-color: #D4AF37; transform: rotate(45deg); opacity: 0.7;"></div>
+                          </td>
+                          <td style="width: 40px; height: 1px; background: linear-gradient(90deg, rgba(212, 175, 55, 0.5), transparent);"></td>
+                        </tr>
+                      </table>
+                      <h1 style="color: #D4AF37; font-size: 32px; margin: 16px 0 0 0; font-weight: 400; letter-spacing: 3px; font-family: 'Georgia', serif;">YNTOYG</h1>
+                    </td>
+                  </tr>
 
-              <a href="${loginUrl}" style="display: inline-block; background-color: #D4AF37; color: #1a1a2e; font-weight: 600; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-size: 15px;">
-                Access Dashboard
-              </a>
+                  <!-- Main Card -->
+                  <tr>
+                    <td>
+                      <!-- Outer glow border -->
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="border-radius: 24px; background: linear-gradient(180deg, rgba(212, 175, 55, 0.3) 0%, rgba(212, 175, 55, 0.1) 50%, rgba(212, 175, 55, 0.3) 100%); padding: 1px;">
+                        <tr>
+                          <td>
+                            <!-- Inner card -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #0a0a0c; border-radius: 23px;">
+                              <tr>
+                                <td style="padding: 40px 32px; text-align: center;">
 
-              <p style="color: #707080; font-size: 12px; margin-top: 24px;">
-                Link expires in 15 minutes
-              </p>
-            </div>
+                                  <!-- Title with gold accent -->
+                                  <h2 style="color: #F5F5DC; font-size: 26px; margin: 0 0 8px 0; font-weight: 400; font-family: 'Georgia', serif;">
+                                    Welcome Back, <span style="color: #D4AF37;">Gentleman</span>
+                                  </h2>
 
-            <div style="text-align: center; margin-top: 32px;">
-              <p style="color: #606070; font-size: 11px; line-height: 1.4;">
-                You requested this email from yntoyg.com<br/>
-                If you didn't request this, you can safely ignore it.
-              </p>
-            </div>
-          </div>
+                                  <p style="color: rgba(245, 245, 220, 0.5); margin: 0 0 28px 0; font-size: 15px; line-height: 1.6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+                                    Your private chambers await. Kindly proceed to review your distinguished standing amongst the Covenant.
+                                  </p>
+
+                                  <!-- CTA Button -->
+                                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+                                    <tr>
+                                      <td style="border-radius: 12px; background: linear-gradient(135deg, #D4AF37 0%, #e6c55a 50%, #D4AF37 100%); box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);">
+                                        <a href="${loginUrl}" style="display: inline-block; padding: 16px 36px; color: #0a0a0c; font-weight: 600; text-decoration: none; font-size: 15px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; letter-spacing: 0.5px;">
+                                          Enter the Chamber →
+                                        </a>
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                  <!-- Divider -->
+                                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: 28px 0;">
+                                    <tr>
+                                      <td style="height: 1px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);"></td>
+                                    </tr>
+                                  </table>
+
+                                  <!-- Info -->
+                                  <p style="color: rgba(245, 245, 220, 0.4); font-size: 14px; margin: 0; font-family: -apple-system, sans-serif; font-style: italic;">
+                                    View your statistics, track your ascension, and witness your transformation unfold.
+                                  </p>
+
+                                  <p style="color: rgba(245, 245, 220, 0.3); font-size: 12px; margin: 24px 0 0 0; font-family: -apple-system, sans-serif;">
+                                    This passage expires in 15 minutes
+                                  </p>
+
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+
+                  <!-- Footer -->
+                  <tr>
+                    <td style="text-align: center; padding-top: 32px;">
+                      <p style="color: rgba(245, 245, 220, 0.25); font-size: 11px; line-height: 1.5; margin: 0; font-family: -apple-system, sans-serif;">
+                        This correspondence was dispatched from yntoyg.com<br/>
+                        Should this request not be of your making, you may disregard it with our regards.
+                      </p>
+                    </td>
+                  </tr>
+
+                </table>
+              </td>
+            </tr>
+          </table>
         </body>
         </html>
       `,
