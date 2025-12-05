@@ -47,7 +47,7 @@ const detailSections = [
   {
     icon: Gift,
     title: 'Future Rewards',
-    description: 'Points unlock exclusive benefits: priority access, community recognition, holder perks, and future opportunities. The more you contribute, the more you benefit.',
+    description: 'Points are being tracked. Rewards are coming. The gentlemen who show up early will be remembered.',
     highlight: 'Coming soon',
   },
 ];
