@@ -64,7 +64,7 @@ export async function POST(request: NextRequest) {
     const loginUrl = `${baseUrl}/api/auth/verify?token=${token}`;
 
     await resend.emails.send({
-      from: '$YNTOYG <onboarding@resend.dev>',
+      from: 'YNTOYG <noreply@yntoyg.com>',
       to: email,
       subject: 'Access Your Covenant Dashboard',
       html: `

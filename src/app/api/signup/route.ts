@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
 
     // Send magic link email via Resend
     const { data, error } = await resend.emails.send({
-      from: '$YNTOYG <onboarding@resend.dev>', // Will use custom domain later
+      from: 'YNTOYG <noreply@yntoyg.com>',
       to: email,
       subject: '🎩 Your $YNTOYG Magic Link',
       html: `
