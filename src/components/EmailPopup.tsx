@@ -204,6 +204,13 @@ export default function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-yg-gold/20 flex items-center justify-center text-yg-gold text-xs font-bold">1</span>
                   <p className="text-white/60 text-sm">Check your inbox for an email from <span className="text-white/80">YNTOYG Covenant</span></p>
                 </div>
+
+                {/* SPAM CHECK - Highlighted */}
+                <div className="flex items-start gap-3 bg-amber-500/10 border border-amber-500/30 rounded-lg p-2 -mx-1">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-amber-500/30 flex items-center justify-center text-amber-400 text-xs font-bold">!</span>
+                  <p className="text-amber-300 text-sm font-semibold">NOT THERE? CHECK YOUR SPAM/JUNK FOLDER</p>
+                </div>
+
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-yg-gold/20 flex items-center justify-center text-yg-gold text-xs font-bold">2</span>
                   <p className="text-white/60 text-sm">Click the magic link to connect your <span className="text-white/80">Telegram</span></p>
@@ -218,11 +225,8 @@ export default function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
                 </div>
               </div>
 
-              <p className="text-white/30 text-xs mb-3">
+              <p className="text-white/30 text-xs mb-4">
                 Link expires in 24 hours
-              </p>
-              <p className="text-amber-400/70 text-xs px-4 py-2 bg-amber-400/5 rounded-lg mb-4">
-                Don't see it? Check your spam folder
               </p>
 
               <button
