@@ -89,11 +89,11 @@ function QuarterZipModel() {
 
         {/* Left sleeve - more rounded, softer */}
         <RoundedBox
-          args={[1.2, 0.6, 0.6]}
+          args={[1.3, 0.6, 0.6]}
           radius={0.25}
           smoothness={8}
-          position={[-1.25, 0.5, 0]}
-          rotation={[0, 0, 0.6]}
+          position={[-1.3, 0.7, 0]}
+          rotation={[0, 0, 0.5]}
         >
           <meshStandardMaterial
             color={GOLD_MAIN}
@@ -104,11 +104,11 @@ function QuarterZipModel() {
 
         {/* Right sleeve - more rounded, softer */}
         <RoundedBox
-          args={[1.2, 0.6, 0.6]}
+          args={[1.3, 0.6, 0.6]}
           radius={0.25}
           smoothness={8}
-          position={[1.25, 0.5, 0]}
-          rotation={[0, 0, -0.6]}
+          position={[1.3, 0.7, 0]}
+          rotation={[0, 0, -0.5]}
         >
           <meshStandardMaterial
             color={GOLD_MAIN}
@@ -136,8 +136,8 @@ function QuarterZipModel() {
           args={[0.4, 0.22, 0.5]}
           radius={0.1}
           smoothness={6}
-          position={[-1.7, 0.0, 0]}
-          rotation={[0, 0, 0.6]}
+          position={[-1.8, 0.25, 0]}
+          rotation={[0, 0, 0.5]}
         >
           <meshStandardMaterial
             color={GOLD_LIGHT}
@@ -151,8 +151,8 @@ function QuarterZipModel() {
           args={[0.4, 0.22, 0.5]}
           radius={0.1}
           smoothness={6}
-          position={[1.7, 0.0, 0]}
-          rotation={[0, 0, -0.6]}
+          position={[1.8, 0.25, 0]}
+          rotation={[0, 0, -0.5]}
         >
           <meshStandardMaterial
             color={GOLD_LIGHT}
