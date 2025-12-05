@@ -1,8 +1,25 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Mail, Loader2, CheckCircle } from 'lucide-react';
+
+declare global {
+  interface Window {
+    turnstile: {
+      render: (container: string | HTMLElement, options: {
+        sitekey: string;
+        callback: (token: string) => void;
+        'error-callback'?: () => void;
+        'expired-callback'?: () => void;
+        theme?: 'light' | 'dark' | 'auto';
+        size?: 'normal' | 'compact';
+      }) => string;
+      reset: (widgetId: string) => void;
+      remove: (widgetId: string) => void;
+    };
+  }
+}
 
 interface EmailPopupProps {
   isOpen: boolean;
@@ -16,10 +33,55 @@ export default function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
   const [error, setError] = useState('');
   const [isClosing, setIsClosing] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState('');
+  const turnstileRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef = useRef<string | null>(null);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Render Turnstile when popup opens
+  const renderTurnstile = useCallback(() => {
+    if (turnstileRef.current && window.turnstile && !widgetIdRef.current) {
+      widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
+        sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '',
+        callback: (token: string) => setTurnstileToken(token),
+        'error-callback': () => setError('Security verification failed. Please refresh.'),
+        'expired-callback': () => setTurnstileToken(''),
+        theme: 'dark',
+      });
+    }
+  }, []);
+
+  // Handle Turnstile lifecycle
+  useEffect(() => {
+    if (isOpen && !isClosing && !isSuccess) {
+      // Wait a bit for the DOM to be ready
+      const timer = setTimeout(() => {
+        if (window.turnstile) {
+          renderTurnstile();
+        } else {
+          // Poll for Turnstile to load
+          const checkTurnstile = setInterval(() => {
+            if (window.turnstile) {
+              clearInterval(checkTurnstile);
+              renderTurnstile();
+            }
+          }, 100);
+          return () => clearInterval(checkTurnstile);
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    } else if (!isOpen || isClosing) {
+      // Cleanup when closing
+      if (widgetIdRef.current && window.turnstile) {
+        window.turnstile.remove(widgetIdRef.current);
+        widgetIdRef.current = null;
+        setTurnstileToken('');
+      }
+    }
+  }, [isOpen, isClosing, isSuccess, renderTurnstile]);
 
   const closeModal = () => {
     setIsClosing(true);
@@ -67,13 +129,18 @@ export default function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
       return;
     }
 
+    if (!turnstileToken) {
+      setError('Please complete the security verification');
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
       const response = await fetch('/api/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, turnstileToken }),
       });
 
       const data = await response.json();
@@ -175,9 +242,12 @@ export default function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
                   <p className="text-red-400 text-sm text-center">{error}</p>
                 )}
 
+                {/* Turnstile Widget */}
+                <div ref={turnstileRef} className="flex justify-center" />
+
                 <button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || !email || !turnstileToken}
                   className="w-full btn-royal-gold flex items-center justify-center gap-2 disabled:opacity-50"
                 >
                   {isSubmitting ? (
