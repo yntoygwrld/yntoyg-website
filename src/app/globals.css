@@ -697,16 +697,15 @@ body {
   justify-content: center;
   padding: 1rem 2.5rem;
   font-family: var(--font-playfair);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: #d4af37;
   background: linear-gradient(180deg,
     rgba(20, 16, 8, 0.95) 0%,
     rgba(15, 12, 5, 0.98) 100%
   );
-  border: 1px solid rgba(212, 175, 55, 0.4);
+  border: 2px solid rgba(212, 175, 55, 0.5);
   border-radius: 1rem;
   box-shadow: inset 0 1px 0 rgba(212, 175, 55, 0.1);
   cursor: pointer;

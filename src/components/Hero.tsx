@@ -75,20 +75,13 @@ export default function Hero({ onJoinClick }: HeroProps) {
 
           {/* Royal Covenant Button with Dropdown (desktop) / Popup (mobile) */}
           <div className="relative inline-block">
-            <div className="btn-covenant-wrapper">
-              {/* Corner diamond ornaments */}
-              <span className="corner-ornament tl" />
-              <span className="corner-ornament tr" />
-              <span className="corner-ornament bl" />
-              <span className="corner-ornament br" />
-              <button
-                onClick={handleCovenantClick}
-                className="btn-covenant"
-              >
-                <span className="btn-covenant-text">Enter The Covenant</span>
-                <span className="btn-covenant-shine" />
-              </button>
-            </div>
+            <button
+              onClick={handleCovenantClick}
+              className="btn-covenant"
+            >
+              <span className="btn-covenant-text">Enter The Covenant</span>
+              <span className="btn-covenant-shine" />
+            </button>
 
             {/* Dropdown Menu */}
             {showCovenantMenu && (
