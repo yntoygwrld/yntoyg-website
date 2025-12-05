@@ -406,9 +406,13 @@ body {
   font-size: 16px;
   color: white;
   background: linear-gradient(104deg, rgba(253, 253, 253, 0.05) 5%, rgba(240, 240, 228, 0.1) 100%);
-  border: 2px solid rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(25px);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.1) 0px 1px 2px -1px,
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   position: relative;
   overflow: hidden;
 }
@@ -809,16 +813,16 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1.1rem 3rem;
+  padding: 0.9rem 2.5rem;
   font-family: var(--font-playfair);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 500;
   letter-spacing: 0.05em;
   background: linear-gradient(180deg,
     rgba(20, 16, 8, 0.95) 0%,
     rgba(15, 12, 5, 0.98) 100%
   );
-  border: 3px solid rgba(212, 175, 55, 0.6);
+  border: 2px solid rgba(212, 175, 55, 0.5);
   border-radius: 1.5rem;
   box-shadow: inset 0 1px 0 rgba(212, 175, 55, 0.1);
   cursor: pointer;
