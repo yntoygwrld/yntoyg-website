@@ -193,11 +193,6 @@ export default function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
                   )}
                 </button>
               </form>
-
-              {/* Footer note */}
-              <p className="text-white/30 text-xs text-center mt-6">
-                You'll receive videos to this email.
-              </p>
             </>
           )}
         </div>
