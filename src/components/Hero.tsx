@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import CovenantPopup from './CovenantPopup';
 
 interface HeroProps {
   onJoinClick: () => void;
@@ -9,6 +10,26 @@ interface HeroProps {
 
 export default function Hero({ onJoinClick }: HeroProps) {
   const [showCovenantMenu, setShowCovenantMenu] = useState(false);
+  const [showCovenantPopup, setShowCovenantPopup] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile on mount and resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const handleCovenantClick = () => {
+    if (isMobile) {
+      setShowCovenantPopup(true);
+    } else {
+      setShowCovenantMenu(!showCovenantMenu);
+    }
+  };
 
   const scrollToHowItWorks = () => {
     document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' });
@@ -52,11 +73,11 @@ export default function Hero({ onJoinClick }: HeroProps) {
             </button>
           </div>
 
-          {/* Royal Covenant Button with Dropdown */}
+          {/* Royal Covenant Button with Dropdown (desktop) / Popup (mobile) */}
           <div className="relative inline-block">
             <div className="btn-covenant-wrapper">
               <button
-                onClick={() => setShowCovenantMenu(!showCovenantMenu)}
+                onClick={handleCovenantClick}
                 className="btn-covenant"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -107,6 +128,13 @@ export default function Hero({ onJoinClick }: HeroProps) {
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gradient-radial from-yg-gold/5 via-transparent to-transparent" />
       </div>
+
+      {/* Covenant Popup for Mobile */}
+      <CovenantPopup
+        isOpen={showCovenantPopup}
+        onClose={() => setShowCovenantPopup(false)}
+        onSignUp={onJoinClick}
+      />
     </section>
   );
 }
