@@ -92,8 +92,8 @@ function QuarterZipModel() {
           args={[1.5, 0.65, 0.6]}
           radius={0.25}
           smoothness={8}
-          position={[-1.55, 0.7, 0]}
-          rotation={[0, 0, 0.35]}
+          position={[-1.55, 0.3, 0]}
+          rotation={[0, 0, 0.25]}
         >
           <meshStandardMaterial
             color={GOLD_MAIN}
@@ -107,8 +107,8 @@ function QuarterZipModel() {
           args={[1.5, 0.65, 0.6]}
           radius={0.25}
           smoothness={8}
-          position={[1.55, 0.7, 0]}
-          rotation={[0, 0, -0.35]}
+          position={[1.55, 0.3, 0]}
+          rotation={[0, 0, -0.25]}
         >
           <meshStandardMaterial
             color={GOLD_MAIN}
@@ -136,8 +136,8 @@ function QuarterZipModel() {
           args={[0.45, 0.22, 0.5]}
           radius={0.1}
           smoothness={6}
-          position={[-2.1, 0.3, 0]}
-          rotation={[0, 0, 0.35]}
+          position={[-2.1, 0.0, 0]}
+          rotation={[0, 0, 0.25]}
         >
           <meshStandardMaterial
             color={GOLD_LIGHT}
@@ -151,8 +151,8 @@ function QuarterZipModel() {
           args={[0.45, 0.22, 0.5]}
           radius={0.1}
           smoothness={6}
-          position={[2.1, 0.3, 0]}
-          rotation={[0, 0, -0.35]}
+          position={[2.1, 0.0, 0]}
+          rotation={[0, 0, -0.25]}
         >
           <meshStandardMaterial
             color={GOLD_LIGHT}
