@@ -47,7 +47,7 @@ const detailSections = [
   {
     icon: Gift,
     title: 'Future Rewards',
-    description: 'Points unlock exclusive rewards: airdrops, early access to features, community perks, and more. The more you contribute, the more you earn.',
+    description: 'Points unlock exclusive benefits: priority access, community recognition, holder perks, and future opportunities. The more you contribute, the more you benefit.',
     highlight: 'Coming soon',
   },
 ];
