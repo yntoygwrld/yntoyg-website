@@ -64,41 +64,52 @@ export async function POST(request: NextRequest) {
     const loginUrl = `${baseUrl}/api/auth/verify?token=${token}`;
 
     await resend.emails.send({
-      from: 'YNTOYG <noreply@yntoyg.com>',
+      from: 'YNTOYG Covenant <noreply@yntoyg.com>',
       to: email,
-      subject: 'Access Your Covenant Dashboard',
+      subject: 'Sign in to Your Dashboard',
       html: `
         <!DOCTYPE html>
         <html>
         <head>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <!--[if mso]>
+          <style type="text/css">
+            table, td {border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;}
+          </style>
+          <![endif]-->
         </head>
-        <body style="margin: 0; padding: 0; background-color: #0a0a0c; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+        <body style="margin: 0; padding: 0; background-color: #1a1a2e; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+          <!-- Preheader text -->
+          <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all;">
+            Click to access your Covenant dashboard - link expires in 15 minutes.
+          </div>
+
           <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
             <div style="text-align: center; margin-bottom: 40px;">
-              <h1 style="color: #D4AF37; font-size: 32px; margin: 0;">$YNTOYG</h1>
-              <p style="color: #F5F5DC; opacity: 0.8; margin-top: 8px;">The Covenant Dashboard</p>
+              <h1 style="color: #D4AF37; font-size: 28px; margin: 0; font-weight: 600;">YNTOYG</h1>
+              <p style="color: #F5F5DC; opacity: 0.7; margin-top: 8px; font-size: 14px;">Dashboard Access</p>
             </div>
 
-            <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(114, 47, 55, 0.1)); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 32px; text-align: center;">
-              <h2 style="color: #F5F5DC; font-size: 24px; margin: 0 0 16px 0;">Welcome Back, Gentleman</h2>
-              <p style="color: #F5F5DC; opacity: 0.7; margin: 0 0 24px 0;">
-                Click below to access your Covenant Dashboard and view your stats.
+            <div style="background: #252540; border: 1px solid #3a3a5a; border-radius: 12px; padding: 32px; text-align: center;">
+              <h2 style="color: #F5F5DC; font-size: 20px; margin: 0 0 16px 0; font-weight: 500;">Welcome Back</h2>
+              <p style="color: #a0a0b0; margin: 0 0 24px 0; font-size: 15px; line-height: 1.5;">
+                Click below to access your dashboard and view your stats.
               </p>
 
-              <a href="${loginUrl}" style="display: inline-block; background-color: #D4AF37; color: #0a0a0c; font-weight: bold; text-decoration: none; padding: 16px 32px; border-radius: 8px; font-size: 16px;">
-                Enter the Covenant
+              <a href="${loginUrl}" style="display: inline-block; background-color: #D4AF37; color: #1a1a2e; font-weight: 600; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-size: 15px;">
+                Access Dashboard
               </a>
 
-              <p style="color: #F5F5DC; opacity: 0.5; font-size: 12px; margin-top: 24px;">
-                This link expires in 15 minutes
+              <p style="color: #707080; font-size: 12px; margin-top: 24px;">
+                Link expires in 15 minutes
               </p>
             </div>
 
-            <div style="text-align: center; margin-top: 40px;">
-              <p style="color: #F5F5DC; opacity: 0.4; font-size: 12px;">
-                You're receiving this because you requested access to your dashboard at yntoyg.com
+            <div style="text-align: center; margin-top: 32px;">
+              <p style="color: #606070; font-size: 11px; line-height: 1.4;">
+                You requested this email from yntoyg.com<br/>
+                If you didn't request this, you can safely ignore it.
               </p>
             </div>
           </div>

@@ -64,6 +64,9 @@ export default function CovenantJoin() {
             <p className="text-white/30 text-sm">
               The link expires in 24 hours
             </p>
+            <p className="text-amber-400/70 text-xs mt-3 px-4 py-2 bg-amber-400/5 rounded-lg">
+              ⚠️ Don't see it? Check your spam folder and mark as "not spam"
+            </p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8">

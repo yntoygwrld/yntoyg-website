@@ -138,7 +138,7 @@ export default function CovenantDashboard() {
         <div className="text-center">
           <p className="text-white/30 text-sm mb-4">Keep claiming and posting to climb the leaderboard</p>
           <a
-            href="https://t.me/yntoyg_claim_bot"
+            href={`https://t.me/${process.env.NEXT_PUBLIC_TELEGRAM_BOT_USERNAME || 'yntoyg_claim_bot'}`}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline inline-flex items-center gap-2"

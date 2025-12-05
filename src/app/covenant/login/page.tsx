@@ -82,7 +82,10 @@ function LoginForm() {
               <Mail className="w-8 h-8 text-yg-gold" />
             </div>
             <h2 className="text-xl font-semibold text-white mb-2">Check Your Email</h2>
-            <p className="text-white/50">We've sent a magic link to access your dashboard.</p>
+            <p className="text-white/50 mb-3">We've sent a magic link to access your dashboard.</p>
+            <p className="text-amber-400/70 text-xs px-4 py-2 bg-amber-400/5 rounded-lg">
+              ⚠️ Don't see it? Check your spam folder and mark as "not spam"
+            </p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8">
