@@ -27,37 +27,11 @@ body {
   font-family: var(--font-inter);
 }
 
-/* Royal Chrome Custom Cursor */
-* {
-  cursor: url('/cursors/royal-pointer.svg') 4 2, auto;
-}
-
-/* Royal hand pointer for interactive elements */
-a,
-button,
-[role="button"],
-input[type="submit"],
-input[type="button"],
-input[type="checkbox"],
-input[type="radio"],
-select,
-label,
-.cursor-pointer,
-[onclick] {
-  cursor: url('/cursors/royal-hand.svg') 10 2, pointer;
-}
-
-/* Text cursor for text inputs */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="url"],
-input[type="number"],
-textarea,
-[contenteditable="true"] {
-  cursor: text;
+/* Custom cursor - hide native cursor (JS-based cursor follows mouse) */
+*,
+*::before,
+*::after {
+  cursor: none !important;
 }
 
 /* Elegant serif headline */
