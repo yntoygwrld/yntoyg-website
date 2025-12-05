@@ -49,7 +49,7 @@ export default function CustomCursor() {
         target.closest('.cursor-pointer') ||
         window.getComputedStyle(target).cursor === 'pointer';
 
-      setIsHovering(isInteractive);
+      setIsHovering(!!isInteractive);
     };
 
     document.addEventListener('mousemove', handleMouseMove);
