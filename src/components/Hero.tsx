@@ -91,7 +91,7 @@ export default function Hero({ onJoinClick }: HeroProps) {
                   className="fixed inset-0 z-10"
                   onClick={() => setShowCovenantMenu(false)}
                 />
-                <div className="absolute left-1/2 -translate-x-1/2 mt-4 w-64 bg-[#0a0a0c]/95 backdrop-blur-sm border border-yg-gold/20 rounded-lg shadow-2xl z-20 overflow-hidden">
+                <div className="dropdown-menu absolute left-1/2 mt-4 w-64 bg-[#0a0a0c]/95 backdrop-blur-sm border border-yg-gold/20 rounded-xl shadow-2xl z-20 overflow-hidden">
                   <button
                     onClick={() => {
                       setShowCovenantMenu(false);

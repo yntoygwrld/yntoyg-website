@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, Loader2, CheckCircle } from 'lucide-react';
+import { Mail, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 
 export default function CovenantJoin() {
@@ -87,12 +87,17 @@ export default function CovenantJoin() {
             <button
               type="submit"
               disabled={isLoading || !email}
-              className="w-full btn-royal-gold flex items-center justify-center gap-2 disabled:opacity-50"
+              className="w-full btn-royal-gold flex items-center justify-center gap-3 disabled:opacity-50"
             >
               {isLoading ? (
                 <>
-                  <Loader2 className="w-5 h-5 animate-spin" />
-                  Sending...
+                  <span className="elegant-spinner-light" />
+                  <span>Joining</span>
+                  <span className="elegant-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </span>
                 </>
               ) : (
                 'Join the Covenant'
@@ -109,10 +114,10 @@ export default function CovenantJoin() {
         <div className="text-center mt-6">
           <Link
             href="/covenant/login"
-            className="inline-flex items-center gap-2 text-white/50 hover:text-yg-gold text-sm transition-colors group"
+            className="page-transition-link text-white/50 hover:text-yg-gold text-sm transition-colors group"
           >
             <span>Already a member?</span>
-            <span className="text-yg-gold group-hover:underline">Sign in →</span>
+            <span className="text-yg-gold group-hover:text-yg-gold/80 transition-colors">Sign in →</span>
           </Link>
         </div>
 

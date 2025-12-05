@@ -130,6 +130,120 @@ body {
   animation: modalSlideDown 0.25s ease-in forwards;
 }
 
+/* Dropdown menu animations */
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-8px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+.dropdown-menu {
+  animation: dropdownFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Elegant loading spinner */
+@keyframes elegantSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes elegantPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.elegant-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(212, 175, 55, 0.2);
+  border-top-color: #d4af37;
+  border-radius: 50%;
+  animation: elegantSpin 0.8s linear infinite;
+}
+
+.elegant-spinner-light {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: elegantSpin 0.8s linear infinite;
+}
+
+/* Elegant dots loading */
+@keyframes elegantDots {
+  0%, 80%, 100% {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.elegant-dots {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.elegant-dots span {
+  width: 6px;
+  height: 6px;
+  background: #d4af37;
+  border-radius: 50%;
+  animation: elegantDots 1.4s ease-in-out infinite;
+}
+
+.elegant-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.elegant-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.elegant-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Page transition link */
+.page-transition-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.page-transition-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #d4af37, transparent);
+  transition: width 0.3s ease;
+}
+
+.page-transition-link:hover::after {
+  width: 100%;
+}
+
 /* Resend-style canvas background */
 .resend-canvas {
   position: relative;
@@ -705,7 +819,7 @@ body {
     rgba(15, 12, 5, 0.98) 100%
   );
   border: 3px solid rgba(212, 175, 55, 0.6);
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   box-shadow: inset 0 1px 0 rgba(212, 175, 55, 0.1);
   cursor: pointer;
   overflow: hidden;
@@ -732,7 +846,7 @@ body {
   background-clip: text;
 }
 
-/* Shine sweep element */
+/* Shine sweep element - auto repeats every 5s */
 .btn-covenant-shine {
   position: absolute;
   top: 0;
@@ -743,12 +857,22 @@ body {
     90deg,
     transparent 0%,
     rgba(212, 175, 55, 0.03) 25%,
-    rgba(255, 223, 120, 0.15) 50%,
+    rgba(255, 223, 120, 0.2) 50%,
     rgba(212, 175, 55, 0.03) 75%,
     transparent 100%
   );
   z-index: 1;
   pointer-events: none;
+  animation: shinePassAuto 5s ease-in-out infinite;
+}
+
+@keyframes shinePassAuto {
+  0%, 85% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 /* Subtle border highlight on hover */
