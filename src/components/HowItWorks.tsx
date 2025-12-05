@@ -47,8 +47,8 @@ const detailSections = [
   {
     icon: Gift,
     title: 'Future Rewards',
-    description: 'Points are being tracked for future airdrops and exclusive rewards. The gentlemen who show up early and contribute the most will be remembered when distribution time comes.',
-    highlight: 'Airdrops coming',
+    description: 'Points unlock exclusive rewards: airdrops, early access to features, community perks, and more. The more you contribute, the more you earn.',
+    highlight: 'Coming soon',
   },
 ];
 
