@@ -235,7 +235,7 @@ export async function POST(request: NextRequest) {
                               <tr>
                                 <td style="width: 44px; vertical-align: top;">
                                   <div style="width: 36px; height: 36px; border: 1px solid #D4AF37; border-radius: 8px; text-align: center; line-height: 36px;">
-                                    <span style="color: #D4AF37; font-size: 16px;">📱</span>
+                                    <span style="color: #D4AF37; font-size: 14px; font-family: Georgia, serif;">I</span>
                                   </div>
                                 </td>
                                 <td style="vertical-align: top; padding-left: 12px;">
@@ -254,7 +254,7 @@ export async function POST(request: NextRequest) {
                               <tr>
                                 <td style="width: 44px; vertical-align: top;">
                                   <div style="width: 36px; height: 36px; border: 1px solid #D4AF37; border-radius: 8px; text-align: center; line-height: 36px;">
-                                    <span style="color: #D4AF37; font-size: 16px;">⭐</span>
+                                    <span style="color: #D4AF37; font-size: 14px; font-family: Georgia, serif;">II</span>
                                   </div>
                                 </td>
                                 <td style="vertical-align: top; padding-left: 12px;">
