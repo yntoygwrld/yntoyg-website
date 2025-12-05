@@ -130,8 +130,19 @@ function LoginForm() {
           </form>
         )}
 
-        {/* Back to home */}
+        {/* Already connected - Enter dashboard */}
         <div className="text-center mt-6">
+          <a
+            href="/covenant"
+            className="inline-flex items-center gap-2 text-white/50 hover:text-yg-gold text-sm transition-colors group"
+          >
+            <span>Already connected?</span>
+            <span className="text-yg-gold group-hover:underline">Enter the Covenant →</span>
+          </a>
+        </div>
+
+        {/* Back to home */}
+        <div className="text-center mt-3">
           <a href="/" className="text-white/30 text-sm hover:text-white/50 transition-colors">
             &larr; Back to home
           </a>

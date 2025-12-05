@@ -74,10 +74,18 @@ export default function ViralCalculator() {
               <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-0.5 bg-gradient-to-r from-white/5 via-white/10 to-white/5 rounded-full" />
 
               {/* Active track - anchored to left, extends to thumb center */}
-              <div
-                className="absolute left-0 top-1/2 -translate-y-1/2 h-1 bg-gradient-to-r from-yg-gold/60 via-yg-gold to-yg-gold/80 rounded-full shadow-[0_0_10px_rgba(212,175,55,0.3)]"
-                style={{ width: `calc(${((holders - 100) / (10000 - 100)) * 100}% + 14px)` }}
-              />
+              {(() => {
+                const percentage = (holders - 100) / (10000 - 100);
+                // At 0%: width = 14px (thumb center at left edge)
+                // At 100%: width = calc(100% - 14px) (thumb center at right edge)
+                const offsetPx = (1 - 2 * percentage) * 14;
+                return (
+                  <div
+                    className="absolute left-0 top-1/2 -translate-y-1/2 h-1 bg-gradient-to-r from-yg-gold/60 via-yg-gold to-yg-gold/80 rounded-full shadow-[0_0_10px_rgba(212,175,55,0.3)]"
+                    style={{ width: `calc(${percentage * 100}% + ${offsetPx}px)` }}
+                  />
+                );
+              })()}
 
               {/* Hidden native input */}
               <input
