@@ -46,7 +46,7 @@ const socialLinks = [
   },
   {
     name: 'DexScreener',
-    href: '#',
+    href: 'https://dexscreener.com/solana/DKQK952DZY59uhAgvZDNyMkDieGc7U25kNf4Q5FJpump',
     icon: (
       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 500 500">
         <path fillRule="evenodd" clipRule="evenodd" d="M301.226 178.11C319.434 170.483 342.603 159.257 365.799 143.875C370.69 152.407 371.226 159.852 368.706 165.863C366.92 170.1 363.555 173.785 359.131 176.717C354.339 179.885 348.355 182.192 341.74 183.438C329.188 185.813 314.533 184.427 301.226 178.11ZM304.383 256.253L328.486 267.948C279.271 291.118 265.892 334.142 250 376.047C234.109 334.142 220.728 291.118 171.515 267.948L195.619 256.253C197.95 255.513 199.943 254.172 201.312 252.422C202.681 250.672 203.355 248.603 203.238 246.512C201.029 207.267 213.644 189.912 230.66 179.015C236.763 175.112 243.426 173.152 250 173.152C256.573 173.152 263.236 175.112 269.341 179.015C286.357 189.912 298.972 207.267 296.763 246.512C296.646 248.603 297.321 250.672 298.689 252.422C300.058 254.172 302.051 255.513 304.383 256.253ZM250 0C277.861 0.628333 305.791 5.17167 330.031 14.01C346.817 20.1383 362.48 28.2333 376.662 37.9133C383.067 42.2833 388.341 46.505 394.15 51.365C409.819 51.82 432.718 37.1983 443.349 23.5167C425.053 73.9 341.565 133.398 283.765 156.165C283.742 156.157 283.726 156.145 283.708 156.135C273.335 149.482 261.668 146.155 250 146.155C238.331 146.155 226.666 149.482 216.293 156.135C216.275 156.143 216.259 156.158 216.236 156.165C158.434 133.398 74.948 73.9 56.6523 23.5167C67.2813 37.1983 90.1801 51.82 105.849 51.365C111.66 46.5067 116.934 42.2833 123.337 37.9133C137.519 28.2333 153.182 20.1383 169.968 14.01C194.21 5.17167 222.14 0.628333 250 0ZM198.773 178.11C180.567 170.483 157.396 159.257 134.202 143.875C129.311 152.407 128.775 159.852 131.293 165.863C133.081 170.1 136.446 173.785 140.869 176.717C145.662 179.885 151.646 182.192 158.261 183.438C170.813 185.813 185.466 184.427 198.773 178.11Z" />
@@ -56,7 +56,7 @@ const socialLinks = [
   },
   {
     name: 'Pump.fun',
-    href: 'https://pump.fun',
+    href: 'https://pump.fun/coin/DKQK952DZY59uhAgvZDNyMkDieGc7U25kNf4Q5FJpump',
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24">
         {/* Capsule/pill shape - Pump.fun logo, rotated so clear side points top-right */}
@@ -93,7 +93,7 @@ export default function JoinCTA({ onJoinClick }: JoinCTAProps) {
           {/* Primary buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://pump.fun"
+              href="https://pump.fun/coin/DKQK952DZY59uhAgvZDNyMkDieGc7U25kNf4Q5FJpump"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary w-full sm:w-auto"
@@ -136,11 +136,11 @@ export default function JoinCTA({ onJoinClick }: JoinCTAProps) {
           <QuarterZip3D />
         </div>
 
-        {/* Contract address placeholder */}
+        {/* Contract address */}
         <div className="bg-white/[0.02] border border-white/5 rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 inline-block">
           <p className="text-white/30 text-[10px] md:text-xs mb-1">Contract Address</p>
-          <code className="text-yg-gold text-xs md:text-sm">
-            Coming soon...
+          <code className="text-yg-gold text-xs md:text-sm font-mono break-all">
+            DKQK952DZY59uhAgvZDNyMkDieGc7U25kNf4Q5FJpump
           </code>
         </div>
       </div>
