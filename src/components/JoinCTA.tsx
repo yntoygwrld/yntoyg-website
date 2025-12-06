@@ -59,13 +59,15 @@ const socialLinks = [
     href: 'https://pump.fun',
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24">
-        {/* Capsule/pill shape - Pump.fun logo */}
-        {/* Top half filled */}
-        <path d="M12 2C9.24 2 7 4.24 7 7v5h10V7c0-2.76-2.24-5-5-5z" fill="currentColor" />
-        {/* Bottom half outline only */}
-        <path d="M7 12v5c0 2.76 2.24 5 5 5s5-2.24 5-5v-5H7z" fill="none" stroke="currentColor" strokeWidth="1.5" />
-        {/* Divider line */}
-        <line x1="7" y1="12" x2="17" y2="12" stroke="currentColor" strokeWidth="1.5" />
+        {/* Capsule/pill shape - Pump.fun logo, rotated so clear side points top-right */}
+        <g transform="rotate(-135 12 12)">
+          {/* Top half filled */}
+          <path d="M12 2C9.24 2 7 4.24 7 7v5h10V7c0-2.76-2.24-5-5-5z" fill="currentColor" />
+          {/* Bottom half outline only */}
+          <path d="M7 12v5c0 2.76 2.24 5 5 5s5-2.24 5-5v-5H7z" fill="none" stroke="currentColor" strokeWidth="1.5" />
+          {/* Divider line */}
+          <line x1="7" y1="12" x2="17" y2="12" stroke="currentColor" strokeWidth="1.5" />
+        </g>
       </svg>
     ),
   },
