@@ -48,7 +48,10 @@ export default function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
         sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '',
         callback: (token: string) => setTurnstileToken(token),
         'error-callback': () => setError('Security verification failed. Please refresh.'),
-        'expired-callback': () => setTurnstileToken(''),
+        'expired-callback': () => {
+          setTurnstileToken('');
+          setError('Security verification expired. Please complete verification again.');
+        },
         theme: 'dark',
       });
     }
@@ -276,6 +279,11 @@ export default function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
 
                 {/* Turnstile Widget */}
                 <div ref={turnstileRef} className="flex justify-center" />
+
+                {/* Hint when verification not complete */}
+                {!turnstileToken && !error && email && (
+                  <p className="text-white/40 text-xs text-center">Complete the security check above to continue</p>
+                )}
 
                 <button
                   type="submit"
