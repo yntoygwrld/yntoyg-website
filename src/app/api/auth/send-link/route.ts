@@ -145,12 +145,12 @@ export async function POST(request: NextRequest) {
           </style>
           <![endif]-->
         </head>
-        <body style="margin: 0; padding: 0; background-color: #000000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+        <body style="margin: 0; padding: 0; background-color: #000000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;" bgcolor="#000000">
           <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all;">
             Your dashboard access link is ready. This link expires in 15 minutes.
           </div>
 
-          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #000000;">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #000000;" bgcolor="#000000">
             <tr>
               <td style="padding: 40px 16px;">
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 480px; margin: 0 auto;">
