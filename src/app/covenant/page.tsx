@@ -150,7 +150,7 @@ export default function CovenantDashboard() {
             </div>
             <div className="flex justify-between text-white/60">
               <span>Points breakdown</span>
-              <span>+10/claim, +25/submit</span>
+              <span>+5/claim, +10/submit</span>
             </div>
           </div>
         </div>
