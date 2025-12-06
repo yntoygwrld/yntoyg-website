@@ -91,6 +91,27 @@ export default function CovenantDashboard() {
           </button>
         </div>
 
+        {/* Claim Video CTA Banner */}
+        <a
+          href={`https://t.me/${process.env.NEXT_PUBLIC_TELEGRAM_BOT_USERNAME || 'yntoyg_claim_bot'}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full mb-8 p-4 rounded-xl border border-yg-gold/50 bg-yg-gold/5 hover:bg-yg-gold/10 hover:border-yg-gold transition-all duration-300 group"
+        >
+          <div className="flex items-center justify-center gap-3">
+            <svg className="w-5 h-5 text-yg-gold" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z" />
+            </svg>
+            <span className="text-white font-bold italic">
+              Claim your daily video
+            </span>
+            <span className="text-yg-gold group-hover:translate-x-1 transition-transform duration-300">→</span>
+          </div>
+          <p className="text-center text-white/50 text-sm mt-1">
+            Open the Telegram bot to claim videos and earn points
+          </p>
+        </a>
+
         {/* Stats Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {stats.map((stat) => (
