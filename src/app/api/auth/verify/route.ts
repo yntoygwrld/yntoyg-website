@@ -14,12 +14,13 @@ export async function GET(request: NextRequest) {
   try {
     const supabase = getSupabaseService();
 
-    // Find token
+    // Find token - for dashboard_login tokens, we DON'T require used=false
+    // because link previews (Telegram, browsers) can consume the token before
+    // the user actually clicks. The token still expires naturally in 7 days.
     const { data: tokenData, error: tokenError } = await supabase
       .from('email_tokens')
       .select('*')
       .eq('token', token)
-      .eq('used', false)
       .eq('type', 'dashboard_login')
       .single();
 
