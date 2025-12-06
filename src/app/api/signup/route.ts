@@ -216,12 +216,26 @@ export async function POST(request: NextRequest) {
                       </table>
 
                       <!-- CTA Button -->
-                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 32px;">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 16px;">
                         <tr>
                           <td style="text-align: center;">
                             <a href="${magicLink}" style="display: inline-block; padding: 14px 32px; background-color: #D4AF37; color: #000000; font-weight: 600; text-decoration: none; font-size: 14px; border-radius: 8px;">
                               Accept Invitation →
                             </a>
+                          </td>
+                        </tr>
+                      </table>
+
+                      <!-- Fallback link for email clients that block Telegram links -->
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 32px;">
+                        <tr>
+                          <td style="text-align: center;">
+                            <p style="margin: 0 0 8px 0; font-size: 11px; color: #666666;">
+                              Button not working? Copy this link:
+                            </p>
+                            <p style="margin: 0; font-size: 10px; color: #D4AF37; word-break: break-all; padding: 8px; background-color: #111111; border-radius: 4px;">
+                              ${magicLink}
+                            </p>
                           </td>
                         </tr>
                       </table>
