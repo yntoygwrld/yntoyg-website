@@ -58,7 +58,7 @@ export default function Hero({ onJoinClick }: HeroProps) {
           {/* Buttons - Stacked on mobile, row on desktop like Resend */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-8">
             <a
-              href="https://pump.fun"
+              href="https://pump.fun/coin/DKQK952DZY59uhAgvZDNyMkDieGc7U25kNf4Q5FJpump"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary w-full md:w-auto"
