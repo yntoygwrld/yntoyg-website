@@ -137,12 +137,17 @@ export default function JoinCTA({ onJoinClick }: JoinCTAProps) {
         </div>
 
         {/* Contract address */}
-        <div className="bg-white/[0.02] border border-white/5 rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 inline-block">
+        <a
+          href="https://pump.fun/coin/DKQK952DZY59uhAgvZDNyMkDieGc7U25kNf4Q5FJpump"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white/[0.02] border border-white/5 rounded-lg md:rounded-xl px-4 md:px-6 py-3 md:py-4 inline-block hover:border-yg-gold/30 hover:bg-white/[0.04] transition-all cursor-pointer"
+        >
           <p className="text-white/30 text-[10px] md:text-xs mb-1">Contract Address</p>
           <code className="text-yg-gold text-xs md:text-sm font-mono break-all">
             DKQK952DZY59uhAgvZDNyMkDieGc7U25kNf4Q5FJpump
           </code>
-        </div>
+        </a>
       </div>
     </section>
   );
