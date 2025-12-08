@@ -18,11 +18,22 @@ export const metadata: Metadata = {
     title: '$YNTOYG | From YN to YG',
     description: 'The ultimate transformation. From YN to YG. $YNTOYG on Solana.',
     type: 'website',
+    url: 'https://yntoyg.com',
+    siteName: '$YNTOYG',
+    images: [
+      {
+        url: 'https://yntoyg.com/og-image.jpg',
+        width: 1200,
+        height: 1200,
+        alt: '$YNTOYG - From YN to YG',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: '$YNTOYG | From YN to YG',
     description: 'The ultimate transformation. From YN to YG. $YNTOYG on Solana.',
+    images: ['https://yntoyg.com/og-image.jpg'],
   },
 }
 
