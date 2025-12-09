@@ -87,7 +87,7 @@ export default function JoinCTA({ onJoinClick }: JoinCTAProps) {
             Ready to <span className="text-glow-gold">Transform</span>?
           </h2>
           <p className="text-[#a1a4a5] text-xl md:text-2xl mb-6 md:mb-8 max-w-xl mx-auto leading-8">
-            Join the movement. Claim your daily videos.<br className="md:hidden" /> Rise from <span className="text-gradient-burgundy font-street text-2xl md:text-3xl">YN</span> to <span className="text-gradient-gold font-serif text-2xl md:text-3xl">YG</span>.
+            Join the movement. Claim daily videos from your dashboard.<br className="md:hidden" /> Rise from <span className="text-gradient-burgundy font-street text-2xl md:text-3xl">YN</span> to <span className="text-gradient-gold font-serif text-2xl md:text-3xl">YG</span>.
           </p>
 
           {/* Primary buttons */}

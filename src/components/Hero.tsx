@@ -52,7 +52,7 @@ export default function Hero({ onJoinClick }: HeroProps) {
           {/* Subheadline - muted like Resend */}
           <p className="text-base md:text-lg text-[#a1a4a5] mb-8 max-w-md mx-auto leading-7">
             This is no mere sport - seize your opportunity.
-            Buy $YNTOYG, claim daily videos, go viral together.
+            Buy $YNTOYG, claim daily videos, ascend together.
           </p>
 
           {/* Buttons - Stacked on mobile, row on desktop like Resend */}

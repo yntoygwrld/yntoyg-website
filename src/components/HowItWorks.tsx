@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { Wallet, Film, Share2, Trophy, X, Bot, Star, Gift, ChevronRight, ChevronDown } from 'lucide-react';
+import Link from 'next/link';
+import { Wallet, Film, Share2, Trophy, X, Sparkles, Star, Gift, ChevronRight, ChevronDown } from 'lucide-react';
 
 const steps = [
   {
@@ -14,7 +15,7 @@ const steps = [
   {
     number: '02',
     title: 'CLAIM',
-    description: 'Daily videos via Telegram',
+    description: 'Daily videos in your dashboard',
     Icon: Film,
   },
   {
@@ -33,9 +34,9 @@ const steps = [
 
 const detailSections = [
   {
-    icon: Bot,
-    title: 'The Telegram Bot',
-    description: 'Connect your wallet to our exclusive Telegram bot. It verifies your $YNTOYG holdings and unlocks daily premium content designed to go viral.',
+    icon: Sparkles,
+    title: 'The Covenant Dashboard',
+    description: 'Join with your email and connect your wallet. We verify your $YNTOYG holdings and unlock daily premium content designed to go viral.',
     highlight: 'Automated daily content delivery',
   },
   {
@@ -178,17 +179,25 @@ export default function HowItWorks() {
             <p className="text-white/60 text-lg font-medium mb-6">
               Ready to start your transformation?
             </p>
-            <a
-              href={process.env.NEXT_PUBLIC_TELEGRAM_URL || 'https://t.me/yntoyg'}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline"
-            >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z" />
-              </svg>
-              Join Telegram
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/covenant/join"
+                className="btn-royal-gold"
+              >
+                Join the Covenant
+              </Link>
+              <a
+                href={process.env.NEXT_PUBLIC_TELEGRAM_URL || 'https://t.me/yntoyg'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z" />
+                </svg>
+                Chat with the Community
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -286,17 +295,12 @@ export default function HowItWorks() {
                     <p className="text-white/30 text-xs mb-6">
                       Join the movement. Rise with the community.
                     </p>
-                    <a
-                      href={process.env.NEXT_PUBLIC_TELEGRAM_URL || 'https://t.me/yntoyg'}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      href="/covenant/join"
                       className="btn-royal-gold"
                     >
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z" />
-                      </svg>
-                      Connect via Telegram
-                    </a>
+                      Join the Covenant
+                    </Link>
                   </div>
                 </div>
               </div>
