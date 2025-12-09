@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { Trophy, Film, Share2, Star, Wallet, LogOut, Loader2 } from 'lucide-react';
+import ClaimSection from '@/components/ClaimSection';
 
 interface UserStats {
   email: string;
@@ -20,11 +21,7 @@ export default function CovenantDashboard() {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
-  useEffect(() => {
-    fetchUser();
-  }, []);
-
-  const fetchUser = async () => {
+  const fetchUser = useCallback(async () => {
     try {
       const res = await fetch('/api/user/me');
       if (!res.ok) {
@@ -37,6 +34,20 @@ export default function CovenantDashboard() {
       router.push('/covenant/login');
     } finally {
       setLoading(false);
+    }
+  }, [router]);
+
+  useEffect(() => {
+    fetchUser();
+  }, [fetchUser]);
+
+  // Handle points update from ClaimSection
+  const handlePointsUpdate = (pointsAdded: number) => {
+    if (user) {
+      setUser({
+        ...user,
+        points: user.points + pointsAdded,
+      });
     }
   };
 
@@ -91,19 +102,8 @@ export default function CovenantDashboard() {
           </button>
         </div>
 
-        {/* Claim Video CTA Banner - Coming Soon */}
-        <div className="block w-full mb-8 p-4 rounded-xl border border-white/20 bg-white/5">
-          <div className="flex items-center justify-center gap-3">
-            <Film className="w-5 h-5 text-white/50" />
-            <span className="text-white/70 font-bold italic">
-              Daily Video Claims
-            </span>
-            <span className="text-xs bg-yg-gold/20 text-yg-gold px-2 py-0.5 rounded-full">Coming Soon</span>
-          </div>
-          <p className="text-center text-white/40 text-sm mt-1">
-            Website-based video claiming launches with $YNTOYG
-          </p>
-        </div>
+        {/* Claim Video Section */}
+        <ClaimSection onPointsUpdate={handlePointsUpdate} />
 
         {/* Stats Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -150,7 +150,7 @@ export default function CovenantDashboard() {
 
         {/* CTA */}
         <div className="text-center">
-          <p className="text-white/30 text-sm">You're part of the Covenant. Claiming features coming soon.</p>
+          <p className="text-white/30 text-sm">You're part of the Covenant. Claim daily videos and earn points!</p>
         </div>
 
         {/* Back to home */}
