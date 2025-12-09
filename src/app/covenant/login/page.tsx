@@ -5,22 +5,6 @@ import { useSearchParams } from 'next/navigation';
 import { Mail, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
 
-declare global {
-  interface Window {
-    turnstile?: {
-      render: (container: HTMLElement, options: {
-        sitekey: string;
-        callback: (token: string) => void;
-        'error-callback': () => void;
-        'expired-callback': () => void;
-        theme: string;
-      }) => string;
-      reset: (widgetId: string) => void;
-      remove: (widgetId: string) => void;
-    };
-  }
-}
-
 function LoginForm() {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
