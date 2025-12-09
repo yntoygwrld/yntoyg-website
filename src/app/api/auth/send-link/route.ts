@@ -238,7 +238,7 @@ export async function POST(request: NextRequest) {
                       </table>
 
                       <!-- CTA Button -->
-                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 32px; background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 16px; background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
                         <tr>
                           <td align="center" style="background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
                             <!--[if mso]>
@@ -252,6 +252,20 @@ export async function POST(request: NextRequest) {
                               Enter Dashboard &#8594;
                             </a>
                             <!--<![endif]-->
+                          </td>
+                        </tr>
+                      </table>
+
+                      <!-- Fallback link -->
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 32px; background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
+                        <tr>
+                          <td align="center" style="background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
+                            <p style="margin: 0 0 8px 0; font-size: 11px; color: #666666 !important;">
+                              Button not working? Copy this link:
+                            </p>
+                            <p style="margin: 0; font-size: 10px; color: #D4AF37 !important; word-break: break-all; padding: 10px 12px; background-color: #111111 !important; border-radius: 6px; border: 1px solid #222222;">
+                              ${loginUrl}
+                            </p>
                           </td>
                         </tr>
                       </table>
