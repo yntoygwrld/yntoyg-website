@@ -164,51 +164,76 @@ export async function POST(request: NextRequest) {
       subject: 'Your Invitation to the Covenant Awaits',
       html: `
         <!DOCTYPE html>
-        <html>
+        <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
         <head>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="color-scheme" content="dark">
+          <meta name="supported-color-schemes" content="dark">
+          <title>Welcome to the Covenant</title>
           <!--[if mso]>
+          <noscript>
+            <xml>
+              <o:OfficeDocumentSettings>
+                <o:AllowPNG/>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+              </o:OfficeDocumentSettings>
+            </xml>
+          </noscript>
           <style type="text/css">
-            table, td {border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;}
+            body, table, td, p, a { font-family: Arial, sans-serif !important; }
+            table, td { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
           </style>
           <![endif]-->
+          <style type="text/css">
+            :root { color-scheme: dark; supported-color-schemes: dark; }
+            body, html { margin: 0 !important; padding: 0 !important; background-color: #000000 !important; }
+            @media only screen and (max-width: 600px) {
+              .container { width: 100% !important; padding: 16px !important; }
+            }
+          </style>
         </head>
-        <body style="margin: 0; padding: 0; background-color: #000000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;" bgcolor="#000000">
-          <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all;">
-            Your invitation to the $YNTOYG Covenant awaits. Connect your Telegram and unlock daily viral content.
+        <body style="margin: 0 !important; padding: 0 !important; background-color: #000000 !important; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;" bgcolor="#000000">
+          <!-- Preheader text -->
+          <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all; font-size: 1px; line-height: 1px; color: #000000;">
+            Your invitation to the $YNTOYG Covenant awaits. Connect and unlock exclusive access.
+            &#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;
           </div>
 
-          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #000000;" bgcolor="#000000">
+          <!-- Wrapper table for dark background -->
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" height="100%" style="background-color: #000000 !important; min-height: 100vh;" bgcolor="#000000">
             <tr>
-              <td style="padding: 40px 16px;">
-                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 480px; margin: 0 auto;">
+              <td align="center" valign="top" style="background-color: #000000 !important; padding: 40px 16px;" bgcolor="#000000">
 
-                  <!-- Main Card with thin gold border -->
+                <!-- Inner container -->
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 480px; background-color: #000000 !important;" bgcolor="#000000" class="container">
+
+                  <!-- Main Card -->
                   <tr>
-                    <td style="background-color: #0a0a0a; border: 1px solid #D4AF37; border-radius: 16px; padding: 32px 24px;">
+                    <td style="background-color: #0a0a0a !important; border: 1px solid #D4AF37; border-radius: 16px; padding: 32px 24px;" bgcolor="#0a0a0a">
 
                       <!-- Diamond ornament -->
-                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 20px;">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
                         <tr>
-                          <td style="text-align: center;">
-                            <span style="color: #D4AF37; font-size: 10px;">◆</span>
+                          <td align="center" style="padding-bottom: 20px; background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
+                            <span style="color: #D4AF37; font-size: 12px;">&#9670;</span>
                           </td>
                         </tr>
                       </table>
 
                       <!-- Title -->
-                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
                         <tr>
-                          <td style="text-align: center; padding-bottom: 12px;">
-                            <h1 style="margin: 0; font-size: 28px; font-weight: 400; font-family: Georgia, 'Times New Roman', serif; color: #FFFFFF;">
-                              Welcome to the <span style="color: #D4AF37; font-style: italic;">Covenant</span>
+                          <td align="center" style="padding-bottom: 12px; background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
+                            <h1 style="margin: 0; font-size: 28px; font-weight: 400; font-family: Georgia, 'Times New Roman', serif; color: #FFFFFF !important; mso-line-height-rule: exactly; line-height: 1.3;">
+                              Welcome to the <span style="color: #D4AF37 !important; font-style: italic;">Covenant</span>
                             </h1>
                           </td>
                         </tr>
                         <tr>
-                          <td style="text-align: center; padding-bottom: 28px;">
-                            <p style="margin: 0; font-size: 14px; color: #808080; line-height: 1.5;">
+                          <td align="center" style="padding-bottom: 28px; background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
+                            <p style="margin: 0; font-size: 14px; color: #888888 !important; line-height: 1.5;">
                               Your exclusive access to the $YNTOYG ecosystem
                             </p>
                           </td>
@@ -216,24 +241,32 @@ export async function POST(request: NextRequest) {
                       </table>
 
                       <!-- CTA Button -->
-                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 16px;">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 16px; background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
                         <tr>
-                          <td style="text-align: center;">
-                            <a href="${magicLink}" style="display: inline-block; padding: 14px 32px; background-color: #D4AF37; color: #000000; font-weight: 600; text-decoration: none; font-size: 14px; border-radius: 8px;">
-                              Accept Invitation →
+                          <td align="center" style="background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
+                            <!--[if mso]>
+                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${magicLink}" style="height:48px;v-text-anchor:middle;width:200px;" arcsize="17%" strokecolor="#D4AF37" fillcolor="#D4AF37">
+                              <w:anchorlock/>
+                              <center style="color:#000000;font-family:Arial,sans-serif;font-size:14px;font-weight:bold;">Accept Invitation</center>
+                            </v:roundrect>
+                            <![endif]-->
+                            <!--[if !mso]><!-->
+                            <a href="${magicLink}" style="display: inline-block; padding: 14px 36px; background-color: #D4AF37 !important; color: #000000 !important; font-weight: 700; text-decoration: none; font-size: 14px; border-radius: 8px; letter-spacing: 0.5px;">
+                              Accept Invitation &#8594;
                             </a>
+                            <!--<![endif]-->
                           </td>
                         </tr>
                       </table>
 
-                      <!-- Fallback link for email clients that block Telegram links -->
-                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 32px;">
+                      <!-- Fallback link -->
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 32px; background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
                         <tr>
-                          <td style="text-align: center;">
-                            <p style="margin: 0 0 8px 0; font-size: 11px; color: #666666;">
+                          <td align="center" style="background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
+                            <p style="margin: 0 0 8px 0; font-size: 11px; color: #666666 !important;">
                               Button not working? Copy this link:
                             </p>
-                            <p style="margin: 0; font-size: 10px; color: #D4AF37; word-break: break-all; padding: 8px; background-color: #111111; border-radius: 4px;">
+                            <p style="margin: 0; font-size: 10px; color: #D4AF37 !important; word-break: break-all; padding: 10px 12px; background-color: #111111 !important; border-radius: 6px; border: 1px solid #222222;">
                               ${magicLink}
                             </p>
                           </td>
@@ -241,20 +274,22 @@ export async function POST(request: NextRequest) {
                       </table>
 
                       <!-- Features Section -->
-                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                        <!-- Feature 1: Telegram Bot -->
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
+                        <!-- Feature 1: Dashboard -->
                         <tr>
-                          <td style="padding: 16px 0; border-top: 1px solid #1a1a1a;">
-                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <td style="padding: 16px 0; border-top: 1px solid #1f1f1f; background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
                               <tr>
-                                <td style="width: 44px; vertical-align: top;">
-                                  <div style="width: 36px; height: 36px; border: 1px solid #D4AF37; border-radius: 8px; text-align: center; line-height: 36px;">
-                                    <span style="color: #D4AF37; font-size: 14px; font-family: Georgia, serif;">I</span>
-                                  </div>
+                                <td width="44" valign="top" style="background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
+                                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="width: 36px; height: 36px; border: 1px solid #D4AF37; border-radius: 8px; background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
+                                    <tr>
+                                      <td align="center" valign="middle" style="color: #D4AF37 !important; font-size: 14px; font-family: Georgia, serif; background-color: #0a0a0a !important;" bgcolor="#0a0a0a">I</td>
+                                    </tr>
+                                  </table>
                                 </td>
-                                <td style="vertical-align: top; padding-left: 12px;">
-                                  <p style="margin: 0 0 4px 0; font-size: 15px; font-weight: 600; color: #FFFFFF;">The Telegram Bot</p>
-                                  <p style="margin: 0; font-size: 12px; color: #808080; line-height: 1.4;">Connect and receive daily viral content designed to go viral on your socials.</p>
+                                <td valign="top" style="padding-left: 12px; background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
+                                  <p style="margin: 0 0 4px 0; font-size: 15px; font-weight: 600; color: #FFFFFF !important;">Your Personal Dashboard</p>
+                                  <p style="margin: 0; font-size: 12px; color: #888888 !important; line-height: 1.4;">Access exclusive content and track your transformation journey.</p>
                                 </td>
                               </tr>
                             </table>
@@ -263,17 +298,19 @@ export async function POST(request: NextRequest) {
 
                         <!-- Feature 2: Points System -->
                         <tr>
-                          <td style="padding: 16px 0; border-top: 1px solid #1a1a1a;">
-                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <td style="padding: 16px 0; border-top: 1px solid #1f1f1f; background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
                               <tr>
-                                <td style="width: 44px; vertical-align: top;">
-                                  <div style="width: 36px; height: 36px; border: 1px solid #D4AF37; border-radius: 8px; text-align: center; line-height: 36px;">
-                                    <span style="color: #D4AF37; font-size: 14px; font-family: Georgia, serif;">II</span>
-                                  </div>
+                                <td width="44" valign="top" style="background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
+                                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="width: 36px; height: 36px; border: 1px solid #D4AF37; border-radius: 8px; background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
+                                    <tr>
+                                      <td align="center" valign="middle" style="color: #D4AF37 !important; font-size: 14px; font-family: Georgia, serif; background-color: #0a0a0a !important;" bgcolor="#0a0a0a">II</td>
+                                    </tr>
+                                  </table>
                                 </td>
-                                <td style="vertical-align: top; padding-left: 12px;">
-                                  <p style="margin: 0 0 4px 0; font-size: 15px; font-weight: 600; color: #FFFFFF;">The Points System</p>
-                                  <p style="margin: 0; font-size: 12px; color: #808080; line-height: 1.4;">Every post earns points. Climb the leaderboard and earn exclusive rewards.</p>
+                                <td valign="top" style="padding-left: 12px; background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
+                                  <p style="margin: 0 0 4px 0; font-size: 15px; font-weight: 600; color: #FFFFFF !important;">The Points System</p>
+                                  <p style="margin: 0; font-size: 12px; color: #888888 !important; line-height: 1.4;">Every post earns points. Climb the leaderboard and earn exclusive rewards.</p>
                                 </td>
                               </tr>
                             </table>
@@ -282,10 +319,10 @@ export async function POST(request: NextRequest) {
                       </table>
 
                       <!-- Expiry notice -->
-                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 24px;">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 24px; background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
                         <tr>
-                          <td style="text-align: center;">
-                            <p style="margin: 0; font-size: 11px; color: #555555;">
+                          <td align="center" style="background-color: #0a0a0a !important;" bgcolor="#0a0a0a">
+                            <p style="margin: 0; font-size: 11px; color: #555555 !important;">
                               This invitation expires in 24 hours
                             </p>
                           </td>
@@ -297,8 +334,8 @@ export async function POST(request: NextRequest) {
 
                   <!-- Footer -->
                   <tr>
-                    <td style="text-align: center; padding-top: 24px;">
-                      <p style="margin: 0; font-size: 11px; color: #444444;">
+                    <td align="center" style="padding-top: 24px; background-color: #000000 !important;" bgcolor="#000000">
+                      <p style="margin: 0; font-size: 11px; color: #444444 !important;">
                         yntoyg.com
                       </p>
                     </td>
