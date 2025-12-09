@@ -1,28 +1,91 @@
 'use client';
 
-import { useState, Suspense } from 'react';
+import { useState, Suspense, useCallback, useRef, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Mail, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (container: HTMLElement, options: {
+        sitekey: string;
+        callback: (token: string) => void;
+        'error-callback': () => void;
+        'expired-callback': () => void;
+        theme: string;
+      }) => string;
+      reset: (widgetId: string) => void;
+      remove: (widgetId: string) => void;
+    };
+  }
+}
 
 function LoginForm() {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState('');
+  const [turnstileToken, setTurnstileToken] = useState('');
   const searchParams = useSearchParams();
   const urlError = searchParams.get('error');
+
+  const turnstileRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef = useRef<string | null>(null);
+
+  const renderTurnstile = useCallback(() => {
+    if (turnstileRef.current && window.turnstile && !widgetIdRef.current) {
+      widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
+        sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '',
+        callback: (token: string) => setTurnstileToken(token),
+        'error-callback': () => setError('Security verification failed. Please refresh.'),
+        'expired-callback': () => setTurnstileToken(''),
+        theme: 'dark',
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    // Try to render immediately
+    renderTurnstile();
+
+    // Also try when script loads
+    const checkInterval = setInterval(() => {
+      if (window.turnstile && !widgetIdRef.current) {
+        renderTurnstile();
+        clearInterval(checkInterval);
+      }
+    }, 100);
+
+    // Cleanup after 10 seconds
+    const timeout = setTimeout(() => clearInterval(checkInterval), 10000);
+
+    return () => {
+      clearInterval(checkInterval);
+      clearTimeout(timeout);
+      if (widgetIdRef.current && window.turnstile) {
+        window.turnstile.remove(widgetIdRef.current);
+        widgetIdRef.current = null;
+      }
+    };
+  }, [renderTurnstile]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setError('');
 
+    if (!turnstileToken) {
+      setError('Please complete the security verification');
+      setIsLoading(false);
+      return;
+    }
+
     try {
       const res = await fetch('/api/auth/send-link', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, turnstileToken }),
       });
 
       const data = await res.json();
@@ -83,9 +146,10 @@ function LoginForm() {
             </div>
             <h2 className="text-xl font-semibold text-white mb-2">Check Your Email</h2>
             <p className="text-white/50 mb-3">We've sent a magic link to access your dashboard.</p>
-            <p className="text-amber-400/70 text-xs px-4 py-2 bg-amber-400/5 rounded-lg">
-              ⚠️ Don't see it? Check your spam folder and mark as "not spam"
-            </p>
+            <div className="flex items-start gap-3 bg-amber-500/10 border border-amber-500/30 rounded-lg p-3">
+              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-amber-500/30 flex items-center justify-center text-amber-400 text-xs font-bold">!</span>
+              <p className="text-amber-300 text-sm font-semibold">NOT THERE? CHECK YOUR SPAM/JUNK FOLDER</p>
+            </div>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8">
@@ -105,9 +169,12 @@ function LoginForm() {
 
             {error && <p className="text-red-400 text-sm mb-4">{error}</p>}
 
+            {/* Turnstile widget */}
+            <div ref={turnstileRef} className="mb-4 flex justify-center" />
+
             <button
               type="submit"
-              disabled={isLoading || !email}
+              disabled={isLoading || !email || !turnstileToken}
               className="w-full btn-royal-gold flex items-center justify-center gap-3 disabled:opacity-50"
             >
               {isLoading ? (
@@ -128,16 +195,18 @@ function LoginForm() {
           </form>
         )}
 
-        {/* Don't have an account - Join */}
-        <div className="text-center mt-6">
-          <Link
-            href="/covenant/join"
-            className="page-transition-link text-white/50 hover:text-yg-gold text-sm transition-colors group"
-          >
-            <span>Don't have an account?</span>
-            <span className="text-yg-gold group-hover:text-yg-gold/80 transition-colors">Join the Covenant →</span>
-          </Link>
-        </div>
+        {/* Don't have an account - Join (hide after email sent) */}
+        {!sent && (
+          <div className="text-center mt-6">
+            <Link
+              href="/covenant/join"
+              className="page-transition-link text-white/50 hover:text-yg-gold text-sm transition-colors group"
+            >
+              <span>Don't have an account? </span>
+              <span className="text-yg-gold group-hover:text-yg-gold/80 transition-colors">Join the Covenant →</span>
+            </Link>
+          </div>
+        )}
 
         {/* Back to home */}
         <div className="text-center mt-3">

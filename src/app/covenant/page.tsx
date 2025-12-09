@@ -42,7 +42,7 @@ export default function CovenantDashboard() {
 
   const handleLogout = async () => {
     await fetch('/api/auth/logout', { method: 'POST' });
-    router.push('/covenant/login');
+    router.push('/');
   };
 
   if (loading) {
@@ -91,26 +91,19 @@ export default function CovenantDashboard() {
           </button>
         </div>
 
-        {/* Claim Video CTA Banner */}
-        <a
-          href={`https://t.me/${process.env.NEXT_PUBLIC_TELEGRAM_BOT_USERNAME || 'yntoyg_claim_bot'}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full mb-8 p-4 rounded-xl border border-yg-gold/50 bg-yg-gold/5 hover:bg-yg-gold/10 hover:border-yg-gold transition-all duration-300 group"
-        >
+        {/* Claim Video CTA Banner - Coming Soon */}
+        <div className="block w-full mb-8 p-4 rounded-xl border border-white/20 bg-white/5">
           <div className="flex items-center justify-center gap-3">
-            <svg className="w-5 h-5 text-yg-gold" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z" />
-            </svg>
-            <span className="text-white font-bold italic">
-              Claim your daily video
+            <Film className="w-5 h-5 text-white/50" />
+            <span className="text-white/70 font-bold italic">
+              Daily Video Claims
             </span>
-            <span className="text-yg-gold group-hover:translate-x-1 transition-transform duration-300">→</span>
+            <span className="text-xs bg-yg-gold/20 text-yg-gold px-2 py-0.5 rounded-full">Coming Soon</span>
           </div>
-          <p className="text-center text-white/50 text-sm mt-1">
-            Open the Telegram bot to claim videos and earn points
+          <p className="text-center text-white/40 text-sm mt-1">
+            Website-based video claiming launches with $YNTOYG
           </p>
-        </a>
+        </div>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -132,7 +125,7 @@ export default function CovenantDashboard() {
           {user.wallet_address ? (
             <code className="text-white/60 text-sm break-all">{user.wallet_address}</code>
           ) : (
-            <p className="text-white/40 text-sm">No wallet connected. Use /wallet in Telegram.</p>
+            <p className="text-white/40 text-sm">No wallet connected yet. Wallet connection coming soon.</p>
           )}
         </div>
 
@@ -157,18 +150,7 @@ export default function CovenantDashboard() {
 
         {/* CTA */}
         <div className="text-center">
-          <p className="text-white/30 text-sm mb-4">Keep claiming and posting to climb the leaderboard</p>
-          <a
-            href={`https://t.me/${process.env.NEXT_PUBLIC_TELEGRAM_BOT_USERNAME || 'yntoyg_claim_bot'}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-outline inline-flex items-center gap-2"
-          >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z" />
-            </svg>
-            Open Telegram Bot
-          </a>
+          <p className="text-white/30 text-sm">You're part of the Covenant. Claiming features coming soon.</p>
         </div>
 
         {/* Back to home */}
