@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { Trophy, Film, Share2, Star, Wallet, LogOut, Loader2 } from 'lucide-react';
 import ClaimSection from '@/components/ClaimSection';
+import TelegramConnectCard from '@/components/TelegramConnectCard';
 
 interface UserStats {
   email: string;
@@ -102,6 +103,9 @@ export default function CovenantDashboard() {
             <LogOut className="w-5 h-5" />
           </button>
         </div>
+
+        {/* Telegram Connect Section */}
+        <TelegramConnectCard onPointsUpdate={handlePointsUpdate} />
 
         {/* Claim Video Section */}
         <ClaimSection onPointsUpdate={handlePointsUpdate} />
