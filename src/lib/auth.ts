@@ -3,7 +3,9 @@ import { getSupabaseService } from './supabase';
 
 export interface SessionUser {
   id: string;
-  telegram_id: number;
+  telegram_id: number | null;
+  telegram_username: string | null;
+  telegram_bonus_claimed: boolean;
   email: string;
   wallet_address: string | null;
   gentleman_score: number;
