@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Film, Download, RefreshCw, Clock, Check, ExternalLink, Loader2 } from 'lucide-react';
+import { Film, Download, RefreshCw, Clock, Check, Loader2 } from 'lucide-react';
 
 interface ClaimStatus {
   can_claim?: boolean;
@@ -312,15 +312,12 @@ export default function ClaimSection({ onPointsUpdate }: ClaimSectionProps) {
         {/* Download Button */}
         <div className="text-center mb-6">
           <a
-            href={status.download_url}
+            href="/api/download"
             download
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 btn-royal-gold px-6 py-3 text-lg"
           >
             <Download className="w-5 h-5" />
             Download Video
-            <ExternalLink className="w-4 h-4 opacity-50" />
           </a>
         </div>
 
