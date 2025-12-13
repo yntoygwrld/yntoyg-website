@@ -140,7 +140,7 @@ export default function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/signup', {
+      const response = await fetch('/api/auth/send-link', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, turnstileToken }),
@@ -216,20 +216,20 @@ export default function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
 
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-yg-gold/20 flex items-center justify-center text-yg-gold text-xs font-bold">2</span>
-                  <p className="text-white/60 text-sm">Click the magic link to connect your <span className="text-white/80">Telegram</span></p>
+                  <p className="text-white/60 text-sm">Click the magic link to access your <span className="text-white/80">dashboard</span></p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-yg-gold/20 flex items-center justify-center text-yg-gold text-xs font-bold">3</span>
-                  <p className="text-white/60 text-sm">Unlock access to <span className="text-white/80">daily viral videos</span></p>
+                  <p className="text-white/60 text-sm">Claim <span className="text-white/80">daily viral videos</span> to share</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-yg-gold/20 flex items-center justify-center text-yg-gold text-xs font-bold">4</span>
-                  <p className="text-white/60 text-sm">Start earning <span className="text-white/80">points</span> on the leaderboard</p>
+                  <p className="text-white/60 text-sm">Earn <span className="text-white/80">points</span> and climb the leaderboard</p>
                 </div>
               </div>
 
               <p className="text-white/30 text-xs mb-4">
-                Link expires in 24 hours
+                Link expires in 15 minutes
               </p>
 
               <button
