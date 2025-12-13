@@ -181,7 +181,7 @@ export default function HowItWorks() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/covenant/join"
+                href="/covenant/login"
                 className="btn-royal-gold"
               >
                 Join the Covenant
@@ -296,7 +296,7 @@ export default function HowItWorks() {
                       Join the movement. Rise with the community.
                     </p>
                     <Link
-                      href="/covenant/join"
+                      href="/covenant/login"
                       className="btn-royal-gold"
                     >
                       Join the Covenant

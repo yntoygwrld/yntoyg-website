@@ -109,17 +109,33 @@ export async function POST(request: NextRequest) {
     const supabase = getSupabaseService();
 
     // Check if user exists with this email
-    const { data: user, error: userError } = await supabase
+    let { data: user, error: userError } = await supabase
       .from('users')
       .select('*')
       .eq('email', email.toLowerCase())
       .single();
 
+    // If user doesn't exist, create them (handles both signup and login)
     if (userError || !user) {
-      return NextResponse.json(
-        { error: 'Email not found. Please join via Telegram first.' },
-        { status: 404 }
-      );
+      const { data: newUser, error: createError } = await supabase
+        .from('users')
+        .insert({
+          email: email.toLowerCase(),
+          gentleman_score: 0,
+          total_claims: 0,
+        })
+        .select()
+        .single();
+
+      if (createError) {
+        console.error('User creation error:', createError);
+        return NextResponse.json(
+          { error: 'Failed to create account' },
+          { status: 500 }
+        );
+      }
+
+      user = newUser;
     }
 
     // Generate token

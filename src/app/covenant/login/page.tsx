@@ -110,9 +110,9 @@ function LoginForm() {
             <div className="w-12 h-px bg-gradient-to-r from-transparent via-yg-gold/50 to-transparent" />
           </div>
           <h1 className="text-3xl md:text-4xl font-serif text-white mb-2">
-            The <span className="text-glow-gold">Covenant</span>
+            Join The <span className="text-glow-gold">Covenant</span>
           </h1>
-          <p className="text-white/40">Enter your email to access your dashboard</p>
+          <p className="text-white/40">Enter your email to join or access your dashboard</p>
         </div>
 
         {/* Error from URL */}
@@ -172,24 +172,11 @@ function LoginForm() {
                   </span>
                 </>
               ) : (
-                'Send Magic Link'
+                'Continue with Email'
               )}
             </button>
 
           </form>
-        )}
-
-        {/* Don't have an account - Join (hide after email sent) */}
-        {!sent && (
-          <div className="text-center mt-6">
-            <Link
-              href="/covenant/join"
-              className="page-transition-link text-white/50 hover:text-yg-gold text-sm transition-colors group"
-            >
-              <span>Don't have an account? </span>
-              <span className="text-yg-gold group-hover:text-yg-gold/80 transition-colors">Join the Covenant →</span>
-            </Link>
-          </div>
         )}
 
         {/* Back to home */}
